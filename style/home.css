@@ -1,0 +1,891 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Graphik";
+}
+
+/* -------------------------------- UTILS -------------------------------- */
+.cut-top-left {
+  position: absolute;
+  clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 100%);
+  top: 0;
+  left: 0;
+  background-color: var(--c);
+  height: var(--l);
+  width: var(--l);
+  z-index: 100;
+}
+
+.cut-top-right {
+  position: absolute;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 0%, 0% 0%);
+  top: 0;
+  right: 0;
+  background-color: var(--c);
+  height: var(--l);
+  width: var(--l);
+  z-index: 100;
+}
+
+.cut-bottom-left {
+  position: absolute;
+  clip-path: polygon(0% 0%, 100% 100%, 0% 100%, 0% 0%);
+  bottom: 0;
+  left: 0;
+  background-color: var(--c);
+  height: var(--l);
+  width: var(--l);
+  z-index: 100;
+}
+
+.cut-bottom-right {
+  position: absolute;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 100% 0%);
+  bottom: 0;
+  right: 0;
+  background-color: var(--c);
+  height: var(--l);
+  width: var(--l);
+  z-index: 100;
+}
+
+.yellow-next-button {
+  display: flex;
+  background-color: #e2b41a;
+  color: white;
+  width: 282px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 40px;
+  height: min-content;
+  justify-content: space-between;
+  padding: 16px;
+  /* align-self: center; */
+}
+
+.white-next-button {
+  display: flex;
+  background-color: white;
+  color: #41c7df;
+  width: 282px;
+  height: min-content;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  justify-content: space-between;
+  padding: 16px;
+  align-self: center;
+}
+
+.blue-next-button {
+  display: flex;
+  background-color: #41C7DF;
+  color: white;
+  width: 282px;
+  height: min-content;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  justify-content: space-between;
+  padding: 16px;
+  align-self: center;
+}
+
+.read-more {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: max-content;
+  align-items: center;
+}
+
+.read-more > span {
+  color: #41c7df;
+  font-size: 14px;
+  line-height: 22.4px;
+  font-weight: 600;
+  font-family: "Switzer";
+}
+
+/* -------------------------------- UTILS END -------------------------------- */
+
+/* ----------------------------- MAIN ------------------------------------- */
+
+.main {
+  background: url("../res/image/home_main.png") no-repeat center center;
+  background-size: cover;
+}
+
+.header {
+  padding: 120px;
+  padding-top: 32px;
+  padding-bottom: 50px;
+  background: linear-gradient(to right, #0b1621b2 100%, transparent 30%);
+}
+
+.header > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header > div > div {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  gap: 24px;
+  align-items: center;
+}
+
+.button_hollow {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #ffffff;
+  border-radius: 96px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.hamburger > div {
+  width: 40px;
+  height: 2px;
+  background-color: white;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 56px;
+  color: #ffffff;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  width: 208px;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1.6px solid rgba(255, 255, 255, 0.4);
+}
+
+/* .menu span {
+} */
+
+.menu div {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.main-body {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-top: 59px;
+  padding-bottom: 240px;
+  margin-left: 120px;
+  color: white;
+}
+
+.main-body > div > h1 {
+  font-size: 70px;
+  line-height: 98px;
+  font-weight: 400;
+  font-family: "Glaukon";
+}
+
+.main-body > div > span {
+  display: block;
+  width: 373px;
+  font-family: "GoogleSans";
+  font-size: 16px;
+  line-height: 25.6px;
+  margin-top: 16px;
+}
+
+/* ---------------------- MAIN END ------------------------- */
+
+/* ----------------------- STORY DIV ------------------------------- */
+
+.story-div {
+  padding-top: 95px;
+  padding-bottom: 95px;
+  padding-left: 120px;
+  padding-left: 120px;
+  background: url("../res/svg/logo/logo_background_white.svg") no-repeat center
+    center;
+  background-size: cover;
+  background-color: #f0f1f5;
+  text-align: justify;
+}
+
+.story-div > span {
+  font-size: 22px;
+  font-weight: 500;
+  color: #071033;
+}
+
+.story-div > div {
+  margin-top: 108px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 40px;
+}
+
+.story-div > div > div > h1 {
+  font-family: "Glaukon";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 22px;
+  color: #071033;
+}
+
+.story-div > div > div > span {
+  font-family: "GoogleSans";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+  text-align: justify;
+  width: 100%;
+  color: #071033;
+}
+
+.mt-95 {
+  margin-top: 95px;
+}
+
+/* ----------------------- STORY DIV END ------------------------------- */
+
+/* ----------------------- NUMBER DIV ------------------------------- */
+
+.number-parent-div {
+  background: linear-gradient(
+    to bottom,
+    #f0f1f5,
+    #f0f1f5 22%,
+    #0b1621 22%,
+    #0b1621 78%,
+    #59729452 78%,
+    #59729452 100%
+  );
+}
+.number-div {
+  background-color: #0b1621;
+  clip-path: polygon(8% 0, 100% 0, 100% 78%, 92% 100%, 0 100%, 0 22%);
+  padding: 120px;
+}
+
+.number-div > .divider {
+  height: 0.8px;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 22px;
+}
+
+.number-div > span {
+  color: #41c7df;
+  font-weight: 500;
+}
+
+.number-div > .numbers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.datas {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.datas > .value {
+  font-size: 70px;
+  font-weight: 300;
+  color: white;
+}
+
+.datas > .key {
+  font-size: 23px;
+  line-height: 32.2px;
+  color: #e2b41a;
+}
+
+/* ----------------------- NUMBER DIV END ------------------------------- */
+
+/* ----------------------- EXPERTISE DIV ------------------------------- */
+
+.expertise-div {
+  padding-top: 96px;
+  padding-bottom: 107px;
+  padding-right: 120px;
+  background-color: rgba(89, 114, 148, 0.32);
+}
+
+.expertise-div > .divider {
+  height: 0.8px;
+  background-color: #606c99;
+  margin-left: 120px;
+  margin-bottom: 28px;
+}
+
+.expertise-div > span {
+  margin-left: 120px;
+  margin-bottom: 28px;
+  font-family: "Switzer";
+  font-weight: 700;
+  font-size: 22px;
+  color: #071033;
+}
+
+.expertise {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 40px;
+}
+
+.expertise-image {
+  background: url("../res/image/home_expertise.png") no-repeat center center;
+  background-size: cover;
+  height: 1230px;
+  position: relative;
+}
+
+.expertise-data > span {
+  font-size: 40px;
+  line-height: 40px;
+  font-family: "Glaukon";
+  color: #071033;
+}
+
+.expertise > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* -------------------------- PROJECTS ----------------------------------- */
+.projects-div {
+  padding-top: 96px;
+  background-color: #c9d1dc;
+}
+
+.projects-div > .divider {
+  height: 0.8px;
+  margin-left: 120px;
+  margin-bottom: 28px;
+  margin-right: 120px;
+  background-color: #606c99;
+}
+
+.projects-div > span {
+  font-weight: 500;
+  margin-left: 120px;
+  font-size: 22px;
+  line-height: 26.4px;
+  color: #071033;
+}
+
+.projects-div > .project-data {
+  text-align: justify;
+  margin-right: 120px;
+  display: grid;
+  margin-left: 120px;
+  grid-template-columns: 50% 50%;
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.projects-div > .project-data > h1 {
+  font-family: "Glaukon";
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #071033;
+}
+.projects-div > .project-data > span {
+  font-family: "GoogleSans";
+  font-size: 16px;
+  line-height: 25.6px;
+  font-weight: 400;
+  color: #071033;
+}
+
+.project-corousal {
+  margin-top: 120px;
+  display: flex;
+  gap: 40px;
+  padding-bottom: 120px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-right: 120px;
+  padding-left: 120px;
+  padding-bottom: 120px;
+  scrollbar-width: 0;
+}
+
+.project-corousal::-webkit-scrollbar {
+  display: none;
+}
+
+.project-image {
+  background-size: cover;
+  height: 600px;
+  width: 425px;
+  position: relative;
+}
+
+.project-image-1 {
+  background: url("../res/image/project_image_1.png") no-repeat;
+}
+
+.project-image-2 {
+  background: url("../res/image/project_image_2.png") no-repeat;
+}
+
+.project-image-3 {
+  background: url("../res/image/project_image_3.png") no-repeat;
+}
+
+.project-logo {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  background-color: white;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  color: black;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 20px;
+  line-height: 24px;
+  justify-content: center;
+}
+
+.project-place {
+  margin-top: 32px;
+  font-size: 14px;
+  color: #505a80;
+  line-height: 16.8px;
+}
+
+.project-hotel {
+  width: 345px;
+  margin-top: 8px;
+  font-size: 22px;
+  line-height: 26.4px;
+  font-family: "GoogleSans";
+  white-space: normal;
+}
+
+.corousal-control-data {
+  display: flex;
+  margin-left: 120px;
+  justify-content: space-between;
+}
+
+.corousal-data {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.corousal-data > div {
+  width: 16px;
+  height: 2px;
+  background-color: #505a80;
+}
+
+.corousal-data > span:nth-child(1) {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 4%;
+}
+
+.corousal-data > span:nth-child(3) {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 4%;
+  color: #505a80;
+}
+
+.corousal-control {
+  display: flex;
+}
+
+.corousal-control > div {
+  display: flex;
+  align-items: center;
+}
+
+.corousal-control > div:nth-child(1) {
+  background-color: #eff0f5;
+  padding: 28px 32px;
+}
+
+.corousal-control > div:nth-child(2) {
+  background-color: white;
+  padding: 32px 246px 32px 28px;
+}
+
+.corousal-control > div > image {
+  width: 24px;
+  height: 24px;
+}
+
+/* -------------------------- PROJECTS END ----------------------------------- */
+
+/* -------------------------------- INSIGHTS --------------------------------- */
+.insights-div {
+  padding: 96px 120px 120px 120px;
+  background-color: #c9d1dc;
+}
+
+.insights-div > .divider {
+  background-color: #606c99;
+  height: 1.6px;
+  margin-bottom: 28px;
+}
+
+.insights-div > span {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26.4px;
+}
+
+.insights-header {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.insights-header > h1 {
+  font-family: "Glaukon";
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 400;
+  width: 580px;
+}
+
+.insights-data {
+  margin-top: 160px;
+  display: flex;
+}
+
+.insights-image {
+  background: url("../res/image/insights_main.png") no-repeat center center;
+  background-size: cover;
+  min-width: 426px;
+}
+
+.insights {
+  background-color: white;
+  padding: 120px 80px 80px 80px;
+}
+
+.insights-author {
+  font-size: 14px;
+  color: #505a80;
+}
+
+.insights-type {
+  font-family: "Switzer";
+  font-weight: 700;
+  font-size: 14px;
+  color: #505a80;
+}
+
+.insight-header {
+  font-size: 28px;
+  line-height: 28px;
+  color: #071033;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.insights-image {
+  position: relative;
+}
+
+.insight-content {
+  font-size: 16px;
+  font-family: "GoogleSans";
+  text-align: justify;
+  line-height: 25.6px;
+  color: #505a80;
+  margin-top: 32px;
+  font-weight: 400;
+  height: 182px;
+}
+
+.insight-controllers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+}
+
+.insight-arrows > div {
+  display: flex;
+  align-items: center;
+  padding: 32px 45px;
+}
+
+.insight-arrows > div:nth-child(1) {
+  background-color: white;
+}
+
+.insight-arrows > div:nth-child(2) {
+  background-color: #eff0f5;
+}
+
+.insight-positions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.insight-positions > div {
+  height: 12px;
+  width: 12px;
+  border-radius: 50px;
+  background-color: white;
+}
+
+.insight-positions > div:nth-child(1) {
+  opacity: 0.4;
+}
+
+.insight-positions > div:nth-child(2) {
+  opacity: 0.4;
+}
+
+.insight-positions > div:nth-child(3) {
+  opacity: 0.4;
+}
+
+.insight-positions > div:nth-child(4) {
+  opacity: 1;
+}
+
+/* -------------------------------- INSIGHTS END --------------------------------- */
+
+/* -------------------------- BUSINESS STREAMS --------------------------- */
+.business-streams-div {
+  padding: 96px 120px 120px 80px;
+  background-color: #c9d1dc;
+}
+
+.business-streams-div > .divider {
+  height: 1.6px;
+  background-color: #606c99;
+  margin-bottom: 28px;
+}
+
+.business-streams-div > span {
+  font-weight: 500;
+  font-size: 22px;
+  color: #071033;
+  line-height: 26.4px;
+}
+
+.business-content {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-top: 80px;
+  height: 241px;
+}
+
+.business-content > h1 {
+  font-family: "Glaukon";
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 400;
+}
+
+.business-content > span {
+  font-family: "GoogleSans";
+  font-size: 16px;
+  text-align: justify;
+  line-height: 25.6px;
+}
+
+.business-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.business-single-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.business-image {
+  height: 580px;
+  width: 600px;
+  position: relative;
+}
+
+.business-image-doha-1 {
+  background: url("../res/image/business_doha.png") no-repeat center center;
+  background-size: cover;
+}
+
+.business-image-doha-2 {
+  background: url("../res/image/business_doha_2.png") no-repeat center center;
+  background-size: cover;
+}
+
+.business-image-gulf-residences {
+  background: url("../res/image/business_gulf_residencies.png") no-repeat center
+    center;
+  background-size: cover;
+}
+
+.business-image-fahed-foods {
+  background: url("../res/image/business_fahad_foods.png") no-repeat center
+    center;
+  background-size: cover;
+}
+
+.business-image-900-park {
+  background: url("../res/image/business_900_park.png") no-repeat center center;
+  background-size: cover;
+}
+
+.business-image-nac-doha {
+  background: url("../res/image/business_nah_doha.png") no-repeat center center;
+  background-size: cover;
+}
+
+.business-image-logo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  padding: 24px 48px;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 20px;
+}
+
+.business-name {
+  size: 14px;
+  line-height: 19.6px;
+  color: #505a80;
+  margin-top: 32px;
+}
+
+.business-service {
+  font-weight: 500;
+  font-size: 22px;
+  color: #071033;
+  margin-top: 8px;
+}
+
+/* -------------------------- BUSINESS STREAMS END --------------------------- */
+
+/* ------------------------- BUSINESS ENTERPRISE ---------------------------------- */
+
+.business-enterprise-div {
+  background-color: #c9d1dc;
+  padding: 96px 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.business-enterprise-div > .divider {
+  background-color: #606c99;
+  height: 1.6px;
+  margin-bottom: 26px;
+}
+
+.business-enterprise-header {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 24.6px;
+  color: #071033;
+}
+
+.business-enterprise-content {
+  margin-top: 80px;
+  font-family: "Glaukon";
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.world-map {
+  margin-top: 96px;
+}
+
+/* ------------------------- BUSINESS ENTERPRISE END ---------------------------------- */
+
+/* ----------------------- CAREERS ------------------------------------ */
+
+.careers-div {
+  background-color: #597294;
+  padding: 96px 120px;
+}
+
+.careers-div > .divider {
+  background-color: white;
+  height: 1.6px;
+  margin-bottom: 28px;
+}
+
+.careers-heading {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26.4px;
+  color: white;
+}
+
+.careers-content {
+  margin-top: 47px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 44px;
+}
+
+.careers-image {
+  background: url('../res/image/careers_main.png') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.careers-data {
+  margin-right: 50px;
+}
+
+.careers-data > h1 {
+  color: #E2B41A;
+  font-family: 'Glaukon';
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+.careers-data > span {
+  display: block;
+  font-family: "GoogleSans";
+  font-size: 16px;
+  line-height: 25.6px;
+  text-align: justify;
+  color: white;
+  /* height: 134px; */
+}
