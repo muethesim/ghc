@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   font-family: "Graphik";
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* -------------------------------- UTILS -------------------------------- */
@@ -888,4 +894,116 @@
   text-align: justify;
   color: white;
   /* height: 134px; */
+}
+
+
+/* ----------------------- CAREERS END ------------------------------------ */
+
+
+.footer {
+  background-color: #0B1621;
+  padding: 146px 120px 40px 120px;
+  position: relative;
+}
+
+.footer-body {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  margin-top: 112px;
+}
+
+.footer-email {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+  justify-content: center;
+}
+
+.footer-email > input {
+  background-color: #0B1621;
+  border: none;
+  border-bottom: #0F6AFF solid 1px;
+  width: 400px;
+  color: white;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 300;
+  align-self: flex-end;
+  padding-bottom: 24px;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* .footer-part-1 {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.footer-part-1-upper {
+  margin-bottom: 200px;
+}
+
+.footer-part-1-upper > p {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 38.4px;
+  text-align: justify;
+  color: white;
+  margin-right: 280px;
+  margin-top: 86px;
+}
+
+.footer-part-1 > span {
+  font-family: 'GoogleSans';
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-part-2 {
+  color: white;
+}
+
+.footer-part-2-upper {
+  position: relative;
+  height: 100%;
+}
+
+.footer-part-2-upper > a > img {
+  height: 40px;
+  width: 40px;
+  bottom: 0;
+  position: absolute;
+}
+
+.footer-part-2-upper > ul {
+  list-style: none;
+}
+
+.footer-part-2-upper > ul > li {
+  font-family: 'Inter', 'sans-serif';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 35.2px;
+}
+
+.footer-part-2-upper > div {
+  margin-top: 100px;
+  font-family: 'Inter', 'sans-serif';
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-part-2-upper > div > p {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.footer-part-2-upper > div > ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
 }
