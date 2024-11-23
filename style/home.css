@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   font-family: "Graphik";
+  text-decoration: none;
 }
 
 html {
@@ -214,12 +215,13 @@ html {
   color: #ffffff;
 }
 
-.menu li {
+.menu > a > li {
   display: flex;
   align-items: center;
   width: 208px;
   justify-content: space-between;
   padding-top: 12px;
+  color: white;
   border-top: 1.6px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -991,7 +993,7 @@ html {
 
 /* ----------------------- CAREERS END ------------------------------------ */
 
-
+/* -------------------------------- FOOTER ------------------------------- */
 .footer {
   background-color: #0B1621;
   padding: 146px 120px 40px 120px;
@@ -1099,3 +1101,5 @@ input:focus {
   display: flex;
   gap: 16px;
 }
+
+/* -------------------------------- FOOTER END ------------------------------- */
