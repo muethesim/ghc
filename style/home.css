@@ -115,6 +115,45 @@ html {
   font-family: "Switzer";
 }
 
+.circular-plus {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: #0B1621 solid 1.2px;
+}
+
+.circular-plus > .plus {
+  position: relative;
+  width: 8px;
+  height: 8px;
+}
+
+.circular-plus > .plus::before,
+.circular-plus > .plus::after {
+  content: "";
+  position: absolute;
+  background-color: #0B1621; /* Color of the + sign */
+}
+
+.circular-plus > .plus::before {
+  width: 8px;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.circular-plus > .plus::after {
+  width: 2px;
+  height: 8px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
 /* -------------------------------- UTILS END -------------------------------- */
 
 /* ----------------------------- MAIN ------------------------------------- */
@@ -367,17 +406,70 @@ html {
   position: relative;
 }
 
-.expertise-data > span {
+.expertise-data > p {
   font-size: 40px;
   line-height: 40px;
   font-family: "Glaukon";
   color: #071033;
+  height: 224px;
+}
+
+.expertise-data > .divider {
+  height: 2.4px;
+  background-color: #071033;
+  margin-bottom: 24px;
 }
 
 .expertise > div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.collapsible-container {
+}
+
+.collapsible {
+  padding-right: 16px;
+  border-bottom: 0.8px solid #606C99;
+  margin-bottom: 32px;
+}
+
+.collapsible-header {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26.4px;
+  color: #0B1621;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.collapsible-header > p {
+  align-self: center;
+}
+
+.collapsible-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding-top: 14px;
+}
+
+.collapsible-content p {
+  text-align: justify;
+  font-family: 'GoogleSans';
+  font-size: 16px;
+  line-height: 25.6px;
+  margin-top: 14px;
+}
+
+.collapsible-content.expanded {
+  padding: 0px;
+}
+
+.collapsible.expanded {
+  border: none;
 }
 
 /* -------------------------- PROJECTS ----------------------------------- */
