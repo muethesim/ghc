@@ -160,40 +160,39 @@ const prevBtn = document.getElementById("prev_btn");
 const positionData = document.querySelectorAll(".insight-position-data");
 const imageDiv = document.querySelector(".insights-image");
 let currentIndex = 0;
-const containerHeight = imageDiv.offsetHeight;
-console.log(containerHeight)
 var translateLength = 0;
 
   positionData[currentIndex].classList.add("active");
   prevBtn.classList.add("disabled");
 
-function updateContent(index) {
+function updateContent(index, containerHeight) {
   positionData.forEach((content) => content.classList.remove("active"));
   positionData[index].classList.add("active");
   translateLength = index * containerHeight;
-  console.log(translateLength);
   insight_containers.style.transform = `translateY(-${translateLength}px)`;
 }
 
 nextBtn.addEventListener("click", () => {
+  var containerHeight = imageDiv.offsetHeight;
   prevBtn.classList.remove("disabled");
   if (currentIndex == contents.length - 2) {
     nextBtn.classList.add("disabled");
   }
   if (currentIndex < contents.length - 1) {
     currentIndex = currentIndex + 1;
-    updateContent(currentIndex);
+    updateContent(currentIndex, containerHeight);
   }
 });
 
 prevBtn.addEventListener("click", () => {
+  var containerHeight = imageDiv.offsetHeight;
   nextBtn.classList.remove("disabled");
   if (currentIndex == 1) {
     prevBtn.classList.add("disabled");
   }
   if (currentIndex > 0) {
     currentIndex = currentIndex - 1;
-    updateContent(currentIndex);
+    updateContent(currentIndex, containerHeight);
   }
 });
 

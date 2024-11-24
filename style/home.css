@@ -175,7 +175,7 @@ html {
 /* ----------------------------- MAIN ------------------------------------- */
 
 .main {
-  background: url("../res/image/home_main.png") no-repeat center center;
+  background: url("../res/image/home_master.png") no-repeat center center;
   background-size: cover;
 }
 
@@ -352,7 +352,7 @@ html {
   padding-top: 95px;
   padding-bottom: 95px;
   padding-left: 120px;
-  padding-left: 120px;
+  padding-right: 120px;
   background: url("../res/svg/logo/logo_background_white.svg") no-repeat center
     center;
   background-size: cover;
@@ -394,6 +394,14 @@ html {
 
 .mt-95 {
   margin-top: 95px;
+}
+
+.story-image {
+  width: 100%;
+  height: 425px;
+  background: url('../res/image/home_our_story.png') no-repeat center center;
+  background-size: cover;
+  position: relative;
 }
 
 /* ----------------------- STORY DIV END ------------------------------- */
@@ -632,15 +640,19 @@ html {
 }
 
 .project-image-1 {
-  background: url("../res/image/project_image_1.png") no-repeat;
+  background: url("../res/image/home_project_1.png") no-repeat;
 }
 
 .project-image-2 {
-  background: url("../res/image/project_image_2.png") no-repeat;
+  background: url("../res/image/home_project_2.png") no-repeat;
 }
 
 .project-image-3 {
-  background: url("../res/image/project_image_3.png") no-repeat;
+  background: url("../res/image/home_project_3.png") no-repeat;
+}
+
+.project-image-4 {
+  background: url("../res/image/home_project_1.png") no-repeat;
 }
 
 .project-logo {
@@ -779,9 +791,21 @@ html {
 } */
 
 .insights-image {
-  background: url("../res/image/insights_main.png") no-repeat center center;
   background-size: cover;
   min-width: 426px;
+}
+
+.insights-image-1 {
+  background: url("../res/image/home_insight_1.png") no-repeat center center;
+}
+.insights-image-2 {
+  background: url("../res/image/home_project_1.png") no-repeat center center;
+}
+.insights-image-3 {
+  background: url("../res/image/home_project_2.png") no-repeat center center;
+}
+.insights-image-4 {
+  background: url("../res/image/home_project_3.png") no-repeat center center;
 }
 
 .insights {
@@ -944,35 +968,35 @@ html {
   position: relative;
 }
 
-.business-image-doha-1 {
-  background: url("../res/image/business_doha.png") no-repeat center center;
+.business-image-1 {
+  background: url("../res/image/home_stream_1.png") no-repeat center center;
   background-size: cover;
 }
 
-.business-image-doha-2 {
-  background: url("../res/image/business_doha_2.png") no-repeat center center;
+.business-image-2 {
+  background: url("../res/image/home_stream_2.png") no-repeat center center;
   background-size: cover;
 }
 
-.business-image-gulf-residences {
-  background: url("../res/image/business_gulf_residencies.png") no-repeat center
+.business-image-3 {
+  background: url("../res/image/home_stream_3.png") no-repeat center
     center;
   background-size: cover;
 }
 
-.business-image-fahed-foods {
-  background: url("../res/image/business_fahad_foods.png") no-repeat center
+.business-image-4 {
+  background: url("../res/image/home_stream_4.png") no-repeat center
     center;
   background-size: cover;
 }
 
-.business-image-900-park {
-  background: url("../res/image/business_900_park.png") no-repeat center center;
+.business-image-5 {
+  background: url("../res/image/home_stream_5.png") no-repeat center center;
   background-size: cover;
 }
 
-.business-image-nac-doha {
-  background: url("../res/image/business_nah_doha.png") no-repeat center center;
+.business-image-6 {
+  background: url("../res/image/home_stream_6.png") no-repeat center center;
   background-size: cover;
 }
 
@@ -1067,7 +1091,7 @@ html {
 }
 
 .careers-image {
-  background: url("../res/image/careers_main.png") no-repeat center center;
+  background: url("../res/image/home_careers.png") no-repeat center center;
   background-size: cover;
   position: relative;
 }

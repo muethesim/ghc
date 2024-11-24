@@ -279,8 +279,8 @@ html {
 
 .social-media-links {
   opacity: 0;
+  display: none;
   transition: opacity 0.3s ease;
-  display: flex;
   flex-direction: column;
   gap: 45px;
   justify-content: center;
@@ -295,9 +295,15 @@ html {
   list-style: none;
 }
 
+.social-media-links > ul > li {
+  display: flex;
+  justify-content: center;
+}
+
 .social-media-links.activate {
   opacity: 1;
   transition: opacity 0.3s ease;
+  display: flex;
 }
 
 .change-language {
@@ -312,6 +318,7 @@ html {
   fill: #e2b41a;
 }
 
+
 /* ---------------------- MAIN END ------------------------- */
 
 /* ----------------------- STORY DIV ------------------------------- */
@@ -320,7 +327,7 @@ html {
   padding-top: 95px;
   padding-bottom: 95px;
   padding-left: 120px;
-  padding-left: 120px;
+  padding-right: 120px;
   background: url("../res/svg/logo/logo_background_white.svg") no-repeat center
     center;
   background-size: cover;
@@ -362,6 +369,14 @@ html {
 
 .mt-95 {
   margin-top: 95px;
+}
+
+.story-image {
+  width: 100%;
+  height: 425px;
+  background: url("../res/image/expertise_how_we_do.png") no-repeat center center;
+  background-size: cover;
+  position: relative;
 }
 
 /* ----------------------- STORY DIV END ------------------------------- */
@@ -453,17 +468,17 @@ html {
 
 .expertise-image-1 {
   position: relative;
-  background: url("../res/image/expertise_image_1.png") no-repeat center center;
+  background: url("../res/image/expertise_expertise_1.png") no-repeat center center;
 }
 
 .expertise-image-2 {
   position: relative;
-  background: url("../res/image/expertise_image_2.png") no-repeat center center;
+  background: url("../res/image/expertise_expertise_2.png") no-repeat center center;
 }
 
 .expertise-image-3 {
   position: relative;
-  background: url("../res/image/expertise_image_3.png") no-repeat center center;
+  background: url("../res/image/expertise_expertise_3.png") no-repeat center center;
 }
 
 /* ----------------------- EXPERTISE DIV END ------------------------------- */
@@ -479,7 +494,7 @@ html {
 .contact-image {
   width: 540px;
   height: 600px;
-  background: url("../res/image/contact_main.png") no-repeat center center;
+  background: url("../res/image/expertise_contact.png") no-repeat center center;
   position: relative;
 }
 
