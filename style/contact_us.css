@@ -627,13 +627,13 @@ textarea:focus {
   width: 100%;
   opacity: 0;
   transition: opacity 0.3s ease;
-  display: none;
+  height: 0;
 }
 
 .drop-down.active {
   opacity: 1;
   transition: opacity 0.3s ease;
-  display: block;
+  height: fit-content;
 }
 
 .expertise-drop-down {
