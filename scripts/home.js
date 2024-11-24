@@ -3,19 +3,24 @@ const collapsibleHeaders = document.querySelectorAll(".collapsible-header");
 collapsibleHeaders.forEach((header) => {
   header.addEventListener("click", () => {
     const content = header.nextElementSibling;
+    const circularPlus = header.querySelector(".circular-plus");
+    console.log(header);
 
     if (content.classList.contains("expanded")) {
       content.style.maxHeight = null;
       content.classList.remove("expanded");
+      circularPlus.classList.remove("expanded");
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
       content.classList.add("expanded");
-
+      circularPlus.classList.add("expanded");
       collapsibleHeaders.forEach((otherHeader) => {
         if (otherHeader !== header) {
+          const otherCircularPlus = otherHeader.querySelector(".circular-plus");
           const otherContent = otherHeader.nextElementSibling;
           otherContent.style.maxHeight = null;
           otherContent.classList.remove("expanded");
+          otherCircularPlus.classList.remove("expanded");
         }
       });
     }
@@ -46,7 +51,7 @@ hamburger.addEventListener("click", () => {
 const expertise_list_item = document.querySelector(".expertise-list-item");
 const drop_down = document.querySelector(".drop-down");
 const expertise_drop_down = document.querySelector(".expertise-drop-down");
-const main = document.querySelector(".main")
+const main = document.querySelector(".main");
 var list_out = true;
 var container_out = true;
 
@@ -94,4 +99,148 @@ expertise_drop_down.addEventListener("mouseout", () => {
   setTimeout(() => {
     container_out = true;
   }, 200);
+});
+
+const number_control = document.getElementById("number_control");
+const counters = document.querySelectorAll(".numbers .datas .value");
+
+let CounterObserver = new IntersectionObserver(
+  (entries, observer) => {
+    let [entry] = entries;
+    if (!entry.isIntersecting) return;
+
+    let speed = 30;
+    counters.forEach((counter, index) => {
+      var val;
+      function UpdateCounter() {
+        const targetNumber = +counter.dataset.target;
+        const initialNumber = +counter.dataset.initial;
+        const incPerCount = targetNumber / speed;
+        var originalNumber;
+        if (initialNumber < targetNumber) {
+          originalNumber = initialNumber + incPerCount;
+          counter.dataset.initial = originalNumber;
+          val = Math.ceil(originalNumber);
+          if (val <= targetNumber) {
+            if (val < 10) {
+              val = "0" + val;
+            }
+            val = val + "+";
+            counter.innerText = val;
+          }
+          setTimeout(UpdateCounter, 40);
+        } else {
+          val = targetNumber;
+          if (val < 10) {
+            val = "0" + val;
+          }
+          counter.innerText = val + "+";
+        }
+      }
+      UpdateCounter();
+    });
+    console.log("HERE");
+    observer.unobserve(number_control);
+  },
+  {
+    root: null,
+    threshold: window.innerWidth > 768 ? 0.4 : 0.3,
+  }
+);
+
+CounterObserver.observe(number_control);
+
+// Insights Corousal
+
+const insight_containers = document.querySelectorAll(
+  ".insight-datas-container"
+);
+const insight_position_containers =
+  document.querySelectorAll(".insight-positions");
+
+insight_containers.forEach((container) => {
+  const contents = container.querySelectorAll(".insights-data");
+  const nextBtn = document.getElementById("next_btn");
+  const prevBtn = document.getElementById("prev_btn");
+  const position_data = container.querySelectorAll(".insight-position-data");
+  let currentIndex = 0;
+
+  contents[currentIndex].classList.add("visible");
+  position_data[currentIndex].classList.add("active");
+  prevBtn.classList.add("disabled");
+
+  function updateContent(index) {
+    contents.forEach((content) => content.classList.remove("visible"));
+    position_data.forEach((content) => content.classList.remove("active"));
+    contents[index].classList.add("visible");
+    position_data[index].classList.add("active");
+  }
+
+  nextBtn.addEventListener("click", () => {
+    prevBtn.classList.remove("disabled");
+    if (currentIndex == contents.length - 2) {
+      nextBtn.classList.add("disabled");
+    }
+    if (currentIndex < contents.length - 1) {
+      currentIndex = currentIndex + 1;
+      updateContent(currentIndex);
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    nextBtn.classList.remove("disabled");
+    if (currentIndex == 1) {
+      prevBtn.classList.add("disabled");
+    }
+    if (currentIndex > 0) {
+      currentIndex = currentIndex - 1;
+      updateContent(currentIndex);
+    }
+  });
+});
+
+// PROJECT COROUSAL
+
+const project_corousal = document.querySelector(".project-corousal");
+const projectNextBtn = document.getElementById("project_control_next");
+const projectPrevBtn = document.getElementById("project_control_prev");
+const scrollNumSpan = document.querySelector(
+  ".corousal-control-data .corousal-initial"
+);
+const totalScrollNumSpan = document.querySelector(
+  ".corousal-control-data .corousal-final"
+);
+const scrollLen = 420;
+var scrollTime = 1;
+
+const scrollWidth = project_corousal.scrollWidth;
+const clientWidth = project_corousal.clientWidth;
+const scrollLeft = project_corousal.scrollLeft;
+const totalScrolls = Math.ceil((scrollWidth - clientWidth - scrollLeft) / 300);
+totalScrollNumSpan.innerHTML = totalScrolls;
+
+projectPrevBtn.classList.add("disabled");
+
+projectNextBtn.addEventListener("click", () => {
+  projectPrevBtn.classList.remove("disabled");
+  if (scrollTime < totalScrolls) {
+    project_corousal.scrollBy({ left: scrollLen, behavior: "smooth" });
+    scrollTime += 1;
+    scrollNumSpan.innerHTML = scrollTime;
+    if (scrollTime == totalScrolls) {
+      projectNextBtn.classList.add("disabled");
+    }
+  }
+});
+
+projectPrevBtn.addEventListener("click", () => {
+  projectNextBtn.classList.remove("disabled");
+  if (scrollTime > 1) {
+    project_corousal.scrollBy({ left: -scrollLen, behavior: "smooth" });
+    scrollTime -= 1;
+    scrollNumSpan.innerHTML = scrollTime;
+    if (scrollTime == 1) {
+      projectPrevBtn.classList.add("disabled");
+    }
+  }
 });

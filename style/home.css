@@ -127,6 +127,10 @@ html {
   border: #0b1621 solid 1.2px;
 }
 
+.circular-plus.expanded {
+  border: #597294 solid 1.2px;
+}
+
 .circular-plus > .plus {
   position: relative;
   width: 8px;
@@ -138,6 +142,11 @@ html {
   content: "";
   position: absolute;
   background-color: #0b1621; /* Color of the + sign */
+}
+
+.circular-plus.expanded > .plus::before,
+.circular-plus.expanded > .plus::after {
+  background-color: #597294; /* Color of the + sign */
 }
 
 .circular-plus > .plus::before {
@@ -154,6 +163,12 @@ html {
   left: 50%;
   top: 0;
   transform: translateX(-50%);
+  transition: transform 0.3s ease;
+}
+
+.circular-plus.expanded  .plus::after {
+  transform: translateX(-50%) rotate(90deg);
+  transition: transform 0.3s ease;
 }
 /* -------------------------------- UTILS END -------------------------------- */
 
@@ -423,6 +438,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  width: 200px;
 }
 
 .datas > .value {
@@ -596,7 +612,7 @@ html {
   display: flex;
   gap: 40px;
   padding-bottom: 120px;
-  overflow-x: auto;
+  overflow-x: hidden;
   white-space: nowrap;
   padding-right: 120px;
   padding-left: 120px;
@@ -698,16 +714,21 @@ html {
 .corousal-control > div {
   display: flex;
   align-items: center;
+  background-color: white;
+  transition: background-color 0.3s ease;
 }
 
 .corousal-control > div:nth-child(1) {
-  background-color: #eff0f5;
   padding: 28px 32px;
 }
 
 .corousal-control > div:nth-child(2) {
-  background-color: white;
   padding: 32px 246px 32px 28px;
+}
+
+.corousal-control > div.disabled {
+  background-color: #eff0f5;
+  transition: background-color 0.3s ease;
 }
 
 .corousal-control > div > image {
@@ -750,7 +771,10 @@ html {
 }
 
 .insights-data {
-  margin-top: 160px;
+  display: none;
+}
+
+.insights-data.visible {
   display: flex;
 }
 
@@ -768,6 +792,11 @@ html {
 .insights-author {
   font-size: 14px;
   color: #505a80;
+}
+
+.insight-datas-container {
+  margin-top: 160px;
+  display: flex;
 }
 
 .insights-type {
@@ -814,12 +843,19 @@ html {
   padding: 32px 45px;
 }
 
-.insight-arrows > div:nth-child(1) {
+.insight-arrows > div {
   background-color: white;
+  transition: background-color 0.3s ease;
 }
 
-.insight-arrows > div:nth-child(2) {
+.insight-arrows > div.disabled {
   background-color: #eff0f5;
+  transition: background-color 0.3s ease;
+}
+
+.insight-arrows > div.disabled > svg > path {
+  stroke: white;
+  transition: stroke 0.3s ease;
 }
 
 .insight-positions {
@@ -835,19 +871,11 @@ html {
   background-color: white;
 }
 
-.insight-positions > div:nth-child(1) {
+.insight-positions > div {
   opacity: 0.4;
 }
 
-.insight-positions > div:nth-child(2) {
-  opacity: 0.4;
-}
-
-.insight-positions > div:nth-child(3) {
-  opacity: 0.4;
-}
-
-.insight-positions > div:nth-child(4) {
+.insight-positions > div.active {
   opacity: 1;
 }
 

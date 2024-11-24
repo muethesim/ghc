@@ -250,7 +250,11 @@
               proud of our work in government sectors, where we provide critical
               IT solutions that contribute to national growth and development.
             </p>
-            <a href="./expertise.html" class="read-more" style="margin-top: 67px;">
+            <a
+              href="./expertise.html"
+              class="read-more"
+              style="margin-top: 67px"
+            >
               <span>Read More</span>
               <img src="./res/svg/assets/more_arrow_blue.svg" alt="" />
             </a>
@@ -266,16 +270,16 @@
             </div>
           </div>
           <div class="expertise-drop-options">
-            <p>Furnished<br>Apartments</p>
-            <p>Food &<br>Beverages</p>
-            <p>Entertainment<br>Parks</p>
-            <p>Food<br>Warehouses</p>
-            <p>Hotels &<br>Residence</p>
+            <p>Furnished<br />Apartments</p>
+            <p>Food &<br />Beverages</p>
+            <p>Entertainment<br />Parks</p>
+            <p>Food<br />Warehouses</p>
+            <p>Hotels &<br />Residence</p>
             <p>Restaurants</p>
           </div>
           <div class="expertise-drop-image">
-            <div class="cut-top-right" style="--l: 34px; --c: #515565;"></div>
-            <div class="cut-bottom-left" style="--l: 34px; --c: #515565;"></div>
+            <div class="cut-top-right" style="--l: 34px; --c: #515565"></div>
+            <div class="cut-bottom-left" style="--l: 34px; --c: #515565"></div>
           </div>
         </div>
       </div>
@@ -318,25 +322,25 @@
         </div>
       </div>
     </div>
-    <div class="number-parent-div">
+    <div class="number-parent-div" id="number_control">
       <div class="number-div">
         <div class="divider"></div>
         <span>GHC in Numbers</span>
         <div class="numbers">
           <div class="datas">
-            <span class="value">1000+</span>
+            <span class="value" data-target="1000" data-initial="0">00</span>
             <span class="key">Employees</span>
           </div>
           <div class="datas">
-            <span class="value">20+</span>
+            <span class="value" data-target="20" data-initial="0">00</span>
             <span class="key">Years of <br />Experience</span>
           </div>
           <div class="datas">
-            <span class="value">06+</span>
+            <span class="value" data-target="6" data-initial="0">00</span>
             <span class="key">Business <br />Streams</span>
           </div>
           <div class="datas">
-            <span class="value">30+</span>
+            <span class="value" data-target="30" data-initial="0">00</span>
             <span class="key">Nationalities</span>
           </div>
         </div>
@@ -562,19 +566,32 @@
       </div>
       <div class="corousal-control-data">
         <div class="corousal-data">
-          <span>1</span>
+          <span class="corousal-initial">1</span>
           <div></div>
-          <span>5</span>
+          <span class="corousal-final">5</span>
         </div>
         <div class="corousal-control">
-          <div>
-            <img src="./res/svg/assets/arrow_left.svg" alt="Arrow Left" />
+          <div id="project_control_prev">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M15 6L9 12L15 18" stroke="#143199" stroke-width="1.2" />
+            </svg>
           </div>
-          <div>
-            <img
-              src="./res/svg/assets/arrow_right_blue.svg"
-              alt="Arrow Right"
-            />
+          <div id="project_control_next">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M9 18L15 12L9 6" stroke="#071033" stroke-width="1.2" />
+            </svg>
           </div>
         </div>
       </div>
@@ -592,46 +609,152 @@
           <img src="./res/svg/assets/rounded_next_blue.svg" alt="Next" />
         </div>
       </div>
-      <div class="insights-data">
-        <div class="insights-image">
-          <div class="cut-top-right" style="--c: #c9d1dc; --l: 78px"></div>
-          <div class="cut-bottom-left" style="--c: #c9d1dc; --l: 78px"></div>
+      <div class="insight-datas-container">
+        <div class="insights-data">
+          <div class="insights-image">
+            <div class="cut-top-right" style="--c: #c9d1dc; --l: 78px"></div>
+            <div class="cut-bottom-left" style="--c: #c9d1dc; --l: 78px"></div>
+          </div>
+          <div class="insights">
+            <p class="insights-author">
+              Rudolf Wisanggeni 1 &nbsp; | &nbsp;
+              <span class="insights-type">ARTICLE &nbsp; &nbsp;</span>
+              30 July 24
+            </p>
+            <h1 class="insight-header">
+              Luxury Living Redefined:<br />Your Home Away from Home
+            </h1>
+            <p class="insight-content">
+              We Gulf Hotels Company emphasize the luxurious and comfortable
+              experience offered through its hotels and residences. It suggests
+              that guests can expect unparalleled comfort, making them feel at
+              home even when they are far away, and also our commitment to
+              exceeding traditional standards of hospitality.
+            </p>
+            <div class="read-more">
+              <span>Read More</span>
+              <img src="./res/svg/assets/more_arrow_blue.svg" alt="" />
+            </div>
+          </div>
         </div>
-        <div class="insights">
-          <p class="insights-author">
-            Rudolf Wisanggeni &nbsp; | &nbsp;
-            <span class="insights-type">ARTICLE &nbsp; &nbsp;</span>
-            30 July 24
-          </p>
-          <h1 class="insight-header">
-            Luxury Living Redefined:<br />Your Home Away from Home
-          </h1>
-          <p class="insight-content">
-            We Gulf Hotels Company emphasize the luxurious and comfortable
-            experience offered through its hotels and residences. It suggests
-            that guests can expect unparalleled comfort, making them feel at
-            home even when they are far away, and also our commitment to
-            exceeding traditional standards of hospitality.
-          </p>
-          <div class="read-more">
-            <span>Read More</span>
-            <img src="./res/svg/assets/more_arrow_blue.svg" alt="" />
+        <div class="insights-data">
+          <div class="insights-image">
+            <div class="cut-top-right" style="--c: #c9d1dc; --l: 78px"></div>
+            <div class="cut-bottom-left" style="--c: #c9d1dc; --l: 78px"></div>
+          </div>
+          <div class="insights">
+            <p class="insights-author">
+              Rudolf Wisanggeni 2 &nbsp; | &nbsp;
+              <span class="insights-type">ARTICLE &nbsp; &nbsp;</span>
+              30 July 24
+            </p>
+            <h1 class="insight-header">
+              Luxury Living Redefined:<br />Your Home Away from Home
+            </h1>
+            <p class="insight-content">
+              We Gulf Hotels Company emphasize the luxurious and comfortable
+              experience offered through its hotels and residences. It suggests
+              that guests can expect unparalleled comfort, making them feel at
+              home even when they are far away, and also our commitment to
+              exceeding traditional standards of hospitality.
+            </p>
+            <div class="read-more">
+              <span>Read More</span>
+              <img src="./res/svg/assets/more_arrow_blue.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="insights-data">
+          <div class="insights-image">
+            <div class="cut-top-right" style="--c: #c9d1dc; --l: 78px"></div>
+            <div class="cut-bottom-left" style="--c: #c9d1dc; --l: 78px"></div>
+          </div>
+          <div class="insights">
+            <p class="insights-author">
+              Rudolf Wisanggeni 3 &nbsp; | &nbsp;
+              <span class="insights-type">ARTICLE &nbsp; &nbsp;</span>
+              30 July 24
+            </p>
+            <h1 class="insight-header">
+              Luxury Living Redefined:<br />Your Home Away from Home
+            </h1>
+            <p class="insight-content">
+              We Gulf Hotels Company emphasize the luxurious and comfortable
+              experience offered through its hotels and residences. It suggests
+              that guests can expect unparalleled comfort, making them feel at
+              home even when they are far away, and also our commitment to
+              exceeding traditional standards of hospitality.
+            </p>
+            <div class="read-more">
+              <span>Read More</span>
+              <img src="./res/svg/assets/more_arrow_blue.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="insights-data">
+          <div class="insights-image">
+            <div class="cut-top-right" style="--c: #c9d1dc; --l: 78px"></div>
+            <div class="cut-bottom-left" style="--c: #c9d1dc; --l: 78px"></div>
+          </div>
+          <div class="insights">
+            <p class="insights-author">
+              Rudolf Wisanggeni 4 &nbsp; | &nbsp;
+              <span class="insights-type">ARTICLE &nbsp; &nbsp;</span>
+              30 July 24
+            </p>
+            <h1 class="insight-header">
+              Luxury Living Redefined:<br />Your Home Away from Home
+            </h1>
+            <p class="insight-content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et
+              suscipit nobis blanditiis odit cumque veniam, amet molestias ut,
+              reiciendis, aperiam sed dolore fugit voluptates modi impedit
+              adipisci ipsam libero quasi!
+            </p>
+            <div class="read-more">
+              <span>Read More</span>
+              <img src="./res/svg/assets/more_arrow_blue.svg" alt="" />
+            </div>
           </div>
         </div>
         <div class="insight-controllers">
           <div class="insight-arrows">
-            <div>
-              <img src="./res/svg/assets/arrow_up_blue.svg" alt="Arrow Up" />
+            <div id="prev_btn">
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.5 15L12.5 9L6.5 15"
+                  stroke="#143199"
+                  stroke-width="1.2"
+                />
+              </svg>
             </div>
-            <div>
-              <img src="./res/svg/assets/arrow_down.svg" alt="Arrow Down" />
+            <div id="next_btn">
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.5 9L12.5 15L18.5 9"
+                  stroke="#143199"
+                  stroke-width="1.2"
+                />
+              </svg>
             </div>
           </div>
           <div class="insight-positions">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="insight-position-data"></div>
+            <div class="insight-position-data"></div>
+            <div class="insight-position-data"></div>
+            <div class="insight-position-data"></div>
           </div>
         </div>
       </div>
