@@ -771,12 +771,12 @@ html {
 }
 
 .insights-data {
-  display: none;
-}
-
-.insights-data.visible {
   display: flex;
 }
+
+/* .insights-data.visible {
+  display: flex;
+} */
 
 .insights-image {
   background: url("../res/image/insights_main.png") no-repeat center center;
@@ -795,8 +795,17 @@ html {
 }
 
 .insight-datas-container {
-  margin-top: 160px;
   display: flex;
+  flex-direction: column;
+  gap: 0px;
+  transition: transform 0.5s ease;
+}
+
+.insight-wrapper {
+  display: flex;
+  margin-top: 160px;
+  overflow-y: hidden;
+  height: 555px;
 }
 
 .insights-type {
@@ -841,12 +850,10 @@ html {
   display: flex;
   align-items: center;
   padding: 32px 45px;
-}
-
-.insight-arrows > div {
   background-color: white;
   transition: background-color 0.3s ease;
 }
+
 
 .insight-arrows > div.disabled {
   background-color: #eff0f5;

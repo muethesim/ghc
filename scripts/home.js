@@ -152,51 +152,49 @@ CounterObserver.observe(number_control);
 
 // Insights Corousal
 
-const insight_containers = document.querySelectorAll(
-  ".insight-datas-container"
-);
-const insight_position_containers =
-  document.querySelectorAll(".insight-positions");
+const insight_containers = document.querySelector(".insight-datas-container");
 
-insight_containers.forEach((container) => {
-  const contents = container.querySelectorAll(".insights-data");
-  const nextBtn = document.getElementById("next_btn");
-  const prevBtn = document.getElementById("prev_btn");
-  const position_data = container.querySelectorAll(".insight-position-data");
-  let currentIndex = 0;
+const contents = document.querySelectorAll(".insights-data");
+const nextBtn = document.getElementById("next_btn");
+const prevBtn = document.getElementById("prev_btn");
+const positionData = document.querySelectorAll(".insight-position-data");
+const imageDiv = document.querySelector(".insights-image");
+let currentIndex = 0;
+const containerHeight = imageDiv.offsetHeight;
+console.log(containerHeight)
+var translateLength = 0;
 
-  contents[currentIndex].classList.add("visible");
-  position_data[currentIndex].classList.add("active");
+  positionData[currentIndex].classList.add("active");
   prevBtn.classList.add("disabled");
 
-  function updateContent(index) {
-    contents.forEach((content) => content.classList.remove("visible"));
-    position_data.forEach((content) => content.classList.remove("active"));
-    contents[index].classList.add("visible");
-    position_data[index].classList.add("active");
+function updateContent(index) {
+  positionData.forEach((content) => content.classList.remove("active"));
+  positionData[index].classList.add("active");
+  translateLength = index * containerHeight;
+  console.log(translateLength);
+  insight_containers.style.transform = `translateY(-${translateLength}px)`;
+}
+
+nextBtn.addEventListener("click", () => {
+  prevBtn.classList.remove("disabled");
+  if (currentIndex == contents.length - 2) {
+    nextBtn.classList.add("disabled");
   }
+  if (currentIndex < contents.length - 1) {
+    currentIndex = currentIndex + 1;
+    updateContent(currentIndex);
+  }
+});
 
-  nextBtn.addEventListener("click", () => {
-    prevBtn.classList.remove("disabled");
-    if (currentIndex == contents.length - 2) {
-      nextBtn.classList.add("disabled");
-    }
-    if (currentIndex < contents.length - 1) {
-      currentIndex = currentIndex + 1;
-      updateContent(currentIndex);
-    }
-  });
-
-  prevBtn.addEventListener("click", () => {
-    nextBtn.classList.remove("disabled");
-    if (currentIndex == 1) {
-      prevBtn.classList.add("disabled");
-    }
-    if (currentIndex > 0) {
-      currentIndex = currentIndex - 1;
-      updateContent(currentIndex);
-    }
-  });
+prevBtn.addEventListener("click", () => {
+  nextBtn.classList.remove("disabled");
+  if (currentIndex == 1) {
+    prevBtn.classList.add("disabled");
+  }
+  if (currentIndex > 0) {
+    currentIndex = currentIndex - 1;
+    updateContent(currentIndex);
+  }
 });
 
 // PROJECT COROUSAL

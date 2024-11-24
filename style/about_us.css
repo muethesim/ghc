@@ -374,10 +374,100 @@ html {
 
 .video-div {
   display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
 .video-div > video {
   width: 100%;
+}
+
+.player-control {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 16px;
+  padding: 48px 120px;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.player-control.paused {
+  background-color: transparent;
+  transition: all 0s ease;
+}
+
+.video-div:hover .player-control {
+  transform: translateY(0%);
+  transition: all 0.3s ease;
+}
+
+.play-pause-button {
+  border-radius: 50%;
+  border: 1.6px solid white;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-pause-button > img {
+  height: 8px;
+  width: 8px;
+}
+
+.video-time {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+  border-radius: 8px;
+}
+
+.video-progress {
+  position: absolute;
+  width: 20%;
+  height: 4px;
+  background-color: #41c7df;
+  border-radius: 8px;
+  transform: translateY(-1px);
+}
+
+.video-pause-layout {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.video-pause-layout.activate {
+  display: flex;
+}
+
+.play-text-btn {
+  background-color: #5c4f4f;
+  border-radius: 50%;
+  color: white;
+  height: 124px;
+  width: 124px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 /* ----------------------- VIDEO DIV END ------------------------ */
@@ -415,7 +505,6 @@ html {
 }
 
 .leaderships-data {
-  margin-top: 160px;
   display: flex;
 }
 
@@ -429,6 +518,20 @@ html {
 .leaderships {
   background-color: white;
   padding: 120px 80px 80px 80px;
+}
+
+.leadership-datas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  transition: transform 0.5s ease;
+}
+
+.leadership-wrapper {
+  display: flex;
+  margin-top: 160px;
+  overflow-y: hidden;
+  height: 555px;
 }
 
 .leaderships-author {
@@ -478,14 +581,18 @@ html {
   display: flex;
   align-items: center;
   padding: 32px 45px;
-}
-
-.leadership-arrows > div:nth-child(1) {
   background-color: white;
+  transition: background-color 0.3s ease;
 }
 
-.leadership-arrows > div:nth-child(2) {
+.leadership-arrows > div.disabled {
   background-color: #eff0f5;
+  transition: background-color 0.3s ease;
+}
+
+.leadership-arrows > div.disabled > svg > path {
+  stroke: white;
+  transition: stroke 0.3s ease;
 }
 
 .leadership-positions {
@@ -501,19 +608,11 @@ html {
   background-color: white;
 }
 
-.leadership-positions > div:nth-child(1) {
+.leadership-positions > div {
   opacity: 0.4;
 }
 
-.leadership-positions > div:nth-child(2) {
-  opacity: 0.4;
-}
-
-.leadership-positions > div:nth-child(3) {
-  opacity: 0.4;
-}
-
-.leadership-positions > div:nth-child(4) {
+.leadership-positions > div.active {
   opacity: 1;
 }
 
@@ -761,7 +860,7 @@ html {
 
 .history-status-bar > div {
   height: 7px;
-  width: 20%;
+  width: 0%;
   background-color: #0040a9;
   border-radius: 5px;
   transform: translateY(-1px);
