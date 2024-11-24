@@ -176,7 +176,7 @@ html {
   justify-content: space-between;
 }
 
-.header > div > div {
+.header-data {
   display: flex;
   justify-content: space-between;
   color: white;
@@ -290,8 +290,8 @@ html {
 
 .social-media-links {
   opacity: 0;
+  display: none;
   transition: opacity 0.3s ease;
-  display: flex;
   flex-direction: column;
   gap: 45px;
   justify-content: center;
@@ -306,9 +306,15 @@ html {
   list-style: none;
 }
 
+.social-media-links > ul > li {
+  display: flex;
+  justify-content: center;
+}
+
 .social-media-links.activate {
   opacity: 1;
   transition: opacity 0.3s ease;
+  display: flex;
 }
 
 .change-language {

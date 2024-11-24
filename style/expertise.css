@@ -134,7 +134,7 @@ html {
   justify-content: space-between;
 }
 
-.header > div > div {
+.header-data {
   display: flex;
   justify-content: space-between;
   color: white;
