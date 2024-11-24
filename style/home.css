@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 * {
   padding: 0;
@@ -87,7 +87,7 @@ html {
 
 .blue-next-button {
   display: flex;
-  background-color: #41C7DF;
+  background-color: #41c7df;
   color: white;
   width: 282px;
   height: min-content;
@@ -124,7 +124,7 @@ html {
   align-items: center;
   justify-content: center;
   position: relative;
-  border: #0B1621 solid 1.2px;
+  border: #0b1621 solid 1.2px;
 }
 
 .circular-plus > .plus {
@@ -137,7 +137,7 @@ html {
 .circular-plus > .plus::after {
   content: "";
   position: absolute;
-  background-color: #0B1621; /* Color of the + sign */
+  background-color: #0b1621; /* Color of the + sign */
 }
 
 .circular-plus > .plus::before {
@@ -204,6 +204,15 @@ html {
   width: 40px;
   height: 2px;
   background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.hamburger.activate > div:nth-child(1) {
+  transform: rotate(45deg) translateY(10px); /* Rotate first line */
+}
+
+.hamburger.activate > div:nth-child(2) {
+  transform: rotate(-45deg) translateY(-10px); /* Rotate second line */
 }
 
 .menu {
@@ -257,6 +266,62 @@ html {
   font-size: 16px;
   line-height: 25.6px;
   margin-top: 16px;
+}
+
+.social-media {
+  right: 120px;
+  position: absolute;
+  height: 0px;
+  width: 79px;
+  background-color: white;
+  transform: translateY(10px);
+  transition: height 0.3s ease;
+}
+
+.social-media.activate {
+  height: 360px;
+  transition: height 0.3s ease;
+}
+
+.social-media > ul {
+  padding: 31px 25px 28px 31px;
+  list-style: none;
+}
+
+
+.social-media-links {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  justify-content: center;
+  width: 79px;
+  margin-top: 30px;
+}
+
+.social-media-links > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  list-style: none;
+}
+
+.social-media-links.activate {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.change-language {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.hover-icon:hover path {
+  fill: #E2B41A;
 }
 
 /* ---------------------- MAIN END ------------------------- */
@@ -433,7 +498,7 @@ html {
 
 .collapsible {
   padding-right: 16px;
-  border-bottom: 0.8px solid #606C99;
+  border-bottom: 0.8px solid #606c99;
   margin-bottom: 32px;
 }
 
@@ -441,7 +506,7 @@ html {
   font-size: 22px;
   font-weight: 500;
   line-height: 26.4px;
-  color: #0B1621;
+  color: #0b1621;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
@@ -460,7 +525,7 @@ html {
 
 .collapsible-content p {
   text-align: justify;
-  font-family: 'GoogleSans';
+  font-family: "GoogleSans";
   font-size: 16px;
   line-height: 25.6px;
   margin-top: 14px;
@@ -962,7 +1027,7 @@ html {
 }
 
 .careers-image {
-  background: url('../res/image/careers_main.png') no-repeat center center;
+  background: url("../res/image/careers_main.png") no-repeat center center;
   background-size: cover;
   position: relative;
 }
@@ -972,8 +1037,8 @@ html {
 }
 
 .careers-data > h1 {
-  color: #E2B41A;
-  font-family: 'Glaukon';
+  color: #e2b41a;
+  font-family: "Glaukon";
   font-weight: 400;
   font-size: 40px;
   line-height: 40px;
@@ -990,12 +1055,11 @@ html {
   /* height: 134px; */
 }
 
-
 /* ----------------------- CAREERS END ------------------------------------ */
 
 /* -------------------------------- FOOTER ------------------------------- */
 .footer {
-  background-color: #0B1621;
+  background-color: #0b1621;
   padding: 146px 120px 40px 120px;
   position: relative;
 }
@@ -1014,9 +1078,9 @@ html {
 }
 
 .footer-email > input {
-  background-color: #0B1621;
+  background-color: #0b1621;
   border: none;
-  border-bottom: #0F6AFF solid 1px;
+  border-bottom: #0f6aff solid 1px;
   width: 400px;
   color: white;
   font-size: 32px;
@@ -1050,7 +1114,7 @@ input:focus {
 }
 
 .footer-part-1 > span {
-  font-family: 'GoogleSans';
+  font-family: "GoogleSans";
   font-size: 14px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.4);
@@ -1077,15 +1141,19 @@ input:focus {
 }
 
 .footer-part-2-upper > ul > li {
-  font-family: 'Inter', 'sans-serif';
+  font-family: "Inter", "sans-serif";
   font-weight: 700;
   font-size: 16px;
   line-height: 35.2px;
 }
 
+.footer-part-2-upper > ul > li > a {
+  color: white;
+}
+
 .footer-part-2-upper > div {
   margin-top: 100px;
-  font-family: 'Inter', 'sans-serif';
+  font-family: "Inter", "sans-serif";
   font-size: 16px;
   display: flex;
   flex-direction: column;

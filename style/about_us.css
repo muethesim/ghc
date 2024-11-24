@@ -166,6 +166,15 @@ html {
   width: 40px;
   height: 2px;
   background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.hamburger.activate > div:nth-child(1) {
+  transform: rotate(45deg) translateY(10px); /* Rotate first line */
+}
+
+.hamburger.activate > div:nth-child(2) {
+  transform: rotate(-45deg) translateY(-10px); /* Rotate second line */
 }
 
 .menu {
@@ -250,6 +259,61 @@ html {
   color: #e2b41a;
   font-size: 14px;
   line-height: 16.8px;
+}
+
+.social-media {
+  right: 120px;
+  position: absolute;
+  height: 0px;
+  width: 79px;
+  background-color: white;
+  transform: translateY(10px);
+  transition: height 0.3s ease;
+}
+
+.social-media.activate {
+  height: 360px;
+  transition: height 0.3s ease;
+}
+
+.social-media > ul {
+  padding: 31px 25px 28px 31px;
+  list-style: none;
+}
+
+.social-media-links {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  justify-content: center;
+  width: 79px;
+  margin-top: 30px;
+}
+
+.social-media-links > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  list-style: none;
+}
+
+.social-media-links.activate {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.change-language {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.hover-icon:hover path {
+  fill: #e2b41a;
 }
 
 /* ---------------------- MAIN END ------------------------- */
@@ -894,7 +958,6 @@ html {
 
 /* ---------------------- HOW IT WORKS DIV END -------------------------- */
 
-
 /* ----------------------- CONTACT DIV ----------------------------------- */
 .contact-div {
   background-color: #597294;
@@ -1018,6 +1081,10 @@ input:focus {
   font-weight: 700;
   font-size: 16px;
   line-height: 35.2px;
+}
+
+.footer-part-2-upper > ul > li > a {
+  color: white;
 }
 
 .footer-part-2-upper > div {
