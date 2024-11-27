@@ -78,6 +78,23 @@ textarea:focus {
   padding: 16px;
 }
 
+.read-more {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: max-content;
+  align-items: center;
+}
+
+.read-more > span {
+  color: #41c7df;
+  font-size: 0.875rem;
+  line-height: 22.4px;
+  font-weight: 600;
+  font-family: "Switzer";
+}
+
 /* -------------------------------- UTILS END -------------------------------- */
 
 /* ----------------------------- MAIN ------------------------------------- */
