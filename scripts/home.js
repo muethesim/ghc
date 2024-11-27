@@ -154,68 +154,68 @@ CounterObserver.observe(number_control);
 
 // Insights Corousal
 
-const insight_containers = document.querySelector(".insight-datas-container");
+// const insight_containers = document.querySelector(".insight-datas-container");
 
-const contents = document.querySelectorAll(".insights-data");
-const nextBtn = document.getElementById("next_btn");
-const prevBtn = document.getElementById("prev_btn");
-const positionData = document.querySelectorAll(".insight-position-data");
-const insightDiv = document.querySelector(".insights");
-const wrapper = document.querySelector(".insight-wrapper");
-const controller = document.querySelector(".insight-controllers");
+// const contents = document.querySelectorAll(".insights-data");
+// const nextBtn = document.getElementById("next_btn");
+// const prevBtn = document.getElementById("prev_btn");
+// const positionData = document.querySelectorAll(".insight-position-data");
+// const insightDiv = document.querySelector(".insights");
+// const wrapper = document.querySelector(".insight-wrapper");
+// const controller = document.querySelector(".insight-controllers");
 
-let currentIndex = 0;
-var translateLength = 0;
+// let currentIndex = 0;
+// var translateLength = 0;
 
-positionData[currentIndex].classList.add("active");
-prevBtn.classList.add("disabled");
-wrapper.style.height = `${insightDiv.offsetHeight}px`;
+// positionData[currentIndex].classList.add("active");
+// prevBtn.classList.add("disabled");
+// wrapper.style.height = `${insightDiv.offsetHeight}px`;
 
-if (screen.width < 790) {
-  wrapper.style.height = `${
-    insightDiv.offsetHeight + controller.offsetHeight
-  }px`;
-  wrapper.style.width = `${insightDiv.offsetWidth}px`;
-}
+// if (screen.width < 790) {
+//   wrapper.style.height = `${
+//     insightDiv.offsetHeight + controller.offsetHeight
+//   }px`;
+//   wrapper.style.width = `${insightDiv.offsetWidth}px`;
+// }
 
-function updateContent(index, containerHeight) {
-  positionData.forEach((content) => content.classList.remove("active"));
-  positionData[index].classList.add("active");
-  translateLength = index * containerHeight;
-  if (screen.width < 790) {
-    insight_containers.style.transform = `translateX(-${translateLength}px)`;
-  } else {
-    insight_containers.style.transform = `translateY(-${translateLength}px)`;
-  }
-}
+// function updateContent(index, containerHeight) {
+//   positionData.forEach((content) => content.classList.remove("active"));
+//   positionData[index].classList.add("active");
+//   translateLength = index * containerHeight;
+//   if (screen.width < 790) {
+//     insight_containers.style.transform = `translateX(-${translateLength}px)`;
+//   } else {
+//     insight_containers.style.transform = `translateY(-${translateLength}px)`;
+//   }
+// }
 
-nextBtn.addEventListener("click", () => {
-  if (screen.width < 790) {
-    var containerHeight = insightDiv.offsetWidth;
-  } else {
-    var containerHeight = insightDiv.offsetHeight;
-  }
-  prevBtn.classList.remove("disabled");
-  if (currentIndex == contents.length - 2) {
-    nextBtn.classList.add("disabled");
-  }
-  if (currentIndex < contents.length - 1) {
-    currentIndex = currentIndex + 1;
-    updateContent(currentIndex, containerHeight);
-  }
-});
+// nextBtn.addEventListener("click", () => {
+//   if (screen.width < 790) {
+//     var containerHeight = insightDiv.offsetWidth;
+//   } else {
+//     var containerHeight = insightDiv.offsetHeight;
+//   }
+//   prevBtn.classList.remove("disabled");
+//   if (currentIndex == contents.length - 2) {
+//     nextBtn.classList.add("disabled");
+//   }
+//   if (currentIndex < contents.length - 1) {
+//     currentIndex = currentIndex + 1;
+//     updateContent(currentIndex, containerHeight);
+//   }
+// });
 
-prevBtn.addEventListener("click", () => {
-  var containerHeight = insightDiv.offsetHeight;
-  nextBtn.classList.remove("disabled");
-  if (currentIndex == 1) {
-    prevBtn.classList.add("disabled");
-  }
-  if (currentIndex > 0) {
-    currentIndex = currentIndex - 1;
-    updateContent(currentIndex, containerHeight);
-  }
-});
+// prevBtn.addEventListener("click", () => {
+//   var containerHeight = insightDiv.offsetHeight;
+//   nextBtn.classList.remove("disabled");
+//   if (currentIndex == 1) {
+//     prevBtn.classList.add("disabled");
+//   }
+//   if (currentIndex > 0) {
+//     currentIndex = currentIndex - 1;
+//     updateContent(currentIndex, containerHeight);
+//   }
+// });
 
 // PROJECT COROUSAL
 
