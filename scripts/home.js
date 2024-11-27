@@ -1,3 +1,5 @@
+// SET INSIGHT HEIGHT
+
 const collapsibleHeaders = document.querySelectorAll(".collapsible-header");
 
 collapsibleHeaders.forEach((header) => {
@@ -158,22 +160,41 @@ const contents = document.querySelectorAll(".insights-data");
 const nextBtn = document.getElementById("next_btn");
 const prevBtn = document.getElementById("prev_btn");
 const positionData = document.querySelectorAll(".insight-position-data");
-const imageDiv = document.querySelector(".insights-image");
+const insightDiv = document.querySelector(".insights");
+const wrapper = document.querySelector(".insight-wrapper");
+const controller = document.querySelector(".insight-controllers");
+
 let currentIndex = 0;
 var translateLength = 0;
 
-  positionData[currentIndex].classList.add("active");
-  prevBtn.classList.add("disabled");
+positionData[currentIndex].classList.add("active");
+prevBtn.classList.add("disabled");
+wrapper.style.height = `${insightDiv.offsetHeight}px`;
+
+if (screen.width < 790) {
+  wrapper.style.height = `${
+    insightDiv.offsetHeight + controller.offsetHeight
+  }px`;
+  wrapper.style.width = `${insightDiv.offsetWidth}px`;
+}
 
 function updateContent(index, containerHeight) {
   positionData.forEach((content) => content.classList.remove("active"));
   positionData[index].classList.add("active");
   translateLength = index * containerHeight;
-  insight_containers.style.transform = `translateY(-${translateLength}px)`;
+  if (screen.width < 790) {
+    insight_containers.style.transform = `translateX(-${translateLength}px)`;
+  } else {
+    insight_containers.style.transform = `translateY(-${translateLength}px)`;
+  }
 }
 
 nextBtn.addEventListener("click", () => {
-  var containerHeight = imageDiv.offsetHeight;
+  if (screen.width < 790) {
+    var containerHeight = insightDiv.offsetWidth;
+  } else {
+    var containerHeight = insightDiv.offsetHeight;
+  }
   prevBtn.classList.remove("disabled");
   if (currentIndex == contents.length - 2) {
     nextBtn.classList.add("disabled");
@@ -185,7 +206,7 @@ nextBtn.addEventListener("click", () => {
 });
 
 prevBtn.addEventListener("click", () => {
-  var containerHeight = imageDiv.offsetHeight;
+  var containerHeight = insightDiv.offsetHeight;
   nextBtn.classList.remove("disabled");
   if (currentIndex == 1) {
     prevBtn.classList.add("disabled");
