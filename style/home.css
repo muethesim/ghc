@@ -13,6 +13,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  position: relative;
+}
+
 /* -------------------------------- UTILS -------------------------------- */
 .cut-top-left {
   position: absolute;
@@ -213,6 +217,7 @@ html {
   flex-direction: column;
   gap: 12px;
   align-items: center;
+  z-index: 105;
 }
 
 .hamburger > div {
@@ -1922,4 +1927,52 @@ input:focus {
   width: 200px;
   background: url("../res/image/expertise_drop_main.png");
   position: relative;
+}
+
+
+
+.navbar {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #0b1621;
+  z-index: 101;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Visibility delayed after fade-out */
+}
+
+.navbar.activate {
+  visibility: visible;
+  opacity: 1; 
+  transition: opacity 0.3s ease; 
+}
+
+.navbar > div.navbar-pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.navbar-pages > ul {
+  list-style: none;
+}
+
+.navbar-pages > ul > a > li {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+}
+
+.navbar-pages > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
 }
