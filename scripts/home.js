@@ -1,3 +1,42 @@
+const textElement = document.querySelector(".main-body > div > h1");
+const textElementSpan = document.querySelector(".main-body > div > span");
+
+function fadeText(newContentHeader, newContentSpan) {
+  // Step 1: Fade out
+  textElement.classList.remove("fade-in");
+  textElement.classList.add("fade-out");
+  textElementSpan.classList.remove("fade-in");
+  textElementSpan.classList.add("fade-out");
+
+  // Step 2: After fade-out, change the content and fade in
+  setTimeout(() => {
+    textElement.innerHTML = newContentHeader; // Change content
+    textElementSpan.innerHTML = newContentSpan; // Change content
+    textElement.classList.remove("fade-out");
+    textElement.classList.add("fade-in");
+    textElementSpan.classList.remove("fade-out");
+    textElementSpan.classList.add("fade-in");
+  }, 500); // Matches the CSS transition duration (0.5s)
+}
+
+// Example: Update text every 3 seconds
+let currentIndexFade = 0;
+const messagesHeader = [
+  "Luxury Living Redefined:<br />Your Home Away<br />from Home!",
+  "Culinary Excellence:<br />Savor the Flavors<br />of the World!",
+  "Adventure Awaits:<br />Where Fun Meets<br />Imagination!",
+];
+const messagesSpan = [
+  "We Gulf Hotels Company emphasize the luxurious and comfortable experience offered through its hotels and residences. It suggests that guests can expect unparalleled comfort, making them feel at home even when they are far away, and our commitment to exceeding traditional standards of hospitality.",
+  'Embark on a global culinary journey with Gulf Hotels Company, where "Culinary Excellence" is at the heart of everything we do. Our Food and Beverage offerings are designed to delight even the most discerning palates, showcasing a diverse array of dishes that celebrate the rich and varied flavors of the world.',
+  "Step into a world of excitement and creativity at Gulf Hotels Company's Entertainment Parks, where \"Adventure Awaits\" are around every corner. Our parks are designed to offer thrilling experiences that captivate the imagination and provide endless fun for visitors of all ages. Whether you are seeking adrenaline-pumping rides, immersive-themed attractions, or interactive experiences, our parks blend enjoyment with creativity, ensuring there's something for everyone.",
+];
+
+setInterval(() => {
+  currentIndexFade = (currentIndexFade + 1) % messagesHeader.length; // Loop through messages
+  fadeText(messagesHeader[currentIndexFade], messagesSpan[currentIndexFade]);
+}, 3000);
+
 // SET INSIGHT HEIGHT
 
 const collapsibleHeaders = document.querySelectorAll(".collapsible-header");
@@ -33,7 +72,7 @@ const hamburger = document.querySelector(".hamburger");
 const social_media_menu = document.getElementById("social-media-menu");
 const social_media_links = document.getElementById("social-media-links");
 const change_language = document.querySelector("change-language");
-const navbar = document.querySelector(".navbar")
+const navbar = document.querySelector(".navbar");
 
 hamburger.addEventListener("click", () => {
   if (screen.width > 1025) {
@@ -167,68 +206,68 @@ CounterObserver.observe(number_control);
 
 // Insights Corousal
 
-// const insight_containers = document.querySelector(".insight-datas-container");
+const insight_containers = document.querySelector(".insight-datas-container");
 
-// const contents = document.querySelectorAll(".insights-data");
-// const nextBtn = document.getElementById("next_btn");
-// const prevBtn = document.getElementById("prev_btn");
-// const positionData = document.querySelectorAll(".insight-position-data");
-// const insightDiv = document.querySelector(".insights");
-// const wrapper = document.querySelector(".insight-wrapper");
-// const controller = document.querySelector(".insight-controllers");
+const contents = document.querySelectorAll(".insights-data");
+const nextBtn = document.getElementById("next_btn");
+const prevBtn = document.getElementById("prev_btn");
+const positionData = document.querySelectorAll(".insight-position-data");
+const insightDiv = document.querySelector(".insights");
+const wrapper = document.querySelector(".insight-wrapper");
+const controller = document.querySelector(".insight-controllers");
 
-// let currentIndex = 0;
-// var translateLength = 0;
+let currentIndex = 0;
+var translateLength = 0;
 
-// positionData[currentIndex].classList.add("active");
-// prevBtn.classList.add("disabled");
-// wrapper.style.height = `${insightDiv.offsetHeight}px`;
+positionData[currentIndex].classList.add("active");
+prevBtn.classList.add("disabled");
+wrapper.style.height = `${insightDiv.offsetHeight}px`;
 
-// if (screen.width < 790) {
-//   wrapper.style.height = `${
-//     insightDiv.offsetHeight + controller.offsetHeight
-//   }px`;
-//   wrapper.style.width = `${insightDiv.offsetWidth}px`;
-// }
+if (screen.width < 790) {
+  wrapper.style.height = `${
+    insightDiv.offsetHeight + controller.offsetHeight
+  }px`;
+  wrapper.style.width = `${insightDiv.offsetWidth}px`;
+}
 
-// function updateContent(index, containerHeight) {
-//   positionData.forEach((content) => content.classList.remove("active"));
-//   positionData[index].classList.add("active");
-//   translateLength = index * containerHeight;
-//   if (screen.width < 790) {
-//     insight_containers.style.transform = `translateX(-${translateLength}px)`;
-//   } else {
-//     insight_containers.style.transform = `translateY(-${translateLength}px)`;
-//   }
-// }
+function updateContent(index, containerHeight) {
+  positionData.forEach((content) => content.classList.remove("active"));
+  positionData[index].classList.add("active");
+  translateLength = index * containerHeight;
+  if (screen.width < 790) {
+    insight_containers.style.transform = `translateX(-${translateLength}px)`;
+  } else {
+    insight_containers.style.transform = `translateY(-${translateLength}px)`;
+  }
+}
 
-// nextBtn.addEventListener("click", () => {
-//   if (screen.width < 790) {
-//     var containerHeight = insightDiv.offsetWidth;
-//   } else {
-//     var containerHeight = insightDiv.offsetHeight;
-//   }
-//   prevBtn.classList.remove("disabled");
-//   if (currentIndex == contents.length - 2) {
-//     nextBtn.classList.add("disabled");
-//   }
-//   if (currentIndex < contents.length - 1) {
-//     currentIndex = currentIndex + 1;
-//     updateContent(currentIndex, containerHeight);
-//   }
-// });
+nextBtn.addEventListener("click", () => {
+  if (screen.width < 790) {
+    var containerHeight = insightDiv.offsetWidth;
+  } else {
+    var containerHeight = insightDiv.offsetHeight;
+  }
+  prevBtn.classList.remove("disabled");
+  if (currentIndex == contents.length - 2) {
+    nextBtn.classList.add("disabled");
+  }
+  if (currentIndex < contents.length - 1) {
+    currentIndex = currentIndex + 1;
+    updateContent(currentIndex, containerHeight);
+  }
+});
 
-// prevBtn.addEventListener("click", () => {
-//   var containerHeight = insightDiv.offsetHeight;
-//   nextBtn.classList.remove("disabled");
-//   if (currentIndex == 1) {
-//     prevBtn.classList.add("disabled");
-//   }
-//   if (currentIndex > 0) {
-//     currentIndex = currentIndex - 1;
-//     updateContent(currentIndex, containerHeight);
-//   }
-// });
+prevBtn.addEventListener("click", () => {
+  var containerHeight = insightDiv.offsetHeight;
+  nextBtn.classList.remove("disabled");
+  if (currentIndex == 1) {
+    prevBtn.classList.add("disabled");
+  }
+  if (currentIndex > 0) {
+    currentIndex = currentIndex - 1;
+    updateContent(currentIndex, containerHeight);
+  }
+});
 
 // PROJECT COROUSAL
 

@@ -263,13 +263,18 @@ body {
   border-radius: 5px;
 }
 
+
+
 .main-body {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
   padding-top: 59px;
   padding-bottom: 240px;
   margin-left: 120px;
   color: white;
+}
+
+.main-body .yellow-next-button {
+  width: 30%;
 }
 
 .main-body > div > h1 {
@@ -277,17 +282,30 @@ body {
   line-height: 70px;
   font-weight: 400;
   font-family: "Glaukon";
+  /* opacity: 1; */
+  transition: opacity 0.5s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .main-body > div > span {
   display: block;
-  /* width: 373px; */
+  width: 50%;
   font-family: "GoogleSans";
   font-size: 1rem;
   line-height: 25.6px;
   margin-top: 16px;
   margin-right: 50%;
   /* width: 100%; */
+  min-height: 150px;
 }
 
 .social-media {
@@ -375,6 +393,7 @@ body {
     margin-right: 25%;
     text-align: center;
     font-size: 1.125rem;
+    min-height: 220px;
   }
 
   .main-body > div {
@@ -419,6 +438,13 @@ body {
   .main-body > div > h1 {
     line-height: 3.5rem;
     margin-bottom: 20px;
+  }
+
+  .main-body > div > span {
+    min-height: 300px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
   }
 }
 
@@ -1929,8 +1955,6 @@ input:focus {
   position: relative;
 }
 
-
-
 .navbar {
   visibility: hidden;
   opacity: 0;
@@ -1948,8 +1972,8 @@ input:focus {
 
 .navbar.activate {
   visibility: visible;
-  opacity: 1; 
-  transition: opacity 0.3s ease; 
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .navbar > div.navbar-pages {
@@ -1981,7 +2005,6 @@ input:focus {
   margin-top: 30px;
   display: flex;
   gap: 10px;
-
 }
 
 .navbar-social-icon > path {
