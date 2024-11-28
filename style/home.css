@@ -1976,3 +1976,14 @@ input:focus {
   gap: 20px;
   justify-content: center;
 }
+
+.navbar-socials {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+
+}
+
+.navbar-social-icon > path {
+  fill: white;
+}
