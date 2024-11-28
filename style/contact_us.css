@@ -304,6 +304,95 @@ textarea:focus {
   fill: #e2b41a;
 }
 
+@media only screen and (max-width: 1024px) {
+  .header {
+    padding-bottom: 60px;
+    padding-top: 60px;
+  }
+
+  .location-strip {
+    padding-left: 60px;
+  }
+
+  .main-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
+
+  .main-body > div > h1 {
+    text-align: center;
+    font-size: 70px;
+  }
+
+  .main-body > div > span {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    font-size: 1.125rem;
+  }
+
+  .main-body > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .main-body > div > .yellow-next-button {
+    align-self: center;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .header-data > :not(.hamburger) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    padding: 30px 60px;
+  }
+
+  .header > div > a > img {
+    width: 70%;
+  }
+
+  .main-body > div > h1 {
+    line-height: 3.5rem;
+    margin-bottom: 20px;
+  }
+
+  .main-body > div > span {
+    width: 100%;
+  }
+
+  .main-body > div {
+    width: 100%;
+  }
+
+  .location-strip {
+    padding-left: 20px;
+  }
+
+  /* .main-body {
+    padding: 0;
+  } */
+}
 
 /* ---------------------- MAIN END ------------------------- */
 
@@ -358,12 +447,57 @@ textarea:focus {
 }
 
 .story-image {
-  width: 100%;
+  width: 90%;
   height: 425px;
   background: url("../res/image/contact_us_hello.png") no-repeat center center;
   background-size: cover;
   position: relative;
 }
+
+
+@media only screen and (max-width: 1024px) {
+  .story-div {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .story-div .yellow-next-button {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .story-div .yellow-next-button {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .story-div > div {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 30px;
+  }
+
+  .story-div {
+    background: none;
+    background-color: #f0f1f5;
+    padding: 60px 20px;
+  }
+
+  .story-div > div > div > h1 {
+    text-align: left;
+  }
+
+  .story-image {
+    width: 100%;
+  }
+
+  .yellow-next-button {
+    margin-top: 60px;
+  }
+}
+
 /* ----------------------- STORY DIV END ------------------------------- */
 
 /* ------------------------- GET IN TOUCH ------------------------------- */
@@ -418,6 +552,82 @@ textarea:focus {
   line-height: 20.35px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .story-div {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .story-div .yellow-next-button {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .story-div .yellow-next-button {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .story-div > div {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 30px;
+  }
+
+  .story-div {
+    background: none;
+    background-color: #f0f1f5;
+    padding: 60px 20px;
+  }
+
+  .story-div > div > div > h1 {
+    text-align: left;
+  }
+
+  .story-image {
+    width: 100%;
+  }
+
+  .yellow-next-button {
+    margin-top: 60px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .get-in-touch {
+    padding: 60px;
+  }
+
+  .contact-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-data {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  
+}
+
+@media only screen and (max-width: 480px) {
+  .get-in-touch {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
 /* ------------------------- GET IN TOUCH END ------------------------------- */
 
 /* ------------------------- MAKE IT HAPPEN --------------------------- */
@@ -451,13 +661,14 @@ textarea:focus {
   margin-top: 36px;
   display: flex;
   justify-content: space-between;
+  gap: 36px;
 }
 
 .name-address > div {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  width: 296px;
+  width: 100%;
 }
 
 .name-address > div > span {
@@ -537,6 +748,66 @@ textarea:focus {
   width: 100%;
   height: 100%;
 }
+
+.make-it-happen-div .white-next-button {
+  margin-top: 80px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .make-it-happen-div > .contact-form {
+    padding: 60px;
+  }
+
+  .make-it-happen-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .make-it-happen-div .white-next-button {
+    margin-top: 40px;
+  }
+
+  .map {
+    height: 50dvh;
+  }
+
+}
+
+@media only screen and (max-width: 790px) {
+  
+}
+
+@media only screen and (max-width: 480px) {
+  .make-it-happen-div > .contact-form {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .name-address {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name-address > div {
+    width: 100%;
+  }
+
+  .make-it-happen-div > .white-next-button {
+    width: 70%;
+  }
+
+  .message {
+    width: calc(100% - 32px);;
+  }
+
+  .message > textarea {
+    width: 100%;
+  }
+
+}
+
+
 /* ------------------------- MAKE IT HAPPEN END --------------------------- */
 
 /* -------------------------------- FOOTER ------------------------------- */
@@ -572,10 +843,14 @@ textarea:focus {
   padding-bottom: 24px;
 }
 
+input:focus {
+  outline: none;
+}
+
 /* .footer-part-1 {
-    display: flex;
-    justify-content: space-between;
-  } */
+  display: flex;
+  justify-content: space-between;
+} */
 
 .footer-part-1-upper {
   margin-bottom: 200px;
@@ -648,6 +923,151 @@ textarea:focus {
   gap: 16px;
 }
 
+.mobile-footer {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 60px;
+    padding-right: 60px;
+    gap: 0;
+  }
+
+  .footer > img {
+    width: 30%;
+  }
+
+  .footer-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-email {
+    width: 100%;
+  }
+
+  .footer-email > input {
+    width: 100%;
+  }
+
+  .footer-part-1-upper > p {
+    width: 100%;
+  }
+
+  .footer-part-1-upper {
+    margin-bottom: 60px;
+  }
+
+  .web-footer {
+    display: none;
+  }
+
+  .mobile-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mobile-footer > div > div > .socials {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .mobile-footer > div > .terms {
+    list-style: none;
+    margin-bottom: 60px;
+  }
+
+  .mobile-footer > div > .terms > li {
+    font-family: "Inter", "sans-serif";
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 48px;
+  }
+
+  .mobile-footer > div > .terms > li > a {
+    color: white;
+  }
+
+  .mobile-footer > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mobile-footer > div > div > p {
+    font-family: "Inter", "sans-serif";
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 48px;
+    color: white;
+  }
+  .mobile-footer > div > span {
+    font-family: "GoogleSans";
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .web-copy {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+}
+
+@media only screen and (max-width: 480px) {
+  .footer {
+    padding: 40px 20px;
+  }
+
+  .footer > img {
+    width: 60%;
+  }
+
+  .footer-email {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-part-1-upper > p {
+    font-size: 18px;
+    margin-right: 0;
+  }
+
+  .footer > .cut-top-left,
+  .footer > .cut-bottom-right {
+    display: none;
+  }
+
+  .footer .white-next-button {
+    width: 70%;
+  }
+
+  .mobile-footer > div {
+    align-items: end;
+  }
+
+  .mobile-footer > div > .terms > li > a {
+    font-size: 18px;
+  }
+
+  .mobile-footer > div > div > p {
+    font-size: 18px;
+  }
+
+  .mobile-footer > div {
+    align-items: start;
+  }
+}
 /* -------------------------------- FOOTER END ------------------------------- */
 
 /* --------------------------------- DROP DOWN -------------------------------------- */

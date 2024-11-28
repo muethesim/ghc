@@ -1204,6 +1204,10 @@ html {
 }
 
 @media only screen and (max-width: 790px) {
+  .insights-div {
+    display: none;
+  }
+
   .insights-header {
     display: flex;
     flex-direction: column;
