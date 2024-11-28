@@ -626,13 +626,58 @@ html {
   }
 }
 
-@media only screen and (max-width: 790px) {
-  .expertise-div {
-    display: none;
+@media only screen and (max-width: 850px) {
+  .expertise-single-data > .expertise-image {
+    width: 100%;
+  }
+  .expertise-single-data.expertise-left > .expertise-content,
+  .expertise-single-data.expertise-right > .expertise-content {
+    left: 0px;
+    bottom: 0px;
+    right: 0;
+  }
+
+  .expertise-content > p {
+    height: 170px;
+  }
+
+  .expertise-datas {
+    gap: 80px;
+  }
+
+  .expertise-single-data.expertise-right > .expertise-content,
+  .expertise-single-data.expertise-left > .expertise-content {
+    width: auto;
+  }
+
+  .expertise-content {
+    background-color: rgba(11, 22, 33, 0.8);
   }
 }
 
 @media only screen and (max-width: 480px) {
+  .expertise-div > .divider {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .expertise-div > p {
+    margin-left: 20px;
+  }
+
+  .expertise-content > p {
+    height: auto;
+  }
+
+  .expertise-single-data.expertise-left > .expertise-content,
+  .expertise-single-data.expertise-right > .expertise-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    top: 0;
+  }
+
+
 }
 
 /* ----------------------- EXPERTISE DIV END ------------------------------- */
