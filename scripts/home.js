@@ -1,41 +1,35 @@
-const textElement = document.querySelector(".main-body > div > h1");
-const textElementSpan = document.querySelector(".main-body > div > span");
+var options = {
+  accessibility: true,
+  prevNextButtons: true,
+  pageDots: true,
+  setGallerySize: false,
+  autoPlay: 3000,
+  arrowShape: {
+    x0: 10,
+    x1: 60,
+    y1: 50,
+    x2: 60,
+    y2: 45,
+    x3: 15
+  }
+};
 
-function fadeText(newContentHeader, newContentSpan) {
-  // Step 1: Fade out
-  textElement.classList.remove("fade-in");
-  textElement.classList.add("fade-out");
-  textElementSpan.classList.remove("fade-in");
-  textElementSpan.classList.add("fade-out");
+var carousel = document.querySelector('[data-carousel]');
+var slides = document.getElementsByClassName('carousel-cell');
+var flkty = new Flickity(carousel, options);
 
-  // Step 2: After fade-out, change the content and fade in
-  setTimeout(() => {
-    textElement.innerHTML = newContentHeader; // Change content
-    textElementSpan.innerHTML = newContentSpan; // Change content
-    textElement.classList.remove("fade-out");
-    textElement.classList.add("fade-in");
-    textElementSpan.classList.remove("fade-out");
-    textElementSpan.classList.add("fade-in");
-  }, 500); // Matches the CSS transition duration (0.5s)
-}
+flkty.on('scroll', function () {
+  flkty.slides.forEach(function (slide, i) {
+    var image = slides[i];
+    var x = (slide.target + flkty.x) * -1/3;
+    image.style.backgroundPosition = x + 'px';
+  });
+});
 
-// Example: Update text every 3 seconds
-let currentIndexFade = 0;
-const messagesHeader = [
-  "Luxury Living Redefined:<br />Your Home Away<br />from Home!",
-  "Culinary Excellence:<br />Savor the Flavors<br />of the World!",
-  "Adventure Awaits:<br />Where Fun Meets<br />Imagination!",
-];
-const messagesSpan = [
-  "We Gulf Hotels Company emphasize the luxurious and comfortable experience offered through its hotels and residences. It suggests that guests can expect unparalleled comfort, making them feel at home even when they are far away, and our commitment to exceeding traditional standards of hospitality.",
-  'Embark on a global culinary journey with Gulf Hotels Company, where "Culinary Excellence" is at the heart of everything we do. Our Food and Beverage offerings are designed to delight even the most discerning palates, showcasing a diverse array of dishes that celebrate the rich and varied flavors of the world.',
-  "Step into a world of excitement and creativity at Gulf Hotels Company's Entertainment Parks, where \"Adventure Awaits\" are around every corner. Our parks are designed to offer thrilling experiences that captivate the imagination and provide endless fun for visitors of all ages. Whether you are seeking adrenaline-pumping rides, immersive-themed attractions, or interactive experiences, our parks blend enjoyment with creativity, ensuring there's something for everyone.",
-];
-
-setInterval(() => {
-  currentIndexFade = (currentIndexFade + 1) % messagesHeader.length; // Loop through messages
-  fadeText(messagesHeader[currentIndexFade], messagesSpan[currentIndexFade]);
-}, 3000);
+const dropDownHeigth = document.querySelector(".drop-down")
+const headerMain = document.querySelector(".header-main")
+dropDownHeigth.style.marginTop = `${headerMain.offsetHeight}px`;
+console.log(headerMain.style)
 
 // SET INSIGHT HEIGHT
 
@@ -105,7 +99,7 @@ hamburger.addEventListener("click", () => {
 const expertise_list_item = document.querySelector(".expertise-list-item");
 const drop_down = document.querySelector(".drop-down");
 const expertise_drop_down = document.querySelector(".expertise-drop-down");
-const main = document.querySelector(".main");
+const main = document.querySelector(".main-test");
 var list_out = true;
 var container_out = true;
 
