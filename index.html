@@ -11,6 +11,34 @@
     <link rel="stylesheet" href="./res/fonts/Glaukon/Glaukon.css" />
   </head>
   <body>
+    <section class="menu-screen">
+      <ul class="menu-navigations">
+        <li>
+          <a href="#"
+            ><div><span class="selected">Home</span></div></a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><div>
+              <span>About Us</span>
+          </a>
+        </li>
+        <li>
+          <a href="#"
+            ><div>
+              <span>Business Streams</span>
+          </a>
+        </li>
+        <li>
+          <a href="#"
+            ><div>
+              <span>Media Room</span>
+          </a>
+        </li>
+      </ul>
+      <div class="main-button blue">Contact Us</div>
+    </section>
     <section class="header">
       <div class="header-container">
         <img src="./res/svg/company_logo_full_white.svg" alt="GHC Logo" />
@@ -43,6 +71,37 @@
           </li>
         </ul>
         <div class="main-button blue">Contact Us</div>
+        <div class="plates">
+          <div class="plate plate1" onclick="this.classList.toggle('active')">
+            <svg
+              class="burger burger-svg"
+              version="1.1"
+              height="100"
+              width="100"
+              viewBox="0 0 100 100"
+            >
+              <path class="line line1" d="M 30,65 H 70" />
+              <path
+                class="line line2"
+                d="M 70,50 H 30 C 30,50 18.644068,50.320751 18.644068,36.016949 C 18.644068,21.712696 24.988973,6.5812347 38.79661,11.016949 C 52.604247,15.452663 46.423729,62.711864 46.423729,62.711864 L 50.423729,49.152542 L 50.423729,16.101695"
+              />
+              <path
+                class="line line3"
+                d="M 30,35 H 70 C 70,35 80.084746,36.737688 80.084746,25.423729 C 80.084746,19.599612 75.882239,9.3123528 64.711864,13.559322 C 53.541489,17.806291 54.423729,62.711864 54.423729,62.711864 L 50.423729,49.152542 V 16.101695"
+              />
+            </svg>
+            <svg
+              class="x burger-svg"
+              version="1.1"
+              height="100"
+              width="100"
+              viewBox="0 0 100 100"
+            >
+              <path class="line" d="M 34,32 L 66,68" />
+              <path class="line" d="M 66,32 L 34,68" />
+            </svg>
+          </div>
+        </div>
       </div>
     </section>
     <section class="main">
@@ -342,7 +401,6 @@
           <div class="venture-data">
             <div class="venture-image-container">
               <div class="venture-image-opaque"></div>
-
             </div>
             <div class="venture-data-container">
               <h1>
@@ -361,7 +419,6 @@
           <div class="venture-data">
             <div class="venture-image-container">
               <div class="venture-image-opaque"></div>
-
             </div>
             <div class="venture-data-container">
               <h1>
@@ -380,7 +437,6 @@
           <div class="venture-data">
             <div class="venture-image-container">
               <div class="venture-image-opaque"></div>
-
             </div>
             <div class="venture-data-container">
               <h1>
@@ -397,26 +453,6 @@
           <div class="venture-data">
             <div class="venture-image-container">
               <div class="venture-image-opaque"></div>
-
-            </div>
-            <div class="venture-data-container">
-              <h1>
-                Intercontinental Hotel<br />
-                Doha Beach & Spa
-              </h1>
-              <p>
-                Experience unparalleled luxury and comfort, where timeless
-                elegance meets modern sophistication in every stay.
-              </p>
-              <div class="main-button grey">Learn More</div>
-            </div>
-          </div>
-        </div>
-        <div class="single-venture-data">
-          <div class="venture-data">
-            <div class="venture-image-container">
-              <div class="venture-image-opaque"></div>
-
             </div>
             <div class="venture-data-container">
               <h1>
@@ -435,7 +471,24 @@
           <div class="venture-data">
             <div class="venture-image-container">
               <div class="venture-image-opaque"></div>
-
+            </div>
+            <div class="venture-data-container">
+              <h1>
+                Intercontinental Hotel<br />
+                Doha Beach & Spa
+              </h1>
+              <p>
+                Experience unparalleled luxury and comfort, where timeless
+                elegance meets modern sophistication in every stay.
+              </p>
+              <div class="main-button grey">Learn More</div>
+            </div>
+          </div>
+        </div>
+        <div class="single-venture-data">
+          <div class="venture-data">
+            <div class="venture-image-container">
+              <div class="venture-image-opaque"></div>
             </div>
             <div class="venture-data-container">
               <h1>
@@ -532,6 +585,12 @@
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
       integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>

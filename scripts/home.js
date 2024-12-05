@@ -153,29 +153,75 @@ collapsibleContainers.forEach((container, index) => {
 // VENTURES
 
 const ventureDataContainer = document.querySelectorAll(".venture-data");
-ventureDataContainer.forEach((ventureData, index) => {
-  var ventureImageContainer = ventureData.querySelector(
-    ".venture-image-opaque"
-  );
-  var ventureLearnButton = ventureData.querySelector(".main-button")
-  ventureData.addEventListener("mouseover", () => {
+if (screen.width > 1024) {
+  ventureDataContainer.forEach((ventureData, index) => {
+    var ventureImageContainer = ventureData.querySelector(
+      ".venture-image-opaque"
+    );
+    var ventureLearnButton = ventureData.querySelector(".main-button");
+    ventureData.addEventListener("mouseover", () => {
+      gsap.to(ventureImageContainer, {
+        x: "100%",
+        duration: 1,
+      });
+      gsap.to(ventureLearnButton, {
+        backgroundColor: "rgba(226, 180, 26, 1)",
+        duration: 0.3,
+      });
+    });
+    ventureData.addEventListener("mouseleave", () => {
+      gsap.to(ventureImageContainer, {
+        x: "0%",
+        duration: 1,
+      });
+      gsap.to(ventureLearnButton, {
+        backgroundColor: "rgba(56, 56, 56, 1)",
+        duration: 0.3,
+      });
+    });
+  });
+}
+
+// VENTURES SMALL SCREEN
+else {
+  ventureDataContainer.forEach((ventureData, index) => {
+    var ventureImageContainer = ventureData.querySelector(
+      ".venture-image-opaque"
+    );
     gsap.to(ventureImageContainer, {
+      scrollTrigger: {
+        trigger: ventureData,
+        start: "top 70%",
+      },
       x: "100%",
       duration: 1,
     });
-    gsap.to(ventureLearnButton, {
-      backgroundColor: "rgba(226, 180, 26, 1)",
-      duration: 0.3,
-    });
   });
-  ventureData.addEventListener("mouseleave", () => {
-    gsap.to(ventureImageContainer, {
-      x: "0%",
+}
+
+// HUMBERGER
+
+const humburgerPlate = document.querySelector(".plates");
+const humburgerSinglePlate = document.querySelector(".plates");
+const menuScreen = document.querySelector(".menu-screen");
+const body = document.querySelector("html")
+var isMobileMenuOpened = false;
+
+humburgerPlate.addEventListener("click", () => {
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+  if (!isMobileMenuOpened) {
+    gsap.to(menuScreen, {
+      x: 0,
       duration: 1,
     });
-    gsap.to(ventureLearnButton, {
-      backgroundColor: "rgba(56, 56, 56, 1)",
-      duration: 0.3,
+    isMobileMenuOpened = true;
+    body.style.overflow = "hidden"
+  } else {
+    gsap.to(menuScreen, {
+      x: "100%",
+      duration: 1,
     });
-  });
+    isMobileMenuOpened = false;
+    body.style.overflow = "scroll"
+  }
 });
