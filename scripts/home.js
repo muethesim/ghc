@@ -155,18 +155,27 @@ collapsibleContainers.forEach((container, index) => {
 const ventureDataContainer = document.querySelectorAll(".venture-data");
 ventureDataContainer.forEach((ventureData, index) => {
   var ventureImageContainer = ventureData.querySelector(
-    ".venture-image-container"
+    ".venture-image-opaque"
   );
+  var ventureLearnButton = ventureData.querySelector(".main-button")
   ventureData.addEventListener("mouseover", () => {
     gsap.to(ventureImageContainer, {
-      width: "100%",
+      x: "100%",
       duration: 1,
     });
-  });
-    ventureData.addEventListener("mouseleave", () => {
-      gsap.to(ventureImageContainer, {
-        width: "0%",
-        duration: 1,
-      });
+    gsap.to(ventureLearnButton, {
+      backgroundColor: "rgba(226, 180, 26, 1)",
+      duration: 0.3,
     });
+  });
+  ventureData.addEventListener("mouseleave", () => {
+    gsap.to(ventureImageContainer, {
+      x: "0%",
+      duration: 1,
+    });
+    gsap.to(ventureLearnButton, {
+      backgroundColor: "rgba(56, 56, 56, 1)",
+      duration: 0.3,
+    });
+  });
 });
