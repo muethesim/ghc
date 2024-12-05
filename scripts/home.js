@@ -1,3 +1,5 @@
+// Corousal
+
 var options = {
   accessibility: true,
   prevNextButtons: true,
@@ -10,28 +12,74 @@ var options = {
     y1: 50,
     x2: 60,
     y2: 45,
-    x3: 15
-  }
+    x3: 15,
+  },
 };
 
-var carousel = document.querySelector('[data-carousel]');
-var slides = document.getElementsByClassName('carousel-cell');
+var carousel = document.querySelector("[data-carousel]");
+var slides = document.getElementsByClassName("carousel-cell");
 var flkty = new Flickity(carousel, options);
 
-flkty.on('scroll', function () {
+flkty.on("scroll", function () {
   flkty.slides.forEach(function (slide, i) {
     var image = slides[i];
-    var x = (slide.target + flkty.x) * -1/3;
-    image.style.backgroundPosition = x + 'px';
+    var x = ((slide.target + flkty.x) * -1) / 3;
+    image.style.backgroundPosition = x + "px";
   });
 });
 
-const dropDownHeigth = document.querySelector(".drop-down")
-const headerMain = document.querySelector(".header-main")
-dropDownHeigth.style.marginTop = `${headerMain.offsetHeight}px`;
-console.log(headerMain.style)
+// Number
 
-// SET INSIGHT HEIGHT
+const number_control = document.querySelector(".numbers");
+const counters = document.querySelectorAll(".numbers .data");
+
+let CounterObserver = new IntersectionObserver(
+  (entries, observer) => {
+    let [entry] = entries;
+    if (!entry.isIntersecting) return;
+    let speed = 30;
+    counters.forEach((counter, index) => {
+      var value;
+      var value_to_change = counter.querySelector(".number-data");
+      function UpdateCounter() {
+        const targetNumber = +value_to_change.dataset.target;
+        console.log(targetNumber);
+        const initialNumber = +value_to_change.dataset.initial;
+        const incPerCount = targetNumber / speed;
+        var originalNumber;
+        if (initialNumber < targetNumber) {
+          originalNumber = initialNumber + incPerCount;
+          value_to_change.dataset.initial = originalNumber;
+          value = Math.ceil(originalNumber);
+          if (value <= targetNumber) {
+            if (value < 10) {
+              value = "0" + value;
+            }
+            value = value + "+";
+            value_to_change.innerText = value;
+          }
+          setTimeout(UpdateCounter, 40);
+        } else {
+          value = targetNumber;
+          if (value < 10) {
+            value = "0" + value;
+          }
+          value_to_change.innerText = value + "+";
+        }
+      }
+      UpdateCounter();
+    });
+    observer.unobserve(number_control);
+  },
+  {
+    root: null,
+    threshold: window.innerWidth > 768 ? 0.4 : 0.3,
+  }
+);
+
+CounterObserver.observe(number_control);
+
+// COLLAPSABLE WIDGET
 
 const collapsibleHeaders = document.querySelectorAll(".collapsible-header");
 
@@ -62,249 +110,63 @@ collapsibleHeaders.forEach((header) => {
   });
 });
 
-const hamburger = document.querySelector(".hamburger");
-const social_media_menu = document.getElementById("social-media-menu");
-const social_media_links = document.getElementById("social-media-links");
-const change_language = document.querySelector("change-language");
-const navbar = document.querySelector(".navbar");
+// COLLAPSIBLE IMAGE CHANGE
 
-hamburger.addEventListener("click", () => {
-  if (screen.width > 1025) {
-    if (social_media_menu.classList.contains("activate")) {
-      social_media_menu.classList.remove("activate");
-      hamburger.classList.remove("activate");
-      social_media_links.classList.remove("activate");
-      change_language.classList.remove("activate");
-    } else {
-      social_media_menu.classList.add("activate");
-      hamburger.classList.add("activate");
-      setTimeout(() => {
-        social_media_links.classList.add("activate");
-        change_language.classList.add("activate");
-      }, 300);
+var collapsibleCurrentIndex = 0;
+
+const collapsibleContainers = document.querySelectorAll(".collapsible");
+collapsibleContainers.forEach((container, index) => {
+  var image_url = "";
+  if (index == 0) {
+    image_url = '"/res/image/home_expand.png"';
+  } else if (index == 1) {
+    image_url = '"/res/image/home_contact.jpeg"';
+  } else if (index == 2) {
+    image_url = '"/res/image/home_expand.png"';
+  } else if (index == 3) {
+    image_url = '"/res/image/home_contact.jpeg"';
+  } else if (index == 4) {
+    image_url = '"/res/image/home_expand.png"';
+  } else if (index == 5) {
+    image_url = '"/res/image/home_contact.jpeg"';
+  }
+  container.addEventListener("mouseover", () => {
+    if (index != collapsibleCurrentIndex) {
+      gsap.to(".horizon-image-container", {
+        opacity: 0,
+        duration: 0.2,
+      });
+      gsap.to(".horizon-image-container", {
+        backgroundImage: `url(${image_url})`,
+        delay: 0.2,
+      });
+      gsap.to(".horizon-image-container", {
+        opacity: 1,
+        delay: 0.2,
+        duration: 0.2,
+      });
+      collapsibleCurrentIndex = index;
     }
-  } else {
-    if (navbar.classList.contains("activate")) {
-      navbar.classList.remove("activate");
-      hamburger.classList.remove("activate");
-      document.body.style.overflow = "";
-    } else {
-      navbar.classList.add("activate");
-      hamburger.classList.add("activate");
-      document.body.style.overflow = "hidden";
-    }
-  }
+  });
 });
 
-const expertise_list_item = document.querySelector(".expertise-list-item");
-const drop_down = document.querySelector(".drop-down");
-const expertise_drop_down = document.querySelector(".expertise-drop-down");
-const main = document.querySelector(".main-test");
-var list_out = true;
-var container_out = true;
+// VENTURES
 
-expertise_list_item.addEventListener("mouseover", () => {
-  drop_down.classList.add("active");
-  expertise_drop_down.classList.add("active");
-  list_out = false;
-});
-
-expertise_list_item.addEventListener("mouseout", () => {
-  if (container_out && list_out) {
-    drop_down.classList.remove("active");
-    expertise_drop_down.classList.remove("active");
-  }
-});
-
-expertise_list_item.addEventListener("mouseout", () => {
-  setTimeout(() => {
-    list_out = true;
-  }, 200);
-});
-
-expertise_drop_down.addEventListener("mouseover", () => {
-  drop_down.classList.add("active");
-  expertise_drop_down.classList.add("active");
-  container_out = false;
-});
-
-main.addEventListener("mouseover", () => {
-  if (container_out && list_out) {
-    drop_down.classList.remove("active");
-    expertise_drop_down.classList.remove("active");
-  }
-});
-
-expertise_drop_down.addEventListener("mouseout", () => {
-  container_out = true;
-  if (container_out && list_out) {
-    drop_down.classList.remove("active");
-    expertise_drop_down.classList.remove("active");
-  }
-});
-
-expertise_drop_down.addEventListener("mouseout", () => {
-  setTimeout(() => {
-    container_out = true;
-  }, 200);
-});
-
-const number_control = document.getElementById("number_control");
-const counters = document.querySelectorAll(".numbers .datas .value");
-
-let CounterObserver = new IntersectionObserver(
-  (entries, observer) => {
-    let [entry] = entries;
-    if (!entry.isIntersecting) return;
-
-    let speed = 30;
-    counters.forEach((counter, index) => {
-      var val;
-      function UpdateCounter() {
-        const targetNumber = +counter.dataset.target;
-        const initialNumber = +counter.dataset.initial;
-        const incPerCount = targetNumber / speed;
-        var originalNumber;
-        if (initialNumber < targetNumber) {
-          originalNumber = initialNumber + incPerCount;
-          counter.dataset.initial = originalNumber;
-          val = Math.ceil(originalNumber);
-          if (val <= targetNumber) {
-            if (val < 10) {
-              val = "0" + val;
-            }
-            val = val + "+";
-            counter.innerText = val;
-          }
-          setTimeout(UpdateCounter, 40);
-        } else {
-          val = targetNumber;
-          if (val < 10) {
-            val = "0" + val;
-          }
-          counter.innerText = val + "+";
-        }
-      }
-      UpdateCounter();
+const ventureDataContainer = document.querySelectorAll(".venture-data");
+ventureDataContainer.forEach((ventureData, index) => {
+  var ventureImageContainer = ventureData.querySelector(
+    ".venture-image-container"
+  );
+  ventureData.addEventListener("mouseover", () => {
+    gsap.to(ventureImageContainer, {
+      width: "100%",
+      duration: 1,
     });
-    console.log("HERE");
-    observer.unobserve(number_control);
-  },
-  {
-    root: null,
-    threshold: window.innerWidth > 768 ? 0.4 : 0.3,
-  }
-);
-
-CounterObserver.observe(number_control);
-
-// Insights Corousal
-
-const insight_containers = document.querySelector(".insight-datas-container");
-
-const contents = document.querySelectorAll(".insights-data");
-const nextBtn = document.getElementById("next_btn");
-const prevBtn = document.getElementById("prev_btn");
-const positionData = document.querySelectorAll(".insight-position-data");
-const insightDiv = document.querySelector(".insights");
-const wrapper = document.querySelector(".insight-wrapper");
-const controller = document.querySelector(".insight-controllers");
-
-let currentIndex = 0;
-var translateLength = 0;
-
-positionData[currentIndex].classList.add("active");
-prevBtn.classList.add("disabled");
-wrapper.style.height = `${insightDiv.offsetHeight}px`;
-
-if (screen.width < 790) {
-  wrapper.style.height = `${
-    insightDiv.offsetHeight + controller.offsetHeight
-  }px`;
-  wrapper.style.width = `${insightDiv.offsetWidth}px`;
-}
-
-function updateContent(index, containerHeight) {
-  positionData.forEach((content) => content.classList.remove("active"));
-  positionData[index].classList.add("active");
-  translateLength = index * containerHeight;
-  if (screen.width < 790) {
-    insight_containers.style.transform = `translateX(-${translateLength}px)`;
-  } else {
-    insight_containers.style.transform = `translateY(-${translateLength}px)`;
-  }
-}
-
-nextBtn.addEventListener("click", () => {
-  if (screen.width < 790) {
-    var containerHeight = insightDiv.offsetWidth;
-  } else {
-    var containerHeight = insightDiv.offsetHeight;
-  }
-  prevBtn.classList.remove("disabled");
-  if (currentIndex == contents.length - 2) {
-    nextBtn.classList.add("disabled");
-  }
-  if (currentIndex < contents.length - 1) {
-    currentIndex = currentIndex + 1;
-    updateContent(currentIndex, containerHeight);
-  }
-});
-
-prevBtn.addEventListener("click", () => {
-  var containerHeight = insightDiv.offsetHeight;
-  nextBtn.classList.remove("disabled");
-  if (currentIndex == 1) {
-    prevBtn.classList.add("disabled");
-  }
-  if (currentIndex > 0) {
-    currentIndex = currentIndex - 1;
-    updateContent(currentIndex, containerHeight);
-  }
-});
-
-// PROJECT COROUSAL
-
-const project_corousal = document.querySelector(".project-corousal");
-const projectNextBtn = document.getElementById("project_control_next");
-const projectPrevBtn = document.getElementById("project_control_prev");
-const scrollNumSpan = document.querySelector(
-  ".corousal-control-data .corousal-initial"
-);
-const totalScrollNumSpan = document.querySelector(
-  ".corousal-control-data .corousal-final"
-);
-const scrollLen = 420;
-var scrollTime = 1;
-
-const scrollWidth = project_corousal.scrollWidth;
-const clientWidth = project_corousal.clientWidth;
-const scrollLeft = project_corousal.scrollLeft;
-const totalScrolls = Math.ceil((scrollWidth - clientWidth - scrollLeft) / 300);
-totalScrollNumSpan.innerHTML = totalScrolls;
-
-projectPrevBtn.classList.add("disabled");
-
-projectNextBtn.addEventListener("click", () => {
-  projectPrevBtn.classList.remove("disabled");
-  if (scrollTime < totalScrolls) {
-    project_corousal.scrollBy({ left: scrollLen, behavior: "smooth" });
-    scrollTime += 1;
-    scrollNumSpan.innerHTML = scrollTime;
-    if (scrollTime == totalScrolls) {
-      projectNextBtn.classList.add("disabled");
-    }
-  }
-});
-
-projectPrevBtn.addEventListener("click", () => {
-  projectNextBtn.classList.remove("disabled");
-  if (scrollTime > 1) {
-    project_corousal.scrollBy({ left: -scrollLen, behavior: "smooth" });
-    scrollTime -= 1;
-    scrollNumSpan.innerHTML = scrollTime;
-    if (scrollTime == 1) {
-      projectPrevBtn.classList.add("disabled");
-    }
-  }
+  });
+    ventureData.addEventListener("mouseleave", () => {
+      gsap.to(ventureImageContainer, {
+        width: "0%",
+        duration: 1,
+      });
+    });
 });
