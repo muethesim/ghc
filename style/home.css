@@ -155,6 +155,10 @@ ul {
 
 .header-container > ul span {
   font-family: Graphik;
+  font-weight: 400;
+}
+
+.header-container > ul span:hover {
   font-weight: 500;
 }
 
@@ -592,13 +596,15 @@ ul {
   line-height: 2.5rem;
 }
 
-.locations > img {
-  margin: 0 120px;
+.locations > svg {
+  margin: 0 0px;
+  width: 100%;
 }
 
 @media only screen and (max-width: 1200px) {
   .ongoing-ventures {
     width: 100%;
+    height: 100%;
   }
 
   .ongoing-ventures > h1 {

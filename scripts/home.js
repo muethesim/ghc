@@ -204,7 +204,7 @@ else {
 const humburgerPlate = document.querySelector(".plates");
 const humburgerSinglePlate = document.querySelector(".plates");
 const menuScreen = document.querySelector(".menu-screen");
-const body = document.querySelector("html")
+const body = document.querySelector("html");
 var isMobileMenuOpened = false;
 
 humburgerPlate.addEventListener("click", () => {
@@ -215,13 +215,75 @@ humburgerPlate.addEventListener("click", () => {
       duration: 1,
     });
     isMobileMenuOpened = true;
-    body.style.overflow = "hidden"
+    body.style.overflow = "hidden";
   } else {
     gsap.to(menuScreen, {
       x: "100%",
       duration: 1,
     });
     isMobileMenuOpened = false;
-    body.style.overflow = "scroll"
+    body.style.overflow = "scroll";
   }
+});
+
+// MAP
+
+var mapAreas = [
+  ".asia-1",
+  ".asia-2",
+  ".australia-1",
+  ".africa-1",
+  ".europe-1",
+  ".europe-2",
+  ".south-america-1",
+  ".america-1",
+  ".america-2",
+  ".america-3",
+];
+
+mapAreas.forEach((loc) => {
+  console.log(`${loc}-pin`)
+  var placePin = document.querySelector(`${loc}-pin`);
+  var placeCircle = document.querySelector(`${loc}-circle`);
+  var placeText = document.querySelector(`${loc}-text`);
+  placePin.addEventListener("mouseover", () => {
+    gsap.to(placeText, {
+      opacity: 1,
+      duration: 0.3,
+    });
+    gsap.to(placeCircle, {
+      fill: "rgba(226, 180, 26, 1)",
+      duration: 0.3,
+    });
+  });
+  placeCircle.addEventListener("mouseover", () => {
+    gsap.to(placeText, {
+      opacity: 1,
+      duration: 0.3,
+    });
+    gsap.to(placeCircle, {
+      fill: "rgba(226, 180, 26, 1)",
+      duration: 0.3,
+    });
+  });
+  placePin.addEventListener("mouseleave", () => {
+    gsap.to(placeText, {
+      opacity: 0,
+      duration: 0.3,
+    });
+    gsap.to(placeCircle, {
+      fill: "rgba(65, 199, 223, 1)",
+      duration: 0.3,
+    });
+  });
+  placeCircle.addEventListener("mouseleave", () => {
+    gsap.to(placeText, {
+      opacity: 0,
+      duration: 0.3,
+    });
+    gsap.to(placeCircle, {
+      fill: "rgba(65, 199, 223, 1)",
+      duration: 0.3,
+    });
+  });
 });
