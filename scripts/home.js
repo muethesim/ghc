@@ -247,6 +247,7 @@ mapAreas.forEach((loc) => {
   var placeCircle = document.querySelector(`${loc}-circle`);
   var placeText = document.querySelector(`${loc}-text`);
   placePin.addEventListener("mouseover", () => {
+    placeText.style.display = "block";
     gsap.to(placeText, {
       opacity: 1,
       duration: 0.3,
@@ -257,6 +258,7 @@ mapAreas.forEach((loc) => {
     });
   });
   placeCircle.addEventListener("mouseover", () => {
+    placeText.style.display = "block";
     gsap.to(placeText, {
       opacity: 1,
       duration: 0.3,
@@ -267,6 +269,7 @@ mapAreas.forEach((loc) => {
     });
   });
   placePin.addEventListener("mouseleave", () => {
+    placeText.style.display = "none";
     gsap.to(placeText, {
       opacity: 0,
       duration: 0.3,
@@ -277,6 +280,7 @@ mapAreas.forEach((loc) => {
     });
   });
   placeCircle.addEventListener("mouseleave", () => {
+    placeText.style.display = "none";
     gsap.to(placeText, {
       opacity: 0,
       duration: 0.3,

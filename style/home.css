@@ -601,6 +601,11 @@ ul {
   width: 100%;
 }
 
+.hide {
+  display: none;
+  opacity: 0;
+}
+
 @media only screen and (max-width: 1200px) {
   .ongoing-ventures {
     width: 100%;
