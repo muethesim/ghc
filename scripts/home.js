@@ -401,7 +401,7 @@ gsap.from(".contact-data-container > h1", {
   },
 });
 
-gsap.from(".contact-data-container > .main-button", {
+gsap.from(".contact-data-container > a >.main-button", {
   delay: 0.9,
   duration: 0.5,
   opacity: 0,
@@ -466,7 +466,6 @@ const dropDownTop = dropDown.style.transform;
 console.log(dropDownTop);
 aboutUsNav.addEventListener("click", () => {
   if (isAboutUsActive) {
-    console.log("HERE");
     gsap.to(".drop-down", {
       y: "-150%",
       duration: 0.5,
@@ -480,3 +479,12 @@ aboutUsNav.addEventListener("click", () => {
     isAboutUsActive = true;
   }
 });
+
+
+// SHIVERING
+const headerNavItems = document.querySelectorAll(".navigations > li > a > div")
+headerNavItems.forEach((element) => {
+  var elementWidth = element.offsetWidth;
+  elementWidth += 0.2;
+  element.style.width = `${elementWidth}px`
+})

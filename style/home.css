@@ -149,6 +149,7 @@ ul {
   width: calc(100% - 480px);
   z-index: 7;
   justify-content: center;
+  align-items: center;
 }
 
 .header-container {
@@ -211,7 +212,7 @@ ul {
 .header-container > ul span {
   font-family: Graphik;
   font-weight: 400;
-  width: calc(100% + 20px);
+  text-align: center;
 }
 
 .header-container > ul span:hover {
@@ -219,8 +220,7 @@ ul {
 }
 
 .header-container ul > li > a > div {
-  display: flex;
-  gap: 10px;
+  padding: 10px;
 }
 
 .header-container ul > li > a > div:hover {
@@ -1141,8 +1141,15 @@ ul {
   padding-bottom: 16px;
   z-index: 99;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   transform: translateY(calc(-150%));
+}
+
+.drop-down-wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 1150px;
 }
 
 .drop-down-description {
