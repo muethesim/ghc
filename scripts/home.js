@@ -466,7 +466,7 @@ const dropDownTop = dropDown.style.transform;
 console.log(dropDownTop);
 aboutUsNav.addEventListener("click", () => {
   if (isAboutUsActive) {
-    console.log("HERE")
+    console.log("HERE");
     gsap.to(".drop-down", {
       y: "-150%",
       duration: 0.5,
@@ -480,5 +480,3 @@ aboutUsNav.addEventListener("click", () => {
     isAboutUsActive = true;
   }
 });
-
-
