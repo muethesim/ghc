@@ -43,7 +43,6 @@ let CounterObserver = new IntersectionObserver(
       var value_to_change = counter.querySelector(".number-data");
       function UpdateCounter() {
         const targetNumber = +value_to_change.dataset.target;
-        console.log(targetNumber);
         const initialNumber = +value_to_change.dataset.initial;
         const incPerCount = targetNumber / speed;
         var originalNumber;
@@ -79,6 +78,69 @@ let CounterObserver = new IntersectionObserver(
 
 CounterObserver.observe(number_control);
 
+// HEADER TARNSITION
+
+const headerDiv = document.querySelector(".header");
+gsap.to(headerDiv, {
+  backgroundColor: "white",
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".main",
+    start: "bottom 50%",
+    scrub: true,
+  },
+});
+
+gsap.to(".navigations > li > a", {
+  color: "rgba(56, 56, 56, 1)",
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".main",
+    start: "bottom 50%",
+    scrub: true,
+  },
+});
+
+gsap.to(".header-container > svg path", {
+  fill: "rgba(11, 22, 33, 1)",
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".main",
+    start: "bottom 50%",
+    scrub: true,
+  },
+});
+
+gsap.to(".line", {
+  stroke: "rgba(11, 22, 33, 1)",
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".main",
+    start: "bottom 50%",
+    scrub: true,
+  },
+});
+
+gsap.from(".main-body h1", {
+  duration: 0.5,
+  opacity: 0,
+  y: 100,
+});
+
+gsap.from(".main-body span", {
+  delay: 0.4,
+  duration: 0.5,
+  opacity: 0,
+  y: 100,
+});
+
+gsap.from(".main-body .main-button", {
+  delay: 0.8,
+  duration: 0.5,
+  opacity: 0,
+  y: 100,
+});
+
 // COLLAPSABLE WIDGET
 
 const collapsibleHeaders = document.querySelectorAll(".collapsible-header");
@@ -87,7 +149,6 @@ collapsibleHeaders.forEach((header) => {
   header.addEventListener("click", () => {
     const content = header.nextElementSibling;
     const circularPlus = header.querySelector(".circular-plus");
-    console.log(header);
 
     if (content.classList.contains("expanded")) {
       content.style.maxHeight = null;
@@ -189,12 +250,7 @@ else {
       ".venture-image-opaque"
     );
     gsap.to(ventureImageContainer, {
-      scrollTrigger: {
-        trigger: ventureData,
-        start: "top 70%",
-      },
       x: "100%",
-      duration: 1,
     });
   });
 }
@@ -205,21 +261,30 @@ const humburgerPlate = document.querySelector(".plates");
 const humburgerSinglePlate = document.querySelector(".plates");
 const menuScreen = document.querySelector(".menu-screen");
 const body = document.querySelector("html");
+const lineContainer = document.querySelector(".line");
 var isMobileMenuOpened = false;
+var strokeColor = `rgba(11, 22, 33, 1)`;
 
 humburgerPlate.addEventListener("click", () => {
-  document.body.scrollTop = document.documentElement.scrollTop = 0;
+  // document.body.scrollTop = document.documentElement.scrollTop = 0;
   if (!isMobileMenuOpened) {
     gsap.to(menuScreen, {
       x: 0,
       duration: 1,
     });
+    gsap.to(".line", {
+      stroke: "white",
+    });
     isMobileMenuOpened = true;
+    strokeColor = lineContainer.style.stroke;
     body.style.overflow = "hidden";
   } else {
     gsap.to(menuScreen, {
       x: "100%",
       duration: 1,
+    });
+    gsap.to(".line", {
+      stroke: `${strokeColor}`,
     });
     isMobileMenuOpened = false;
     body.style.overflow = "scroll";
@@ -242,7 +307,6 @@ var mapAreas = [
 ];
 
 mapAreas.forEach((loc) => {
-  console.log(`${loc}-pin`)
   var placePin = document.querySelector(`${loc}-pin`);
   var placeCircle = document.querySelector(`${loc}-circle`);
   var placeText = document.querySelector(`${loc}-text`);
@@ -290,4 +354,102 @@ mapAreas.forEach((loc) => {
       duration: 0.3,
     });
   });
+});
+
+// Description
+
+gsap.from(".description > h1", {
+  duration: 0.5,
+  opacity: 0,
+  y: 100,
+  scrollTrigger: {
+    trigger: ".description",
+    start: "top 70%",
+  },
+});
+
+gsap.from(".description > p", {
+  delay: 0.4,
+  duration: 0.5,
+  opacity: 0,
+  y: 100,
+  scrollTrigger: {
+    trigger: ".description",
+    start: "top 70%",
+  },
+});
+
+if (screen.width > 767) {
+  gsap.from(".contact-data-container", {
+    x: "150%",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: ".contact",
+      start: "top 40%",
+    },
+  });
+}
+
+gsap.from(".contact-data-container > h1", {
+  delay: 0.5,
+  duration: 0.5,
+  opacity: 0,
+  y: 100,
+  scrollTrigger: {
+    trigger: ".contact",
+    start: "top 40%",
+  },
+});
+
+gsap.from(".contact-data-container > .main-button", {
+  delay: 0.9,
+  duration: 0.5,
+  opacity: 0,
+  y: 100,
+  scrollTrigger: {
+    trigger: ".contact",
+    start: "top 40%",
+  },
+});
+
+// TEXT ANIMATIONS
+gsap.from(".ex-horizon > h1", {
+  duration: 0.5,
+  opacity: 0,
+  y: 100,
+  scrollTrigger: {
+    trigger: ".ex-horizon",
+    start: "top 70%",
+  },
+});
+
+gsap.from(".ongoing-ventures > h1", {
+  duration: 0.5,
+  opacity: 0,
+  y: 100,
+  scrollTrigger: {
+    trigger: ".ongoing-ventures",
+    start: "top 60%",
+  },
+});
+
+gsap.from(".ongoing-ventures > p", {
+  delay: 0.4,
+  duration: 0.5,
+  opacity: 0,
+  y: 100,
+  scrollTrigger: {
+    trigger: ".ongoing-ventures",
+    start: "top 60%",
+  },
+});
+
+gsap.from(".locations > h1", {
+  duration: 0.5,
+  opacity: 0,
+  y: 100,
+  scrollTrigger: {
+    trigger: ".locations",
+    start: "top 60%",
+  },
 });

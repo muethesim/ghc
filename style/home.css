@@ -52,6 +52,12 @@ ul {
   height: fit-content;
   font-weight: 500;
   line-height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.main-button:hover {
+  background-color: #e2b41a !important;
+  transition: all 0.3s ease;
 }
 
 .main-button.yellow {
@@ -126,12 +132,13 @@ ul {
 
 /* -------------------- HEADER ----------------------------- */
 .header {
-  position: absolute;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  position: fixed;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   width: calc(100% - 480px);
-  z-index: 10;
+  z-index: 7;
+  justify-content: center;
 }
 
 .header-container {
@@ -140,6 +147,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: 1150px;
 }
 
 .header-container > ul {
@@ -156,6 +164,7 @@ ul {
 .header-container > ul span {
   font-family: Graphik;
   font-weight: 400;
+  width: calc(100% + 20px);
 }
 
 .header-container > ul span:hover {
@@ -167,9 +176,13 @@ ul {
   gap: 10px;
 }
 
+.header-container ul > li > a > div:hover {
+  gap: 9px;
+}
+
 @media only screen and (max-width: 1200px) {
   .header {
-    padding: 50px 90px;
+    padding: 20px 90px;
     width: calc(100% - 180px);
   }
 }
@@ -183,7 +196,7 @@ ul {
 
 @media only screen and (max-width: 767px) {
   .header {
-    padding: 50px 45px;
+    padding: 20px 45px;
     width: calc(100% - 90px);
   }
 }
@@ -239,6 +252,15 @@ ul {
 
 .main-body .main-button {
   margin-top: 32px;
+}
+
+@media only screen and (min-width: 1500px) {
+  .main-body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1150px;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -517,6 +539,7 @@ ul {
   height: 100%;
   gap: 23px;
   overflow-x: hidden;
+  width: 100%;
 }
 
 .venture-image-container {
@@ -530,10 +553,11 @@ ul {
   height: 481px;
   width: 100%;
   mask-size: cover;
+  max-width: 346px;
 }
 
 .venture-image-opaque {
-  background-color: rgba(217, 217, 217, 1);
+  background-color: #c9d1dc;
   height: 100%;
   width: 100%;
 }
@@ -633,7 +657,7 @@ ul {
   }
 
   .venture-image-container {
-    width: 60%;
+    width: 100%;
   }
 
   .single-venture-data > .venture-data {
@@ -696,6 +720,10 @@ ul {
   .locations {
     gap: 25px;
   }
+
+  .venture-image-container {
+    margin-top: 45px;
+  }
 }
 
 /* --------------------------------------- LOCATIONS --------------------------------- */
@@ -712,13 +740,14 @@ ul {
 .contact-image-container {
   background: url("../res/image/home_contact.jpeg") no-repeat center center;
   background-size: cover;
-  width: 60%;
+  width: 62%;
   height: 75vh;
 }
 
 .contact-data-container {
   position: absolute;
-  right: 120px;
+  right: 9%;
+  left: 47%;
   background-color: #383838;
   padding: 70px 60px;
 }
@@ -736,6 +765,12 @@ ul {
 @media only screen and (max-width: 1200px) {
   .contact {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .contact-data-container {
+    left: 30%;
   }
 }
 
@@ -927,10 +962,14 @@ ul {
 }
 
 .plates {
+  position: fixed;
+  z-index: 110;
   display: none;
   flex-wrap: wrap;
   max-height: 160px;
   width: fit-content;
+  right: 120px;
+  top: 20px;
 }
 
 .plate {
@@ -995,6 +1034,12 @@ ul {
 @media only screen and (max-width: 1024px) {
   .plates {
     display: flex;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .plates {
+    right: 45px;
   }
 }
 
