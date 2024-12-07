@@ -856,6 +856,9 @@ ul {
 .footer {
   background-color: #0b1621;
   width: calc(100% - 480px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-container {
@@ -863,6 +866,7 @@ ul {
   display: grid;
   grid-template-columns: 60% 40%;
   margin-bottom: 15px;
+  max-width: 1150px;
 }
 
 .footer-email {
@@ -928,11 +932,12 @@ ul {
 
 .footer-divider {
   border: 0.2px solid #0040a9;
-  margin: 0 -240px;
+  margin: 0 -1150px;
 }
 
 .footer-extend {
   margin-top: 27px;
+  max-width: 1150px;
 }
 
 .footer-extend {
