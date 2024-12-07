@@ -200,7 +200,6 @@ ul {
 .header-container > ul {
   display: flex;
   gap: 15px;
-
 }
 
 .header-container > ul .selected {
@@ -229,7 +228,6 @@ ul {
 }
 
 .header-container ul > li > a:focus {
-
 }
 
 @media only screen and (max-width: 1200px) {
@@ -1166,7 +1164,6 @@ ul {
   margin-bottom: 40px;
 }
 
-
 .drop-down-navigations {
   width: 69%;
   display: flex;
@@ -1176,11 +1173,11 @@ ul {
   background-color: rgba(61, 81, 108, 1);
   width: 24%;
   padding: 20px;
-
 }
 
-.nav-items a:hover {
-  color: rgba(226, 180, 26, 1); /* Optional: Change the text color on hover */
+.nav-items li > a:hover {
+  color: rgba(226, 180, 26, 1);
+  border-bottom: 1.5px solid rgba(226, 180, 26, 1);
 }
 
 .nav-items {
@@ -1216,15 +1213,14 @@ ul {
 .drop-down-navigation-description > p {
   color: rgba(89, 114, 148, 1);
   margin-bottom: 30px;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 16px;
 }
 
 .drop-down-navigation-description > a {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
 }
-
 
 @media only screen and (max-width: 1200px) {
   .drop-down {
