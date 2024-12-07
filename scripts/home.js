@@ -453,3 +453,32 @@ gsap.from(".locations > h1", {
     start: "top 60%",
   },
 });
+
+const headerContainer = document.querySelector(".header");
+const headerContainerWidth = headerContainer.offsetHeight;
+const dropDown = document.querySelector(".drop-down");
+
+dropDown.style.top = `${headerContainerWidth}px`;
+
+const aboutUsNav = document.querySelector(".about-us-nav");
+var isAboutUsActive = false;
+const dropDownTop = dropDown.style.transform;
+console.log(dropDownTop);
+aboutUsNav.addEventListener("click", () => {
+  if (isAboutUsActive) {
+    console.log("HERE")
+    gsap.to(".drop-down", {
+      y: "-150%",
+      duration: 0.5,
+    });
+    isAboutUsActive = false;
+  } else {
+    gsap.to(".drop-down", {
+      y: 0,
+      duration: 0.5,
+    });
+    isAboutUsActive = true;
+  }
+});
+
+
