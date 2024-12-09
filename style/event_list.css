@@ -48,6 +48,7 @@ ul {
 @media only screen and (max-width: 480px) {
 }
 /* -------------------------- UTILS ----------------------------- */
+
 .main-button {
   padding: 8px 13px;
   width: 124px;
@@ -80,6 +81,62 @@ ul {
   background-color: #383838;
   color: #ebebeb;
 }
+
+.circular-plus {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: #0b1621 solid 1.2px;
+}
+
+.circular-plus.expanded {
+  border: #597294 solid 1.2px;
+}
+
+.circular-plus > .plus {
+  position: relative;
+  width: 8px;
+  height: 8px;
+}
+
+.circular-plus > .plus::before,
+.circular-plus > .plus::after {
+  content: "";
+  position: absolute;
+  background-color: #0b1621; /* Color of the + sign */
+}
+
+.circular-plus.expanded > .plus::before,
+.circular-plus.expanded > .plus::after {
+  background-color: #597294; /* Color of the + sign */
+}
+
+.circular-plus > .plus::before {
+  width: 8px;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.circular-plus > .plus::after {
+  width: 2px;
+  height: 8px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease;
+}
+
+.circular-plus.expanded .plus::after {
+  transform: translateX(-50%) rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
 /* -------------------- HEADER ----------------------------- */
 .header {
   display: flex;
@@ -270,7 +327,54 @@ ul {
     margin-left: 45px;
   }
 }
-/* --------------------------- HUMBERGER --------------------------- */
+/* -------------------------- DESCRIPTIION -------------------------------- */
+
+.description {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.description > h1 {
+  font-family: Felis;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  width: 35%;
+  color: #383838;
+}
+
+.description > p {
+  width: calc(100% - 480px);
+  text-align: justify;
+  font-family: GoogleSans;
+  font-size: 1rem;
+  line-height: 25.6px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 1200px) {
+  .description > p {
+    width: 100%;
+  }
+
+  .description > h1 {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 767px) {
+  .description > h1 {
+    width: 80%;
+  }
+}
+
+/* ---------------------------------------- HUMBERGER ------------------------------------------- */
+
 .burger-svg {
   height: 80px;
   position: absolute;
@@ -522,6 +626,8 @@ ul {
 
 .previous-path-text {
   color: white;
+  width: max-content;
+  text-wrap: nowrap;
 }
 
 .current-path-text {
@@ -547,145 +653,68 @@ ul {
   }
 }
 
-/* -------------------------- DESCRIPTIION -------------------------------- */
+/* ------------------------------- EVENT DATA ------------------------------------------ */
 
-.description {
-  background-color: #f0f1f5;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.description > h1 {
-  font-family: Felis;
-  font-weight: 400;
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  width: 35%;
-  color: #383838;
-}
-
-.description > p {
+.event-datas {
+  background-color: white;
   width: calc(100% - 480px);
-  text-align: justify;
-  font-family: GoogleSans;
-  font-size: 1rem;
-  line-height: 25.6px;
-  font-weight: 400;
-}
-
-@media only screen and (max-width: 1200px) {
-  .description > p {
-    width: 100%;
-  }
-
-  .description > h1 {
-    width: 50%;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-}
-
-@media only screen and (max-width: 767px) {
-  .description > h1 {
-    width: 80%;
-  }
-}
-
-/* ----------------------------- HOTEL DETAILS ---------------------------------- */
-
-.hotel-details {
-  background-color: rgba(240, 241, 245, 1);
-  padding: 100px 0px;
-}
-
-.hotel-details-container {
   display: flex;
+  padding-top: 0;
   flex-direction: column;
-  gap: 100px;
 }
 
-.left-hotel-details {
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  row-gap: 100px;
+  max-width: 1150px;
+  place-self: center;
   width: 100%;
-  height: 500px;
-  display: flex;
-  align-items: center;
 }
 
-.left-hotel-details > .hotel-detail-image {
-  width: 70%;
-  height: 100%;
-  background-color: rgba(201, 209, 220, 1);
+.event {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 43vw;
+  overflow: hidden;
 }
 
-.hotel-detail-description {
-  position: absolute;
-  background-color: rgba(56, 56, 56, 1);
-  height: 300px;
-  width: 300px;
-  padding: 27px;
-  color: rgba(225, 225, 225, 1);
+.event-overlay {
+  width: calc(100% - 70px);
+  height: calc(100% - 70px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #030303 100%);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: end;
+  color: white;
+  padding: 35px;
+  font-family: GoogleSans;
+  transform: translateY(100%);
 }
 
-.left-hotel-details > .hotel-detail-description {
-  left: 63%;
-}
-
-.right-hotel-details > .hotel-detail-description {
-  right: 63%;
-}
-
-.hotel-detail-content > h1 {
-  font-family: Felis;
-  font-weight: 400;
+.event-overlay > h1 {
+  font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
   margin-bottom: 20px;
 }
 
-.hotel-detail-content > p {
-  font-family: GoogleSans;
-  font-weight: 400;
-  line-height: 22.4px;
+.event-overlay > p {
+  font-weight: 400px;
   font-size: 14px;
-  text-align: left;
+  margin-bottom: 30px;
 }
 
-.right-hotel-details {
-  width: 100%;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.right-hotel-details > .hotel-detail-image {
-  position: absolute;
-  right: 0;
-  width: 70%;
-  height: 100%;
-  background-color: rgba(201, 209, 220, 1);
+.event-overlay > a {
+  font-weight: 500;
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 1200px) {
-  .hotel-details {
-    width: 100%;
-  }
-
-  .left-hotel-details > .hotel-detail-description {
-    left: 50%;
-  }
-
-  .right-hotel-details > .hotel-detail-description {
-    right: 50%;
-  }
-
-  .hotel-detail-image {
-    width: 50%;
+  .event-datas {
+    width: calc(100% - 180px);
   }
 }
 
@@ -693,27 +722,23 @@ ul {
 }
 
 @media only screen and (max-width: 767px) {
-  .hotel-detail-image {
-    display: none;
-  }
-
-  .hotel-detail-description {
-    position: static;
-  }
-
-  .left-hotel-details,
-  .right-hotel-details {
-    display: flex;
-    justify-content: center;
-    height: auto;
-  }
-
-  .hotel-details-container {
-    gap: 100px;
+  .event-datas {
+    width: calc(100% - 90px);
   }
 }
 
-/* --------------------------------------- LOCATIONS --------------------------------- */
+@media only screen and (max-width: 520px) {
+  .events-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px;
+  }
+
+  .event {
+    height: 50vh;
+  }
+}
+
+/* --------------------------------------- CONTACTS --------------------------------- */
 
 .contact {
   background-color: #597294;
@@ -945,5 +970,3 @@ ul {
     justify-content: left;
   }
 }
-
-/* --------------------------- HUMBERGER --------------------------- */
