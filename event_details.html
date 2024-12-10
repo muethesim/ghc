@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GHC | Event List</title>
+    <link rel="stylesheet" href="./style/event_details.css" />
+    <link rel="stylesheet" href="./res/fonts/Graphik/Graphik.css" />
+    <link rel="stylesheet" href="./res/fonts/Felis/Felis.css" />
+    <link rel="stylesheet" href="./res/fonts/GoogleSans/GoogleSans.css" />
+    <link rel="stylesheet" href="./res/fonts/Glaukon/Glaukon.css" />
+  </head>
+  <body>
+    <section class="menu-screen">
+      <ul class="menu-navigations">
+        <li>
+          <a href="#"
+            ><div><span class="selected">Home</span></div></a
+          >
+        </li>
+        <li>
+          <a href="./about_us.html"
+            ><div>
+              <span>About Us</span>
+            </div></a
+          >
+        </li>
+        <li>
+          <a href="./streams.html"
+            ><div>
+              <span>Business Streams</span>
+            </div></a
+          >
+        </li>
+        <li>
+          <a href="./media_room.html"
+            ><div>
+              <span>Media Room</span>
+            </div></a
+          >
+        </li>
+      </ul>
+      <a href="./contact_us.html">
+        <div class="main-button blue">Contact Us</div>
+      </a>
+    </section>
+    <div class="plates">
+      <div class="plate plate1" onclick="this.classList.toggle('active')">
+        <svg
+          class="burger burger-svg"
+          version="1.1"
+          height="100"
+          width="100"
+          viewBox="0 0 100 100"
+        >
+          <path class="line line1" d="M 30,65 H 70" />
+          <path
+            class="line line2"
+            d="M 70,50 H 30 C 30,50 18.644068,50.320751 18.644068,36.016949 C 18.644068,21.712696 24.988973,6.5812347 38.79661,11.016949 C 52.604247,15.452663 46.423729,62.711864 46.423729,62.711864 L 50.423729,49.152542 L 50.423729,16.101695"
+          />
+          <path
+            class="line line3"
+            d="M 30,35 H 70 C 70,35 80.084746,36.737688 80.084746,25.423729 C 80.084746,19.599612 75.882239,9.3123528 64.711864,13.559322 C 53.541489,17.806291 54.423729,62.711864 54.423729,62.711864 L 50.423729,49.152542 V 16.101695"
+          />
+        </svg>
+        <svg
+          class="x burger-svg"
+          version="1.1"
+          height="100"
+          width="100"
+          viewBox="0 0 100 100"
+        >
+          <path class="line" d="M 34,32 L 66,68" />
+          <path class="line" d="M 66,32 L 34,68" />
+        </svg>
+      </div>
+    </div>
+    <section class="header">
+      <div class="header-container">
+        <svg
+          width="214"
+          height="82"
+          viewBox="0 0 214 82"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M112 15.4785V24.7356H116.057V21.7465C114.093 20.0781 112.655 17.9579 112 15.4785Z"
+            fill="white"
+          />
+          <path
+            d="M99.3945 3.13976C100.165 3.80015 100.832 4.39103 101.808 5.81609C101.808 5.81609 102.951 5.81609 103.451 5.81609V0H99.3945V3.13976Z"
+            fill="white"
+          />
+          <path
+            d="M99.3316 9.61651H97.2776H95.2236V13.4282H99.3316C98.7796 17.6571 94.9412 20.9243 90.294 20.9243C85.2617 20.9243 81.1922 17.101 81.1922 12.3739C81.1922 7.6585 85.2746 3.82359 90.294 3.82359C92.5149 3.82359 94.5432 4.56508 96.1223 5.80477H101.424C99.1005 2.32902 94.9797 0.0234375 90.294 0.0234375C83.028 0.0350233 77.1484 5.56147 77.1484 12.3739C77.1484 19.1864 83.028 24.7129 90.294 24.7129C93.8243 24.7129 97.0337 23.4037 99.3958 21.2719V24.7244H103.452V9.61651C103.298 9.61651 101.463 9.61651 101.398 9.61651H99.3316Z"
+            fill="white"
+          />
+          <path
+            d="M112.003 13.4282C112.671 19.9511 118.461 24.7244 125.149 24.7244C125.611 24.7244 126.06 24.6897 126.484 24.6433C130.618 24.2494 134.174 22.0597 136.279 18.9315H130.977C129.398 20.1712 127.37 20.9127 125.149 20.9127C124.058 20.9127 123.005 20.7273 122.029 20.4029C122.004 20.3913 121.978 20.3797 121.952 20.3797C121.85 20.345 121.747 20.2986 121.631 20.2639C121.567 20.2407 121.503 20.206 121.426 20.1828C121.362 20.1596 121.311 20.1364 121.246 20.1133C121.144 20.0669 121.041 20.0206 120.938 19.9742C120.913 19.9627 120.9 19.9511 120.874 19.9395C118.088 18.5492 116.163 15.8497 116.034 12.7215H116.022V11.8757C116.034 11.6093 116.073 11.3312 116.111 11.0647C116.163 10.7867 116.214 10.5086 116.291 10.2306C116.407 9.82505 116.548 9.41955 116.715 9.03722C116.997 8.4 117.369 7.79753 117.806 7.253C117.896 7.14873 117.986 7.03287 118.076 6.9286C118.255 6.72005 118.461 6.51151 118.666 6.32613C118.769 6.23345 118.871 6.14076 118.987 6.04807C119.308 5.77001 119.655 5.51512 120.014 5.28341C121.465 4.35654 123.223 3.82359 125.11 3.82359C127.331 3.82359 129.36 4.56508 130.939 5.80477H136.241C133.955 2.32902 129.835 0.0234375 125.149 0.0234375C121.619 0.0234375 118.422 1.33264 116.06 3.45284V0.0466091H112.003V9.61651H103.852C103.852 11.4123 103.852 13.0459 103.852 13.4282H112.003Z"
+            fill="white"
+          />
+          <g clip-path="url(#clip0_1447_4859)">
+            <path
+              d="M19.6783 57.8013V53.8298C18.8799 55.3066 17.7646 56.4072 16.3357 57.1342C14.9068 57.8612 13.2023 58.2262 11.2284 58.2262C9.81855 58.2262 8.44351 57.9952 7.09698 57.5305C5.75046 57.0658 4.55284 56.3901 3.50097 55.5005C2.44909 54.611 1.60316 53.5133 0.963162 52.2103C0.323166 50.9045 0 49.4106 0 47.7284C0 46.0463 0.319998 44.5552 0.963162 43.2579C1.60316 41.9635 2.44909 40.8687 3.50097 39.982C4.55284 39.0925 5.75046 38.4167 7.09698 37.952C8.44351 37.4901 9.81855 37.2563 11.2284 37.2563C12.2803 37.2563 13.3354 37.3846 14.3967 37.6384C15.4581 37.895 16.4656 38.277 17.4225 38.7874C18.3793 39.2977 19.2411 39.9364 20.0078 40.7033C20.7745 41.4703 21.3797 42.3741 21.8201 43.4119H18.6676C18.3508 42.5223 17.9199 41.7297 17.3749 41.0283C16.8268 40.3298 16.2185 39.7425 15.5468 39.2692C14.8751 38.7959 14.1686 38.4367 13.4336 38.1915C12.6985 37.9463 11.9635 37.8237 11.2253 37.8237C10.2368 37.8237 9.27677 38.0604 8.33895 38.5336C7.40431 39.0069 6.56788 39.6741 5.83283 40.5351C5.09779 41.3961 4.50215 42.4368 4.05225 43.6571C3.59918 44.8773 3.37423 46.2344 3.37423 47.7284C3.37423 49.2224 3.59918 50.5795 4.05225 51.7998C4.50532 53.0201 5.09779 54.0664 5.83283 54.936C6.56788 55.8056 7.40431 56.4784 8.33895 56.9517C9.2736 57.425 10.2368 57.6616 11.2253 57.6616C12.3405 57.6616 13.3797 57.5162 14.346 57.2226C15.3124 56.9289 16.171 56.4556 16.9155 55.8027C17.6601 55.1498 18.2779 54.2888 18.7595 53.2196C19.2442 52.1505 19.5484 50.8504 19.6751 49.3193V48.2131H15.8288C14.8403 48.2131 13.8898 48.3785 12.9742 48.7092C12.0585 49.0399 11.2443 49.593 10.5314 50.3685L11.1302 47.7284H22.3872V57.7728L19.6751 57.8013H19.6783Z"
+              fill="white"
+            />
+            <path
+              d="M43.0143 50.6651C43.0143 51.8568 42.8368 52.906 42.4788 53.8155C42.1208 54.7222 41.6107 55.4891 40.9485 56.1135C40.2864 56.7379 39.488 57.2112 38.5533 57.5334C37.6187 57.8556 36.5826 58.0152 35.4484 58.0152C34.3141 58.0152 33.2242 57.8556 32.185 57.5334C31.1458 57.2112 30.2207 56.7379 29.4096 56.1135C28.6017 55.4891 27.9585 54.7222 27.4865 53.8155C27.0144 52.9089 26.7768 51.8568 26.7768 50.6651V40.3099C26.7768 39.7996 26.7134 39.2921 26.5867 38.7931C26.4599 38.2913 26.2825 37.8722 26.0512 37.5301V37.5016L26.0195 37.4731H30.7181L30.6864 37.5016V37.5586C30.433 37.8979 30.2334 38.3198 30.0876 38.8216C29.9419 39.3234 29.8658 39.8195 29.8658 40.3128V50.6708C29.8658 51.4263 29.9767 52.2075 30.1985 53.0115C30.4203 53.8155 30.7593 54.5483 31.2219 55.2097C31.6844 55.8712 32.2674 56.41 32.9708 56.8263C33.6741 57.2426 34.5106 57.4507 35.4769 57.4507C36.5288 57.4507 37.4793 57.2939 38.3315 56.9831C39.1838 56.6723 39.9093 56.2276 40.5081 55.6488C41.107 55.0729 41.5695 54.363 41.8959 53.5219C42.2222 52.6808 42.3838 51.7285 42.3838 50.6708V40.2814C42.3838 39.8452 42.3267 39.3747 42.2095 38.8615C42.0923 38.3512 41.9402 37.8979 41.7533 37.4987V37.4702H43.6448V37.4987C43.4547 37.895 43.3026 38.3512 43.1885 38.8615C43.0713 39.3719 43.0143 39.8452 43.0143 40.2814V50.6679V50.6651Z"
+              fill="white"
+            />
+            <path
+              d="M51.3062 57.3196H55.688C56.6131 57.3196 57.3893 57.2626 58.0198 57.1485C58.6503 57.0345 59.2016 56.8491 59.6737 56.5954C60.1457 56.3388 60.5735 56.0138 60.9505 55.6175C61.3275 55.2212 61.7172 54.7365 62.1164 54.1691L61.2325 57.8014H47.4219L47.4536 57.7729V57.7444C47.6848 57.4222 47.8686 57.0174 48.0048 56.5241C48.1411 56.0337 48.2108 55.5205 48.2108 54.9931V40.4924C48.2108 39.9821 48.1411 39.4746 48.0048 38.9756C47.8686 38.4738 47.6848 38.0633 47.4536 37.7411V37.7126L47.4219 37.6841H52.1205L52.0254 37.8266C51.7941 38.1488 51.6167 38.5565 51.49 39.0469C51.3632 39.5401 51.2999 40.0391 51.2999 40.5494V57.3196H51.3062Z"
+              fill="white"
+            />
+            <path
+              d="M65.2109 57.8013L65.2743 57.7443C65.5056 57.4221 65.683 57.0201 65.8097 56.5383C65.9365 56.0565 65.9998 55.5404 65.9998 54.993V40.4353C65.9998 39.9449 65.9301 39.446 65.7939 38.9442C65.6577 38.4424 65.4612 38.0233 65.2109 37.6812H78.9582L79.6837 41.456C79.3479 40.7945 78.9803 40.25 78.5811 39.8252C78.1819 39.4004 77.7606 39.0639 77.3202 38.8187C76.8798 38.5735 76.4172 38.4025 75.9324 38.3084C75.4477 38.2143 74.9661 38.1658 74.4814 38.1658H69.6561C69.5071 38.488 69.3868 38.853 69.2949 39.2578C69.1998 39.6655 69.1523 40.0561 69.1523 40.4353V47.3007H75.2069C75.6283 47.3007 76.0148 47.0727 76.3728 46.6193C76.7309 46.166 77.0033 45.5986 77.1934 44.9172V50.1946C77.1079 49.8924 77.0002 49.593 76.8639 49.3022C76.7277 49.0086 76.5756 48.7491 76.4077 48.521C76.2398 48.2929 76.056 48.1133 75.8564 47.9822C75.6568 47.851 75.4414 47.7826 75.2101 47.7826H69.1555V55.0472C69.1555 55.2353 69.1776 55.4549 69.2188 55.7001C69.26 55.9453 69.3139 56.1962 69.3772 56.4528C69.4406 56.7094 69.5135 56.9546 69.599 57.1912C69.6814 57.4278 69.7765 57.6303 69.8842 57.8013H65.2173H65.2109Z"
+              fill="white"
+            />
+            <path
+              d="M94.3467 54.9361C94.3467 55.4464 94.4133 55.9539 94.5527 56.4528C94.6889 56.9546 94.8727 57.3738 95.104 57.7159L95.1357 57.7729L95.1673 57.8014H90.4688L90.5321 57.7444C90.7634 57.4222 90.9408 57.0202 91.0676 56.5384C91.1943 56.0565 91.2577 55.5405 91.2577 54.9931V40.4924C91.2577 39.9821 91.1943 39.4746 91.0676 38.9756C90.9408 38.4738 90.7634 38.0633 90.5321 37.7411L90.4688 37.6841H95.1673L95.1357 37.7126L95.104 37.7696C94.8727 38.1089 94.6889 38.5309 94.5527 39.0327C94.4165 39.5344 94.3467 40.0391 94.3467 40.5494V47.1326L105.762 47.1611V40.5494C105.762 40.0391 105.692 39.5316 105.556 39.0327C105.42 38.5309 105.236 38.1117 105.005 37.7696L104.973 37.7126L104.942 37.6841H109.64L109.577 37.7411C109.345 38.0633 109.168 38.4653 109.041 38.9471C108.915 39.429 108.851 39.945 108.851 40.4924V54.9931C108.851 55.5034 108.915 56.0109 109.041 56.5099C109.168 57.0117 109.345 57.4222 109.577 57.7444L109.64 57.8014H104.942L104.973 57.7729L105.005 57.7159C105.236 57.3766 105.42 56.9546 105.556 56.4528C105.692 55.9511 105.762 55.4464 105.762 54.9361V47.7285L94.3467 47.7V54.9361Z"
+              fill="white"
+            />
+            <path
+              d="M113.109 47.7284C113.109 46.0463 113.429 44.5552 114.072 43.2579C114.712 41.9635 115.558 40.8687 116.61 39.982C117.661 39.0925 118.859 38.4167 120.206 37.952C121.549 37.4901 122.924 37.2563 124.334 37.2563C125.744 37.2563 127.119 37.4873 128.465 37.952C129.812 38.4167 131.01 39.0925 132.061 39.982C133.113 40.8715 133.959 41.9635 134.599 43.2579C135.239 44.5552 135.562 46.0434 135.562 47.7284C135.562 49.4134 135.242 50.9074 134.599 52.2103C133.959 53.5161 133.113 54.6138 132.061 55.5005C131.01 56.3901 129.812 57.0658 128.465 57.5305C127.119 57.9952 125.744 58.2262 124.334 58.2262C122.924 58.2262 121.549 57.9952 120.202 57.5305C118.856 57.0658 117.658 56.3901 116.606 55.5005C115.555 54.611 114.709 53.5133 114.069 52.2103C113.429 50.9045 113.105 49.4106 113.105 47.7284H113.109ZM116.483 47.7284C116.483 49.2224 116.708 50.5795 117.161 51.7998C117.614 53.0201 118.206 54.0664 118.941 54.936C119.677 55.8056 120.513 56.4784 121.448 56.9517C122.382 57.425 123.345 57.6616 124.334 57.6616C125.322 57.6616 126.282 57.425 127.22 56.9517C128.155 56.4784 128.991 55.8084 129.726 54.936C130.461 54.0664 131.057 53.0201 131.507 51.7998C131.96 50.5795 132.185 49.2224 132.185 47.7284C132.185 46.2344 131.96 44.8773 131.507 43.6571C131.054 42.4368 130.461 41.3961 129.726 40.5351C128.991 39.6741 128.155 39.0069 127.22 38.5336C126.286 38.0604 125.322 37.8237 124.334 37.8237C123.345 37.8237 122.385 38.0604 121.448 38.5336C120.513 39.0069 119.677 39.6741 118.941 40.5351C118.206 41.3961 117.611 42.4368 117.161 43.6571C116.708 44.8773 116.483 46.2344 116.483 47.7284Z"
+              fill="white"
+            />
+            <path
+              d="M146.104 38.4818C145.433 38.4818 144.701 38.516 143.912 38.5816C143.123 38.6472 142.366 38.7698 141.64 38.9494C140.915 39.129 140.268 39.3742 139.701 39.6878C139.134 39.9986 138.722 40.412 138.472 40.9224L138 41.886L138.947 38H156.354L157.301 41.886L156.671 40.8368C156.376 40.3465 155.945 39.9416 155.378 39.6308C154.811 39.3201 154.18 39.0777 153.487 38.9066C152.793 38.7356 152.074 38.6215 151.326 38.5674C150.578 38.5103 149.868 38.4818 149.197 38.4818V55.309C149.197 55.8194 149.263 56.3268 149.403 56.8258C149.539 57.3276 149.723 57.7381 149.954 58.0603V58.0888L149.986 58.1173H145.287L145.382 57.9748C145.613 57.6526 145.791 57.2477 145.918 56.7545C146.044 56.2641 146.108 55.7623 146.108 55.252V38.4818H146.104Z"
+              fill="white"
+            />
+            <path
+              d="M174.372 57.8013H160.625L160.688 57.7443C160.92 57.4221 161.097 57.0201 161.224 56.5383C161.351 56.0565 161.414 55.5404 161.414 54.993V40.4353C161.414 39.9449 161.344 39.446 161.208 38.9442C161.072 38.4424 160.875 38.0233 160.625 37.6812H174.372L175.098 41.456C174.762 40.7945 174.394 40.25 173.995 39.8252C173.596 39.4004 173.175 39.0639 172.734 38.8187C172.294 38.5735 171.831 38.4025 171.347 38.3084C170.862 38.2143 170.38 38.1658 169.895 38.1658H165.07C164.924 38.488 164.801 38.853 164.709 39.2578C164.614 39.6655 164.566 40.0561 164.566 40.4353V47.3007H170.621C171.042 47.3007 171.429 47.0727 171.787 46.6193C172.145 46.166 172.417 45.5986 172.607 44.9172V50.1946C172.522 49.8924 172.414 49.593 172.275 49.3022C172.139 49.0086 171.987 48.7491 171.819 48.521C171.651 48.2929 171.467 48.1133 171.267 47.9822C171.068 47.851 170.852 47.7826 170.621 47.7826H164.566V55.0472C164.566 55.4264 164.62 55.8141 164.725 56.2104C164.829 56.6067 164.988 56.966 165.197 57.2881H169.895C170.589 57.2881 171.188 57.2368 171.692 57.1313C172.196 57.0287 172.649 56.8519 173.048 56.6067C173.447 56.3615 173.808 56.0308 174.135 55.6145C174.461 55.1983 174.781 54.668 175.098 54.0265L174.372 57.8013Z"
+              fill="white"
+            />
+            <path
+              d="M182.826 57.3196H187.208C188.133 57.3196 188.91 57.2626 189.54 57.1485C190.171 57.0345 190.722 56.8491 191.197 56.5954C191.669 56.3388 192.097 56.0138 192.474 55.6175C192.851 55.2212 193.241 54.7365 193.64 54.1691L192.756 57.8014H178.945L178.977 57.7729V57.7444C179.208 57.4222 179.392 57.0174 179.528 56.5241C179.665 56.0337 179.734 55.5205 179.734 54.9931V40.4924C179.734 39.9821 179.665 39.4746 179.528 38.9756C179.392 38.4738 179.208 38.0633 178.977 37.7411V37.7126L178.945 37.6841H183.644L183.549 37.8266C183.318 38.1488 183.14 38.5565 183.013 39.0469C182.887 39.5401 182.823 40.0391 182.823 40.5494V57.3196H182.826Z"
+              fill="white"
+            />
+            <path
+              d="M213.033 43.3891C212.739 42.8788 212.333 42.2971 211.82 41.6442C211.303 40.9913 210.689 40.3783 209.976 39.7996C209.26 39.2236 208.474 38.7304 207.612 38.3227C206.751 37.915 205.825 37.7126 204.837 37.7126C204.206 37.7126 203.576 37.8038 202.945 37.9834C202.315 38.163 201.748 38.4196 201.244 38.7504C200.74 39.0811 200.328 39.4888 200.015 39.9706C199.698 40.4525 199.543 40.997 199.543 41.6015C199.543 42.357 199.717 42.9785 200.062 43.4604C200.411 43.9422 200.861 44.3499 201.418 44.6806C201.976 45.0114 202.606 45.2965 203.31 45.5331C204.013 45.7698 204.713 46.0207 205.407 46.2858C206.814 46.7962 208.05 47.2637 209.111 47.6914C210.172 48.1162 211.056 48.5524 211.76 48.9972C212.463 49.442 212.989 49.9238 213.337 50.4456C213.683 50.9673 213.857 51.5774 213.857 52.276C213.857 53.0515 213.642 53.7984 213.211 54.5169C212.78 55.2354 212.175 55.8683 211.398 56.4186C210.619 56.966 209.691 57.4079 208.607 57.7387C207.524 58.0694 206.332 58.2348 205.027 58.2348C203.912 58.2348 202.879 58.1122 201.922 57.867C200.965 57.6218 200.11 57.3081 199.353 56.9318C198.595 56.5526 197.943 56.1363 197.398 55.683C196.85 55.2297 196.431 54.7935 196.137 54.3772V51.0585C196.745 52.0992 197.407 53.0315 198.123 53.8526C198.836 54.6766 199.574 55.3666 200.332 55.9254C201.089 56.4842 201.849 56.9147 202.619 57.2169C203.386 57.5191 204.127 57.6816 204.843 57.6987C205.683 57.7187 206.478 57.6189 207.223 57.4022C207.967 57.1855 208.62 56.8919 209.177 56.5212C209.735 56.1535 210.175 55.7315 210.502 55.2582C210.828 54.7849 210.99 54.3031 210.99 53.8099C210.99 53.4506 210.917 53.0771 210.768 52.6894C210.622 52.3016 210.331 51.9082 209.9 51.5119C209.469 51.1156 208.861 50.7079 208.072 50.2916C207.283 49.8753 206.259 49.4591 204.998 49.0428C203.928 48.7035 202.901 48.3614 201.925 48.0221C200.946 47.6828 200.081 47.2951 199.324 46.8589C198.567 46.4227 197.962 45.918 197.512 45.3421C197.059 44.7662 196.834 44.0705 196.834 43.2579C196.834 42.4454 197.033 41.7127 197.433 41.0027C197.832 40.2928 198.38 39.6656 199.074 39.1153C199.768 38.5679 200.591 38.126 201.548 37.7952C202.505 37.4645 203.551 37.2906 204.685 37.2706C205.547 37.2507 206.402 37.3049 207.254 37.4275C208.107 37.5501 208.899 37.7211 209.634 37.9378C210.369 38.1545 211.037 38.4168 211.636 38.719C212.235 39.0212 212.713 39.3519 213.071 39.7112L213.04 43.4005L213.033 43.3891Z"
+              fill="white"
+            />
+            <path
+              d="M57.5513 72.7754C58.1089 71.8659 58.8725 71.1559 59.8388 70.6485C60.8051 70.141 61.8855 69.8872 63.0768 69.8872C64.5279 69.8872 65.773 70.198 66.8059 70.8167C67.8419 71.4354 68.596 72.3106 69.068 73.4368H67.5409C67.1702 72.6442 66.5999 72.0255 65.8395 71.5779C65.076 71.1303 64.1572 70.9079 63.0768 70.9079C62.12 70.9079 61.2614 71.1075 60.501 71.5095C59.7374 71.9115 59.1386 72.4903 58.7045 73.2429C58.2705 73.9956 58.0519 74.8709 58.0519 75.8631C58.0519 76.8553 58.2673 77.7277 58.7045 78.4747C59.1386 79.2217 59.7374 79.7976 60.501 80.1996C61.2645 80.6016 62.1231 80.8012 63.0768 80.8012C64.1572 80.8012 65.076 80.5817 65.8395 80.1397C66.6031 79.6978 67.1702 79.0877 67.5409 78.3065H69.068C68.596 79.4241 67.8387 80.288 66.7995 80.901C65.7572 81.514 64.5184 81.8219 63.0768 81.8219C61.8855 81.8219 60.8083 81.5681 59.8388 81.0607C58.8725 80.5532 58.1089 79.8461 57.5513 78.9423C56.9937 78.0385 56.7148 77.0121 56.7148 75.8603C56.7148 74.7084 56.9937 73.682 57.5513 72.7697V72.7754Z"
+              fill="white"
+            />
+            <path
+              d="M76.0838 81.0805C75.1048 80.573 74.3318 79.8631 73.7678 78.9536C73.2039 78.0441 72.9219 77.0149 72.9219 75.863C72.9219 74.7112 73.2039 73.6848 73.7678 72.7724C74.3318 71.8629 75.1048 71.153 76.0838 70.6455C77.0628 70.138 78.1559 69.8843 79.3598 69.8843C80.5638 69.8843 81.6727 70.138 82.6517 70.6455C83.6307 71.153 84.4006 71.8629 84.9582 72.7724C85.5158 73.6819 85.7947 74.7112 85.7947 75.863C85.7947 77.0149 85.5158 78.0413 84.9582 78.9536C84.4006 79.8631 83.6307 80.573 82.6517 81.0805C81.6727 81.588 80.5733 81.8418 79.3598 81.8418C78.1464 81.8418 77.066 81.588 76.0838 81.0805ZM81.9642 80.2195C82.7341 79.8175 83.3424 79.2387 83.7891 78.486C84.2359 77.7333 84.4576 76.8581 84.4576 75.8659C84.4576 74.8737 84.2359 74.0013 83.7891 73.2543C83.3424 72.5073 82.7341 71.9314 81.9642 71.5294C81.1943 71.1274 80.3262 70.9278 79.3598 70.9278C78.3935 70.9278 77.5254 71.1274 76.7555 71.5294C75.9856 71.9314 75.3773 72.5073 74.9306 73.2543C74.4838 74.0013 74.2621 74.8737 74.2621 75.8659C74.2621 76.8581 74.4838 77.7333 74.9306 78.486C75.3773 79.2387 75.9856 79.8175 76.7555 80.2195C77.5254 80.6215 78.3935 80.8211 79.3598 80.8211C80.3262 80.8211 81.1943 80.6215 81.9642 80.2195Z"
+              fill="white"
+            />
+            <path
+              d="M102.747 70.1721V81.7248H101.445V72.4986L96.8667 81.7248H95.9194L91.3412 72.5328V81.7248H90.0391V70.1721H91.4173L96.3852 80.1852L101.353 70.1721H102.747Z"
+              fill="white"
+            />
+            <path
+              d="M114.788 75.8144C114.056 76.4274 112.956 76.7353 111.496 76.7353H108.872V81.7247H107.57V70.021H111.496C112.947 70.021 114.043 70.3289 114.781 70.9419C115.52 71.5549 115.887 72.3703 115.887 73.3853C115.887 74.4003 115.52 75.1986 114.791 75.8144H114.788ZM114.544 73.3881C114.544 72.6069 114.303 72.0139 113.818 71.6119C113.333 71.2099 112.56 71.0103 111.493 71.0103H108.869V75.7317H111.493C113.527 75.7317 114.544 74.9505 114.544 73.3881Z"
+              fill="white"
+            />
+            <path
+              d="M127.454 78.9452H121.536L120.402 81.725H119.023L123.77 70.1724H125.24L129.967 81.725H128.589L127.454 78.9452ZM127.065 77.9758L124.498 71.6464L121.932 77.9758H127.068H127.065Z"
+              fill="white"
+            />
+            <path
+              d="M143.72 81.7247H142.418L135.216 71.8799V81.7247H133.914V70.021H135.216L142.418 79.8487V70.021H143.72V81.7247Z"
+              fill="white"
+            />
+            <path
+              d="M157.134 70.0212L152.967 77.1718V81.725H151.665V77.1718L147.461 70.0212H148.931L152.318 76.0998L155.686 70.0212H157.137H157.134Z"
+              fill="white"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_1447_4859">
+              <rect
+                width="213.85"
+                height="44.5854"
+                fill="white"
+                transform="translate(0 37.2563)"
+              />
+            </clipPath>
+          </defs>
+        </svg>
+        <ul class="navigations">
+          <li>
+            <a href="javascript:void(0);"
+              ><div><span class="selected">Home</span></div></a
+            >
+          </li>
+          <li>
+            <a href="javascript:void(0);">
+              <div class="about-us-nav">
+                <span>About Us</span>
+                <img src="./res/svg/arrow_down.svg" alt="Arrow Down" /></div
+            ></a>
+          </li>
+          <li>
+            <a href="./streams.html"
+              ><div>
+                <span>Business Streams</span>
+                <img src="./res/svg/arrow_down.svg" alt="Arrow Down" /></div
+            ></a>
+          </li>
+          <li>
+            <a href="./media_room.html"
+              ><div>
+                <span>Media Room</span>
+                <img src="./res/svg/arrow_down.svg" alt="Arrow Down" /></div
+            ></a>
+          </li>
+        </ul>
+        <a href="./contact_us.html">
+          <div class="main-button blue">Contact Us</div>
+        </a>
+      </div>
+    </section>
+    <section class="drop-down">
+      <div class="drop-down-wrapper">
+        <div class="drop-down-description">
+          <h1>About Us</h1>
+          <p>
+            Gulf Hotels Company underscores the company's mission to transform
+            the hospitality landscape on a global scale.
+          </p>
+          <div class="main-button blue">Learn More</div>
+        </div>
+        <div class="drop-down-navigations">
+          <div class="drop-down-navigation-items">
+            <ul class="nav-items">
+              <li><a href="./about_us.html">Our Story</a></li>
+              <li><a href="./about_us.html">Messages</a></li>
+              <li><a href="./about_us.html">Board of Directors</a></li>
+              <li><a href="./about_us.html">Board of Members</a></li>
+              <li><a href="./about_us.html">Our Vision</a></li>
+              <li><a href="./about_us.html">Our Mission</a></li>
+              <li><a href="./about_us.html">Our Value</a></li>
+              <li><a href="./about_us.html">GHC in Numbers</a></li>
+              <li><a href="./about_us.html">Our History</a></li>
+              <li><a href="./about_us.html">Company ESG</a></li>
+            </ul>
+          </div>
+          <div class="drop-down-navigation-description">
+            <img src="./res/image/home_dropdown_messages.png" alt="" />
+            <h1>Messages</h1>
+            <p>
+              Gulf Hotels Company underscores the company's mission to transform
+              the hospitality landscape on a global scale.
+            </p>
+            <a href="./about_us.html">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="main">
+      <div class="hero-slider" data-carousel>
+        <div
+          class="carousel-cell"
+          style="background-image: url('./res/image/home_master_1.png')"
+        >
+          <div class="main-body">
+            <div>
+              <h1>
+                The future is changing <br />
+                and we are part of it
+              </h1>
+              <span
+                >Gulf Hotels Company underscores the company's mission to
+                transform the hospitality landscape on a global scale.</span
+              >
+              <div class="main-button yellow">Learn More</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="carousel-cell"
+          style="background-image: url('./res/image/home_master_2.png')"
+        >
+          <div class="main-body">
+            <div>
+              <h1>The future is changing <br/ > and we are part of it</h1>
+              <span
+                >Gulf Hotels Company underscores the company's mission to
+                transform the hospitality landscape on a global scale.</span
+              >
+              <div class="main-button yellow">Learn More</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="carousel-cell"
+          style="background-image: url('./res/image/home_master_3.png')"
+        >
+          <div class="main-body">
+            <div>
+              <h1>The future is changing<br />and we are part of it</h1>
+              <span
+                >Gulf Hotels Company underscores the company's mission to
+                transform the hospitality landscape on a global scale.</span
+              >
+              <div class="main-button yellow">Learn More</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="current-path">
+        <div class="current-path-container">
+          <p class="previous-path-text">Home</p>
+          <p class="previous-path-arrow">></p>
+          <p class="previous-path-text">Event Room</p>
+          <p class="previous-path-arrow">></p>
+          <p class="current-path-text">Awards</p>
+        </div>
+      </div>
+    </section>
+    <section class="description">
+      <h1>Qatar World Cup 10-Ball</h1>
+      <p>
+        Founded on the principles of excellence and innovation, Gulf Hotels
+        Company (GHC) has been a pioneer in the hospitality industry for over 20
+        years. Our journey began with a simple vision: to create exceptional
+        experiences that resonate with guests long after their stay. From a
+        single property, we have grown into a global hospitality leader, diverse
+        portfolio that spans luxury hotels, resorts, and serviced apartments
+        across the world.
+      </p>
+    </section>
+    <section class="event-details">
+      <div class="event-details-container">
+        <div class="event-detail-image"></div>
+        <div class="event-detail-description">
+          <h1>Qatar World Cup 10-Ball</h1>
+          <p>
+            Founded on the principles of excellence and innovation, Gulf Hotels
+            Company (GHC) has been a pioneer in the hospitality industry for
+            over 20 years. Our journey began with a simple vision: to create
+            exceptional experiences that resonate with guests long after their
+            stay. From a single property, we have grown into a global
+            hospitality leader, diverse portfolio that spans luxury hotels,
+            resorts, and serviced apartments across the world.
+          </p>
+          <p>
+            Founded on the principles of excellence and innovation, Gulf Hotels
+            Company (GHC) has been a pioneer in the hospitality industry for
+            over 20 years. Our journey began with a simple vision: to create
+            exceptional experiences that resonate with guests long after their
+            stay. From a single property, we have grown into a global
+            hospitality leader, diverse portfolio that spans luxury hotels,
+            resorts, and serviced apartments across the world.
+          </p>
+        </div>
+        <div class="event-detail-description">
+          <h1>Qatar World Cup 10-Ball</h1>
+          <p>
+            Founded on the principles of excellence and innovation, Gulf Hotels
+            Company (GHC) has been a pioneer in the hospitality industry for
+            over 20 years. Our journey began with a simple vision: to create
+            exceptional experiences that resonate with guests long after their
+            stay. From a single property, we have grown into a global
+            hospitality leader, diverse portfolio that spans luxury hotels,
+            resorts, and serviced apartments across the world.
+          </p>
+          <p>
+            Founded on the principles of excellence and innovation, Gulf Hotels
+            Company (GHC) has been a pioneer in the hospitality industry for
+            over 20 years. Our journey began with a simple vision: to create
+            exceptional experiences that resonate with guests long after their
+            stay. From a single property, we have grown into a global
+            hospitality leader, diverse portfolio that spans luxury hotels,
+            resorts, and serviced apartments across the world.
+          </p>
+        </div>
+        <div class="event-detail-more">
+          <div class="event-detail-more-image"></div>
+          <div class="event-detail-more-description">
+            <div class="more-data">
+              <h1>Qatar World Cup 10-Ball</h1>
+              <p>
+                Founded on the principles of<br />
+                excellence and innovation,
+              </p>
+            </div>
+            <div class="more-data">
+              <h1>Qatar World Cup 10-Ball</h1>
+              <p>
+                Founded on the principles of<br />
+                excellence and innovation,
+              </p>
+            </div>
+            <div class="more-data">
+              <h1>Qatar World Cup 10-Ball</h1>
+              <p>
+                Founded on the principles of<br />
+                excellence and innovation,
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="more-from-events">
+      <div class="more-from-events-container">
+        <h1>More from Events</h1>
+        <div class="event-items">
+          <div class="e-item">
+            <div
+              style="background-image: url('./res/image/more_event_1.png')"
+              class="event-image"
+            ></div>
+            <div class="event-content">
+              <h1>Event/News Name</h1>
+              <p>
+                GHC prioritizes environmental responsibility by implementing
+                eco-friendly initiatives across our hotels, residences, and food
+                services.
+              </p>
+              <a href="#">View More</a>
+            </div>
+          </div>
+          <div class="e-item">
+            <div
+              style="background-image: url('./res/image/more_event_2.png')"
+              class="event-image"
+            ></div>
+            <div class="event-content">
+              <h1>Event/News Name</h1>
+              <p>
+                We believe in empowering our people and communities. GHC is
+                dedicated to creating opportunities for local employment.
+              </p>
+              <a href="#">View More</a>
+            </div>
+          </div>
+          <div class="e-item">
+            <div
+              style="background-image: url('./res/image/more_event_3.png')"
+              class="event-image"
+            ></div>
+            <div class="event-content">
+              <h1>Event/News Name</h1>
+              <p>
+                By integrating ESG into our business model, Gulf Hotels Company
+                is building a sustainable future for our guests, employees.
+              </p>
+              <a href="#">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact">
+      <div class="contact-image-container"></div>
+      <div class="contact-data-container">
+        <h1>
+          What can we help<br />
+          you achieve?
+        </h1>
+        <a href="./contact_us.html">
+          <div class="main-button blue">Contact Us</div>
+        </a>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="footer-datas">
+        <img src="./res/svg/company_logo_full_blue.svg" alt="" />
+        <div class="footer-container">
+          <div class="footer-left">
+            <div class="footer-email">
+              <input type="text" placeholder="email address" />
+              <div class="main-button blue">Submit</div>
+            </div>
+            <p>
+              We provide luxury accommodations, furnished apartments,
+              exceptional dining, entertainment parks, and diverse restaurants,
+              all aimed at delivering unforgettable experiences and top-tier
+              service.
+            </p>
+          </div>
+          <div class="footer-right">
+            <ul class="footer-navs">
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Terms of use</a></li>
+              <li><a href="#">Privacy Cookie</a></li>
+              <li><a href="#">Policy</a></li>
+            </ul>
+            <div class="footer-contacts">
+              <p>+97444203888</p>
+              <p>info@gulfhotelsco.com</p>
+              <br />
+              <p>
+                Street 900, Bldg. No. 25, Zone 61<br />
+                Al Dafna, West Bay, PO Box 5780<br />
+                Doha, State of Qatar
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-extend">
+          <div class="footer-extend-left">
+            <p>© 2024 GHC, Qaptive Technologies Pvt Ltd</p>
+          </div>
+          <div class="footer-extend-right">
+            <ul class="footer-socials">
+              <li>
+                <a href="#"><img src="./res/svg/linked_in.svg" alt="" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="./res/svg/fb.svg" alt="" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="./res/svg/youtube.svg" alt="" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="./res/svg/twitter.svg" alt="" /></a>
+              </li>
+            </ul>
+            <a href="#">
+              <img src="./res/svg/arrow_up.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.pkgd.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./scripts/event_details.js"></script>
+  </body>
+</html>
