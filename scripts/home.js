@@ -488,3 +488,8 @@ headerNavItems.forEach((element) => {
   elementWidth += 0.2;
   element.style.width = `${elementWidth}px`
 })
+
+
+document.querySelector("#close-removable").addEventListener("click", () => {
+  document.querySelector(".removable").style.display = `none`
+}) 
