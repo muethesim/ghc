@@ -1133,7 +1133,30 @@ ul {
   }
 }
 
+/* ------------------------------ DROP DOWN ------------------------------------- */
+
 .drop-down {
+  width: 100%;
+  background-color: rgba(89, 114, 148, 1);
+  height: 0;
+  position: absolute;
+  top: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+}
+
+.drop-down.active {
+  height: 70vh;
+  transition: all 1s ease-in-out;
+}
+
+
+
+
+/* .drop-down {
   position: fixed;
   background-color: rgba(89, 114, 148, 1);
   width: calc(100% - 480px);
@@ -1144,12 +1167,14 @@ ul {
   flex-direction: column;
   align-items: center;
   transform: translateY(calc(-150%));
-}
+} */
 
 .drop-down-wrapper {
   display: flex;
   justify-content: center;
   max-width: 1150px;
+  margin-top: 18px;
+  margin-bottom: 18px;
 }
 
 .drop-down-description {
@@ -1240,6 +1265,7 @@ ul {
     width: calc(100% - 180px);
   }
 }
+
 
 
 

@@ -454,21 +454,17 @@ gsap.from(".locations > h1", {
   },
 });
 
-
 // SHIVERING
-const headerNavItems = document.querySelectorAll(".navigations > li > a > div")
+const headerNavItems = document.querySelectorAll(".navigations > li > a > div");
 headerNavItems.forEach((element) => {
   var elementWidth = element.offsetWidth;
   elementWidth += 0.2;
-  element.style.width = `${elementWidth}px`
-})
+  element.style.width = `${elementWidth}px`;
+});
 
-
-document.querySelector("#close-removable").addEventListener("click", () => {
-  document.querySelector(".removable").style.display = `none`
-}) 
-
-
+// document.querySelector("#close-removable").addEventListener("click", () => {
+//   document.querySelector(".removable").style.display = `none`
+// })
 
 const dropDownDivAboutUs = document.querySelector(".drop-down");
 
