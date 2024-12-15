@@ -121,7 +121,7 @@ gsap.from(".main-body .main-button", {
 const headerNavItems = document.querySelectorAll(".navigations > li > a > div");
 headerNavItems.forEach((element) => {
   var elementWidth = element.offsetWidth;
-  elementWidth += 0.2;
+  elementWidth += 3;
   element.style.width = `${elementWidth}px`;
 });
 

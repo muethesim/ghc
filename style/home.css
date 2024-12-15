@@ -215,8 +215,8 @@ ul {
   text-align: center;
 }
 
-.header-container > ul span:hover {
-  font-weight: 500;
+.header-container > ul:hover > span {
+  color: #41c7df;
 }
 
 .header-container ul > li > a > div {
@@ -1153,9 +1153,6 @@ ul {
   transition: all 1s ease-in-out;
 }
 
-
-
-
 /* .drop-down {
   position: fixed;
   background-color: rgba(89, 114, 148, 1);
@@ -1209,12 +1206,28 @@ ul {
 .drop-down-navigation-items {
   background-color: rgba(61, 81, 108, 1);
   width: 24%;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.nav-items li > a:hover {
+.empty-div {
+  /* height: 100%; */
+  width: 100%;
+}
+
+.nav-items li:hover > a {
   color: rgba(226, 180, 26, 1);
-  border-bottom: 1.5px solid rgba(226, 180, 26, 1);
+}
+
+.a-line {
+  width: 0;
+  height: 0.5px;
+  background-color: rgba(226, 180, 26, 1);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-items li:hover > .a-line {
+  width: 100%;
 }
 
 .nav-items {
@@ -1227,12 +1240,19 @@ ul {
   padding: 10px 0;
 }
 
+.nav-items > li {
+  padding-right: 20px;
+  padding-left: 20px;
+  display: block;
+}
+
 .drop-down-navigation-description {
   width: 76%;
   background-color: rgba(39, 60, 89, 1);
   padding: 24px;
   display: flex;
   flex-direction: column;
+  height: -webkit-fill-available;
 }
 
 .drop-down-navigation-description > img {
@@ -1259,6 +1279,37 @@ ul {
   font-weight: 500;
 }
 
+.drop-down-navigation-description.multiple {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding: 0;
+  background-color: rgba(39, 60, 89, 1);
+  /* display: flex;
+  flex-direction: row; */
+}
+
+.second-option {
+  background-color: rgba(51, 68, 91, 1);
+  width: 100%;
+  height: inherit;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.drop-down-navigation-description.small > img {
+  height: 30%;
+}
+
+.drop-down-navigation-description.small {
+  width: auto;
+}
+
+/* .multiple-option {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 100%;
+} */
+
 @media only screen and (max-width: 1200px) {
   .drop-down {
     padding: 20px 90px;
@@ -1266,8 +1317,26 @@ ul {
   }
 }
 
+.drop-down-navigation-description.hospitality_busineses-description  {
+  display: none;
+}
 
+.drop-down-navigation-description {
+  display: none;
+}
 
+.drop-down-navigation-description.empty-div {
+  display: flex;
+}
+
+.drop-down-navigation-description.hospitality_busineses-description,
+.drop-down-navigation-description.restaurant-description {
+  display: none;
+}
+
+.empty-div.multiple {
+  display: grid;
+}
 
 /* ------------------------------------ REMOVABLE  ----------------------------------------- */
 
@@ -1282,4 +1351,5 @@ ul {
   display: flex;
   flex-direction: row;
   gap: 50px;
+  display: none;
 }

@@ -454,39 +454,112 @@ gsap.from(".locations > h1", {
   },
 });
 
-
-// SHIVERING
-const headerNavItems = document.querySelectorAll(".navigations > li > a > div")
-headerNavItems.forEach((element) => {
-  var elementWidth = element.offsetWidth;
-  elementWidth += 0.2;
-  element.style.width = `${elementWidth}px`
-})
-
-
 document.querySelector("#close-removable").addEventListener("click", () => {
-  document.querySelector(".removable").style.display = `none`
-}) 
+  document.querySelector(".removable").style.display = `none`;
+});
 
-
-
-const dropDownDivAboutUs = document.querySelector(".drop-down");
+const dropDownDivAboutUs = document.querySelector(".about-us-drop-down");
+const dropDownDivBussinessStreams = document.querySelector(
+  ".bussiness-stream-drop-down"
+);
+const dropDownDivMediaRoom = document.querySelector(".media-room-drop-down");
+var isDropDownActive = false;
 
 document.querySelector(".about-us-nav").addEventListener("click", () => {
   if (dropDownDivAboutUs.classList.contains("active")) {
     dropDownDivAboutUs.classList.remove("active");
+    isAboutUsActive = false;
   } else {
-    dropDownDivAboutUs.classList.add("active");
+    dropDownDivBussinessStreams.classList.remove("active");
+    dropDownDivMediaRoom.classList.remove("active");
+    setTimeout(
+      () => {
+        dropDownDivAboutUs.classList.add("active");
+      },
+      isDropDownActive ? 1000 : 0
+    );
+    isDropDownActive = true;
   }
 });
 
-const headerDivMain = document.querySelector(".header")
-const allDropDown = document.querySelectorAll(".drop-down")
+document
+  .querySelector(".bussiness-stream-nav")
+  .addEventListener("click", () => {
+    if (dropDownDivBussinessStreams.classList.contains("active")) {
+      dropDownDivBussinessStreams.classList.remove("active");
+      isDropDownActive = false;
+    } else {
+      dropDownDivAboutUs.classList.remove("active");
+      dropDownDivMediaRoom.classList.remove("active");
+      setTimeout(
+        () => {
+          dropDownDivBussinessStreams.classList.add("active");
+        },
+        isDropDownActive ? 1000 : 0
+      );
+      isDropDownActive = true;
+    }
+  });
+
+document.querySelector(".media-room-nav").addEventListener("click", () => {
+  if (dropDownDivMediaRoom.classList.contains("active")) {
+    dropDownDivMediaRoom.classList.remove("active");
+    isDropDownActive = false;
+  } else {
+    dropDownDivAboutUs.classList.remove("active");
+    dropDownDivBussinessStreams.classList.remove("active");
+    setTimeout(
+      () => {
+        dropDownDivMediaRoom.classList.add("active");
+      },
+      isDropDownActive ? 1000 : 0
+    );
+    isDropDownActive = true;
+  }
+});
+
+const headerDivMain = document.querySelector(".header");
+const allDropDown = document.querySelectorAll(".drop-down");
 
 document.addEventListener("click", function (event) {
   if (!headerDivMain.contains(event.target)) {
     allDropDown.forEach((item) => {
-      item.classList.remove("active")
-    })
+      item.classList.remove("active");
+      isDropDownActive = false;
+    });
   }
+});
+
+// DROPDOWNVIEW ABOUT US
+
+var dropDownItems = [
+  "our_story",
+  "messages",
+  "board_of_directors",
+  "board_of_members",
+  "our_vision",
+  "our_mission",
+  "our_values",
+  "ghc_in_numbers",
+  "our_history",
+  "company_esg",
+];
+
+dropDownItems.forEach((item) => {
+  document.querySelector(`#${item}`).addEventListener("mouseover", () => {
+    document.querySelector(`.${item}-description`).style.display = "flex";
+    document.querySelector(".empty-div").style.display = "none";
+  });
+  document.querySelector(`#${item}`).addEventListener("mouseleave", () => {
+    document.querySelector(`.${item}-description`).style.display = "none";
+    document.querySelector(".empty-div").style.display = "flex";
+  });
+  document.querySelector(`.${item}-description`).addEventListener("mouseover", () => {
+    document.querySelector(`.${item}-description`).style.display = "flex";
+    document.querySelector(".empty-div").style.display = "none";
+  });
+  document.querySelector(`.${item}-description`).addEventListener("mouseleave", () => {
+    document.querySelector(`.${item}-description`).style.display = "none";
+    document.querySelector(".empty-div").style.display = "flex";
+  });
 });

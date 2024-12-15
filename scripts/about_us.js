@@ -213,6 +213,69 @@ aboutUsNav.addEventListener("click", () => {
 const headerNavItems = document.querySelectorAll(".navigations > li > a > div");
 headerNavItems.forEach((element) => {
   var elementWidth = element.offsetWidth;
-  elementWidth += 0.2;
+  elementWidth += 3;
   element.style.width = `${elementWidth}px`;
 });
+
+
+const managersMembersTeam = document.querySelector("#managers_members_team")
+const boardMembersTeam = document.querySelector("#board_members_team")
+
+gsap.from("#managers_members_team > .team > .team-items", {
+  x: '150%',
+  duration: 0.8,
+  scrollTrigger: {
+    trigger: managersMembersTeam,
+    start: "top 30%",
+  }
+})
+
+gsap.from("#managers_members_team > .team > .team-items > div > h4", {
+  y: 20,
+  delay: 0.7,
+  duration: 1,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: managersMembersTeam,
+    start: "top 30%",
+  }
+})
+gsap.from("#managers_members_team > .team > .team-items > div > p", {
+  y: 20,
+  delay: 0.7,
+  duration: 1,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: managersMembersTeam,
+    start: "top 30%",
+  }
+})
+gsap.from("#board_members_team > .team > .team-items", {
+  x: '150%',
+  duration: 0.8,
+  scrollTrigger: {
+    trigger: boardMembersTeam,
+    start: "top 30%",
+  }
+})
+
+gsap.from("#board_members_team > .team > .team-items > div > h4", {
+  y: 20,
+  delay: 0.7,
+  duration: 1,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: boardMembersTeam,
+    start: "top 30%",
+  }
+})
+gsap.from("#board_members_team > .team > .team-items > div > p", {
+  y: 20,
+  delay: 0.7,
+  duration: 1,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: boardMembersTeam,
+    start: "top 30%",
+  }
+})
