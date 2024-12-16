@@ -215,16 +215,8 @@ ul {
   text-align: center;
 }
 
-.header-container > ul:hover > span {
-  color: #41c7df;
-}
-
 .header-container ul > li > a > div {
   padding: 10px;
-}
-
-.header-container ul > li > a > div:hover {
-  gap: 9px;
 }
 
 .header-container ul > li > a:focus {

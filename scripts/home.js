@@ -554,12 +554,32 @@ dropDownItems.forEach((item) => {
     document.querySelector(`.${item}-description`).style.display = "none";
     document.querySelector(".empty-div").style.display = "flex";
   });
-  document.querySelector(`.${item}-description`).addEventListener("mouseover", () => {
-    document.querySelector(`.${item}-description`).style.display = "flex";
-    document.querySelector(".empty-div").style.display = "none";
-  });
-  document.querySelector(`.${item}-description`).addEventListener("mouseleave", () => {
-    document.querySelector(`.${item}-description`).style.display = "none";
-    document.querySelector(".empty-div").style.display = "flex";
-  });
+  document
+    .querySelector(`.${item}-description`)
+    .addEventListener("mouseover", () => {
+      document.querySelector(`.${item}-description`).style.display = "flex";
+      document.querySelector(".empty-div").style.display = "none";
+    });
+  document
+    .querySelector(`.${item}-description`)
+    .addEventListener("mouseleave", () => {
+      document.querySelector(`.${item}-description`).style.display = "none";
+      document.querySelector(".empty-div").style.display = "flex";
+    });
 });
+
+// HOVER
+
+const navigationList = document.querySelectorAll(".navigations > li")
+
+console.log(navigationList)
+
+navigationList.forEach((nav) => {
+  console.log(nav)
+  nav.addEventListener("mouseover", () => {
+    nav.querySelector("span").style.color = "#41c7df"
+  })
+  nav.addEventListener("mouseleave", () => {
+    nav.querySelector("span").style.color = "white"
+  })
+})
