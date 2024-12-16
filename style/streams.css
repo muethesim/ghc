@@ -158,16 +158,8 @@ ul {
   text-align: center;
 }
 
-.header-container > ul span:hover {
-  font-weight: 500;
-}
-
 .header-container ul > li > a > div {
   padding: 10px;
-}
-
-.header-container ul > li > a > div:hover {
-  gap: 9px;
 }
 
 .header-container ul > li > a:focus {
