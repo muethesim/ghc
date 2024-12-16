@@ -543,43 +543,103 @@ var dropDownItems = [
   "ghc_in_numbers",
   "our_history",
   "company_esg",
+  "hospitality_busineses",
+  "restaurants",
+  "events",
+  "awards"
 ];
 
+var emptyDivs = document.querySelectorAll(".empty-div");
 dropDownItems.forEach((item) => {
   document.querySelector(`#${item}`).addEventListener("mouseover", () => {
     document.querySelector(`.${item}-description`).style.display = "flex";
-    document.querySelector(".empty-div").style.display = "none";
+    if (
+      document
+        .querySelector(`.${item}-description`)
+        .classList.contains("multiple")
+    ) {
+      document.querySelector(`.${item}-description`).style.display = "grid";
+    }
+    emptyDivs.forEach((empty) => {
+      empty.style.display = "none";
+    });
   });
   document.querySelector(`#${item}`).addEventListener("mouseleave", () => {
     document.querySelector(`.${item}-description`).style.display = "none";
-    document.querySelector(".empty-div").style.display = "flex";
+    emptyDivs.forEach((empty) => {
+      empty.style.display = "grid";
+    });
   });
   document
     .querySelector(`.${item}-description`)
     .addEventListener("mouseover", () => {
       document.querySelector(`.${item}-description`).style.display = "flex";
-      document.querySelector(".empty-div").style.display = "none";
+      if (
+        document
+          .querySelector(`.${item}-description`)
+          .classList.contains("multiple")
+      ) {
+        document.querySelector(`.${item}-description`).style.display = "grid";
+      }
+      emptyDivs.forEach((empty) => {
+        empty.style.display = "none";
+      });
     });
   document
     .querySelector(`.${item}-description`)
     .addEventListener("mouseleave", () => {
       document.querySelector(`.${item}-description`).style.display = "none";
-      document.querySelector(".empty-div").style.display = "flex";
+      emptyDivs.forEach((empty) => {
+        empty.style.display = "grid";
+      });
+    });
+});
+
+const dropDownSmallItems = [
+  "hotelspa",
+  "residence",
+  "suites",
+  "fahad_foods",
+  "park",
+];
+
+dropDownSmallItems.forEach((item) => {
+  document.querySelector(`#${item}`).addEventListener("mouseover", () => {
+    document.querySelector(`.${item}-description`).style.display = "flex";
+  });
+});
+dropDownSmallItems.forEach((item) => {
+  document.querySelector(`#${item}`).addEventListener("mouseleave", () => {
+    document.querySelector(`.${item}-description`).style.display = "none";
+  });
+});
+dropDownSmallItems.forEach((item) => {
+  document
+    .querySelector(`.${item}-description`)
+    .addEventListener("mouseover", () => {
+      document.querySelector(`.${item}-description`).style.display = "flex";
+    });
+});
+dropDownSmallItems.forEach((item) => {
+  document
+    .querySelector(`.${item}-description`)
+    .addEventListener("mouseleave", () => {
+      document.querySelector(`.${item}-description`).style.display = "none";
     });
 });
 
 // HOVER
 
-const navigationList = document.querySelectorAll(".navigations > li")
+const navigationList = document.querySelectorAll(".navigations > li");
 
-console.log(navigationList)
+console.log(navigationList);
 
 navigationList.forEach((nav) => {
-  console.log(nav)
+  console.log(nav);
   nav.addEventListener("mouseover", () => {
-    nav.querySelector("span").style.color = "#41c7df"
-  })
+    nav.querySelector("span").style.color = "#41c7df";
+  });
   nav.addEventListener("mouseleave", () => {
-    nav.querySelector("span").style.color = "white"
-  })
-})
+    nav.querySelector("span").style.color = "white";
+  });
+});
