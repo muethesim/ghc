@@ -482,3 +482,206 @@ communityItems.forEach((item, index) => {
 });
 
 
+
+const dropDownDivAboutUs = document.querySelector(".about-us-drop-down");
+const dropDownDivBussinessStreams = document.querySelector(
+  ".bussiness-stream-drop-down"
+);
+const dropDownDivMediaRoom = document.querySelector(".media-room-drop-down");
+var isDropDownActive = false;
+
+document.querySelector(".about-us-nav").addEventListener("click", () => {
+  if (dropDownDivAboutUs.classList.contains("active")) {
+    dropDownDivAboutUs.classList.remove("active");
+    isAboutUsActive = false;
+  } else {
+    dropDownDivBussinessStreams.classList.remove("active");
+    dropDownDivMediaRoom.classList.remove("active");
+    setTimeout(
+      () => {
+        dropDownDivAboutUs.classList.add("active");
+      },
+      isDropDownActive ? 1000 : 0
+    );
+    isDropDownActive = true;
+  }
+});
+
+document
+  .querySelector(".bussiness-stream-nav")
+  .addEventListener("click", () => {
+    if (dropDownDivBussinessStreams.classList.contains("active")) {
+      dropDownDivBussinessStreams.classList.remove("active");
+      isDropDownActive = false;
+    } else {
+      dropDownDivAboutUs.classList.remove("active");
+      dropDownDivMediaRoom.classList.remove("active");
+      setTimeout(
+        () => {
+          dropDownDivBussinessStreams.classList.add("active");
+        },
+        isDropDownActive ? 1000 : 0
+      );
+      isDropDownActive = true;
+    }
+  });
+
+document.querySelector(".media-room-nav").addEventListener("click", () => {
+  if (dropDownDivMediaRoom.classList.contains("active")) {
+    dropDownDivMediaRoom.classList.remove("active");
+    isDropDownActive = false;
+  } else {
+    dropDownDivAboutUs.classList.remove("active");
+    dropDownDivBussinessStreams.classList.remove("active");
+    setTimeout(
+      () => {
+        dropDownDivMediaRoom.classList.add("active");
+      },
+      isDropDownActive ? 1000 : 0
+    );
+    isDropDownActive = true;
+  }
+});
+
+const headerDivMain = document.querySelector(".header");
+const allDropDown = document.querySelectorAll(".drop-down");
+
+document.addEventListener("click", function (event) {
+  if (!headerDivMain.contains(event.target)) {
+    allDropDown.forEach((item) => {
+      item.classList.remove("active");
+      isDropDownActive = false;
+    });
+  }
+});
+
+// DROPDOWNVIEW ABOUT US
+
+var dropDownItems = [
+  "our_story",
+  "messages",
+  "board_of_directors",
+  "board_of_members",
+  "our_vision",
+  "our_mission",
+  "our_values",
+  "ghc_in_numbers",
+  "our_history",
+  "company_esg",
+  "hospitality_busineses",
+  "restaurants",
+  "events",
+  "awards"
+];
+
+var emptyDivs = document.querySelectorAll(".empty-div");
+dropDownItems.forEach((item) => {
+  document.querySelector(`#${item}`).addEventListener("mouseover", () => {
+    document.querySelector(`.${item}-description`).style.display = "flex";
+    if (
+      document
+        .querySelector(`.${item}-description`)
+        .classList.contains("multiple")
+    ) {
+      document.querySelector(`.${item}-description`).style.display = "grid";
+    }
+    emptyDivs.forEach((empty) => {
+      empty.style.display = "none";
+    });
+  });
+  document.querySelector(`#${item}`).addEventListener("mouseleave", () => {
+    document.querySelector(`.${item}-description`).style.display = "none";
+    emptyDivs.forEach((empty) => {
+      empty.style.display = "grid";
+    });
+  });
+  document
+    .querySelector(`.${item}-description`)
+    .addEventListener("mouseover", () => {
+      document.querySelector(`.${item}-description`).style.display = "flex";
+      if (
+        document
+          .querySelector(`.${item}-description`)
+          .classList.contains("multiple")
+      ) {
+        document.querySelector(`.${item}-description`).style.display = "grid";
+      }
+      emptyDivs.forEach((empty) => {
+        empty.style.display = "none";
+      });
+    });
+  document
+    .querySelector(`.${item}-description`)
+    .addEventListener("mouseleave", () => {
+      document.querySelector(`.${item}-description`).style.display = "none";
+      emptyDivs.forEach((empty) => {
+        empty.style.display = "grid";
+      });
+    });
+});
+
+const dropDownSmallItems = [
+  "hotelspa",
+  "residence",
+  "suites",
+  "fahad_foods",
+  "park",
+  "hotelspa2",
+  "residence2",
+  "suites2",
+  "fahad_foods2",
+  "park2",
+  "great",
+  "diversity",
+  "world_travel",
+  "freddie",
+  "kincentric",
+  "top_employer",
+  "great2",
+  "diversity2",
+  "world_travel2",
+  "freddie2",
+  "kincentric2",
+  "top_employer2"
+];
+
+dropDownSmallItems.forEach((item) => {
+  document.querySelector(`#${item}`).addEventListener("mouseover", () => {
+    document.querySelector(`.${item}-description`).style.display = "flex";
+  });
+});
+dropDownSmallItems.forEach((item) => {
+  document.querySelector(`#${item}`).addEventListener("mouseleave", () => {
+    document.querySelector(`.${item}-description`).style.display = "none";
+  });
+});
+dropDownSmallItems.forEach((item) => {
+  document
+    .querySelector(`.${item}-description`)
+    .addEventListener("mouseover", () => {
+      document.querySelector(`.${item}-description`).style.display = "flex";
+    });
+});
+dropDownSmallItems.forEach((item) => {
+  document
+    .querySelector(`.${item}-description`)
+    .addEventListener("mouseleave", () => {
+      document.querySelector(`.${item}-description`).style.display = "none";
+    });
+});
+
+// HOVER
+
+const navigationList = document.querySelectorAll(".navigations > li");
+
+console.log(navigationList);
+
+navigationList.forEach((nav) => {
+  console.log(nav);
+  nav.addEventListener("mouseover", () => {
+    nav.querySelector("span").style.color = "#41c7df";
+  });
+  nav.addEventListener("mouseleave", () => {
+    nav.querySelector("span").style.color = "white";
+  });
+});
