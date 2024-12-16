@@ -216,3 +216,62 @@ headerNavItems.forEach((element) => {
   elementWidth += 3;
   element.style.width = `${elementWidth}px`;
 });
+
+// MORE
+
+function showEventMore(itemName) {
+  const allEvent = ["first-event", "second-event", "third-event"];
+
+  const paraContainer = document.querySelector(`#${itemName}`);
+  const ParaToExtend = paraContainer.querySelector(`p`);
+  console.log(ParaToExtend.classList);
+  if (ParaToExtend.classList.contains("extended")) {
+    ParaToExtend.style.height = `100px`;
+    ParaToExtend.classList.remove("extended");
+    paraContainer.querySelector("a").innerText = "View More";
+  } else {
+    allEvent.forEach((event) => {
+      const paraContainerForAll = document.querySelector(`#${event}`);
+      const ParaToExtendForAll = paraContainerForAll.querySelector(`p`);
+      ParaToExtendForAll.style.height = `100px`;
+      ParaToExtendForAll.classList.remove("extended");
+      paraContainerForAll.querySelector("a").innerText = "View More";
+    });
+    ParaToExtend.style.height = `${ParaToExtend.scrollHeight}px`;
+    ParaToExtend.classList.add("extended");
+    paraContainer.querySelector("a").innerText = "View Less";
+  }
+}
+
+// CONTENT ANIMATION
+
+const contentDescriptionsAll = document.querySelectorAll(
+  ".event-detail-description"
+);
+
+contentDescriptionsAll.forEach((contentDescription) => {
+  const contentHeading = contentDescription.querySelector("h1");
+  const contentParas = contentDescription.querySelectorAll("p");
+
+  gsap.from(contentHeading, {
+    y: 20,
+    opacity: 0,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: contentDescription,
+      start: "top 90%",
+    },
+  });
+
+  contentParas.forEach((para) => {
+    gsap.from(para, {
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: contentDescription,
+        start: "top 90%",
+      },
+    });
+  });
+});

@@ -396,7 +396,7 @@
       </div>
     </section>
     <section class="company-morals">
-      <div class="morals">
+      <div class="morals" id="vision_moral">
         <div
           class="moral-images"
           style="background-image: url('./res/image/placeholder_2.png')"
@@ -419,7 +419,7 @@
           </p>
         </div>
       </div>
-      <div class="morals inverted">
+      <div class="morals inverted" id="values_moral">
         <div
           class="moral-images"
           style="background-image: url('./res/image/placeholder_2.png')"
@@ -442,7 +442,7 @@
           </p>
         </div>
       </div>
-      <div class="morals">
+      <div class="morals" id="mission_moral">
         <div
           class="moral-images"
           style="background-image: url('./res/image/placeholder_2.png')"
@@ -469,7 +469,7 @@
     <section class="number-details">
       <div class="number-corousal">
         <div class="number-data first">
-          <div class="number">1000</div>
+          <div class="number" data-target="1000" data-initial="0">1000</div>
           <h1>Employees</h1>
           <p>
             The impact of consulting firms on local businesses in emerging
@@ -479,7 +479,7 @@
           </p>
         </div>
         <div class="number-data">
-          <div class="number">30</div>
+          <div class="number" data-target="30" data-initial="0">30</div>
           <h1>Nationalities</h1>
           <p>
             The impact of consulting firms on local businesses in emerging
@@ -489,7 +489,7 @@
           </p>
         </div>
         <div class="number-data">
-          <div>06</div>
+          <div class="number" data-target="6" data-initial="0">06</div>
           <h1>Business Streams</h1>
           <p>
             The impact of consulting firms on local businesses in emerging
@@ -503,7 +503,7 @@
           </p>
         </div>
         <div class="number-data">
-          <div class="number">30</div>
+          <div class="number" data-target="30" data-initial="0">30</div>
           <h1>Nationalities</h1>
           <p>
             The impact of consulting firms on local businesses in emerging
@@ -715,14 +715,14 @@
               style="background-image: url('./res/image/more_event_1.png')"
               class="event-image"
             ></div>
-            <div class="event-content">
+            <div class="event-content" id="first-event">
               <h1>Event/News Name</h1>
               <p>
                 GHC prioritizes environmental responsibility by implementing
                 eco-friendly initiatives across our hotels, residences, and food
                 services.
               </p>
-              <a href="#">View More</a>
+              <a href="javascript:showEventMore('first-event');">View More</a>
             </div>
           </div>
           <div class="e-item">
@@ -730,13 +730,13 @@
               style="background-image: url('./res/image/more_event_2.png')"
               class="event-image"
             ></div>
-            <div class="event-content">
+            <div class="event-content" id="second-event">
               <h1>Event/News Name</h1>
               <p>
                 We believe in empowering our people and communities. GHC is
-                dedicated to creating opportunities for local employment.
+                dedicated to creating opportunities for local employment. Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eum cupiditate itaque illo recusandae quibusdam suscipit earum tenetur nesciunt. Rem sunt tempore earum quasi cum! Suscipit sed quisquam, consequuntur voluptates voluptatum dolorum, neque perspiciatis quasi minus voluptate fugiat ipsa, laudantium aliquid dolor? Cupiditate soluta aliquid vel libero aut itaque cum!
               </p>
-              <a href="#">View More</a>
+              <a href="javascript:showEventMore('second-event');">View More</a>
             </div>
           </div>
           <div class="e-item">
@@ -744,13 +744,13 @@
               style="background-image: url('./res/image/more_event_3.png')"
               class="event-image"
             ></div>
-            <div class="event-content">
+            <div class="event-content" id="third-event">
               <h1>Event/News Name</h1>
               <p>
                 By integrating ESG into our business model, Gulf Hotels Company
                 is building a sustainable future for our guests, employees.
               </p>
-              <a href="#">View More</a>
+              <a href="javascript:showEventMore('third-event');">View More</a>
             </div>
           </div>
         </div>

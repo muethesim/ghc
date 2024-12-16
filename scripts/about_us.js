@@ -217,18 +217,17 @@ headerNavItems.forEach((element) => {
   element.style.width = `${elementWidth}px`;
 });
 
-
-const managersMembersTeam = document.querySelector("#managers_members_team")
-const boardMembersTeam = document.querySelector("#board_members_team")
+const managersMembersTeam = document.querySelector("#managers_members_team");
+const boardMembersTeam = document.querySelector("#board_members_team");
 
 gsap.from("#managers_members_team > .team > .team-items", {
-  x: '150%',
+  x: "150%",
   duration: 0.8,
   scrollTrigger: {
     trigger: managersMembersTeam,
     start: "top 30%",
-  }
-})
+  },
+});
 
 gsap.from("#managers_members_team > .team > .team-items > div > h4", {
   y: 20,
@@ -238,8 +237,8 @@ gsap.from("#managers_members_team > .team > .team-items > div > h4", {
   scrollTrigger: {
     trigger: managersMembersTeam,
     start: "top 30%",
-  }
-})
+  },
+});
 gsap.from("#managers_members_team > .team > .team-items > div > p", {
   y: 20,
   delay: 0.7,
@@ -248,16 +247,16 @@ gsap.from("#managers_members_team > .team > .team-items > div > p", {
   scrollTrigger: {
     trigger: managersMembersTeam,
     start: "top 30%",
-  }
-})
+  },
+});
 gsap.from("#board_members_team > .team > .team-items", {
-  x: '150%',
+  x: "150%",
   duration: 0.8,
   scrollTrigger: {
     trigger: boardMembersTeam,
     start: "top 30%",
-  }
-})
+  },
+});
 
 gsap.from("#board_members_team > .team > .team-items > div > h4", {
   y: 20,
@@ -267,8 +266,8 @@ gsap.from("#board_members_team > .team > .team-items > div > h4", {
   scrollTrigger: {
     trigger: boardMembersTeam,
     start: "top 30%",
-  }
-})
+  },
+});
 gsap.from("#board_members_team > .team > .team-items > div > p", {
   y: 20,
   delay: 0.7,
@@ -277,5 +276,209 @@ gsap.from("#board_members_team > .team > .team-items > div > p", {
   scrollTrigger: {
     trigger: boardMembersTeam,
     start: "top 30%",
+  },
+});
+
+// MORALS
+
+gsap.from("#vision_moral > .moral-images", {
+  x: `-150%`,
+  duration: 0.8,
+  scrollTrigger: {
+    trigger: "#vision_moral",
+    start: "top 50%",
+  },
+});
+
+gsap.from(
+  "#vision_moral > .moral-description > h1, #vision_moral > .moral-description > p",
+  {
+    y: 20,
+    duration: 1,
+    delay: 0.7,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: "#vision_moral",
+      start: "top 50%",
+    },
   }
-})
+);
+gsap.from("#values_moral > .moral-images", {
+  x: `150%`,
+  duration: 0.8,
+  scrollTrigger: {
+    trigger: "#values_moral",
+    start: "top 50%",
+  },
+});
+
+gsap.from(
+  "#values_moral > .moral-description > h1, #values_moral > .moral-description > p",
+  {
+    y: 20,
+    duration: 1,
+    delay: 0.7,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: "#values_moral",
+      start: "top 50%",
+    },
+  }
+);
+gsap.from("#mission_moral > .moral-images", {
+  x: `-150%`,
+  duration: 0.8,
+  scrollTrigger: {
+    trigger: "#mission_moral",
+    start: "top 50%",
+  },
+});
+
+gsap.from(
+  "#mission_moral > .moral-description > h1, #mission_moral > .moral-description > p",
+  {
+    y: 20,
+    duration: 1,
+    delay: 0.7,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: "#mission_moral",
+      start: "top 50%",
+    },
+  }
+);
+
+// NUMBERS
+
+const number_control = document.querySelector(".number-details");
+const counters = document.querySelectorAll(".number-data");
+
+let CounterObserver = new IntersectionObserver(
+  (entries, observer) => {
+    let [entry] = entries;
+    if (!entry.isIntersecting) return;
+    let speed = 30;
+    counters.forEach((counter, index) => {
+      var value;
+      var value_to_change = counter.querySelector(".number");
+      function UpdateCounter() {
+        const targetNumber = +value_to_change.dataset.target;
+        const initialNumber = +value_to_change.dataset.initial;
+        const incPerCount = targetNumber / speed;
+        var originalNumber;
+        if (initialNumber < targetNumber) {
+          originalNumber = initialNumber + incPerCount;
+          value_to_change.dataset.initial = originalNumber;
+          value = Math.ceil(originalNumber);
+          if (value <= targetNumber) {
+            if (value < 10) {
+              value = "0" + value;
+            }
+            value_to_change.innerText = value;
+          }
+          setTimeout(UpdateCounter, 40);
+        } else {
+          value = targetNumber;
+          if (value < 10) {
+            value = "0" + value;
+          }
+          value_to_change.innerText = value;
+        }
+      }
+      UpdateCounter();
+    });
+    observer.unobserve(number_control);
+  },
+  {
+    root: null,
+    threshold: window.innerWidth > 768 ? 0.4 : 0.3,
+  }
+);
+
+CounterObserver.observe(number_control);
+
+// NUMBER SCROLL
+
+const numberScoller = document.querySelector(".number-status-bar > div");
+const numberCorousal = document.querySelector(".number-corousal");
+
+numberCorousal.addEventListener("scroll", () => {
+  var scrollPercent =
+    (numberCorousal.scrollLeft /
+      (numberCorousal.scrollWidth - numberCorousal.clientWidth)) *
+    100;
+  numberScoller.style.width = `${scrollPercent}%`;
+});
+
+// HISTORY SCROLL
+
+const historyScoller = document.querySelector(".history-status-bar > div");
+const historyCorousal = document.querySelector(".history-corousal");
+
+historyCorousal.addEventListener("scroll", () => {
+  var scrollPercent =
+    (historyCorousal.scrollLeft /
+      (historyCorousal.scrollWidth - historyCorousal.clientWidth)) *
+    100;
+  historyScoller.style.width = `${scrollPercent}%`;
+});
+
+function showEventMore(itemName) {
+  const allEvent = ["first-event", "second-event", "third-event"];
+
+  const paraContainer = document.querySelector(`#${itemName}`);
+  const ParaToExtend = paraContainer.querySelector(`p`);
+  if (ParaToExtend.classList.contains("extended")) {
+    ParaToExtend.style.height = `100px`;
+    ParaToExtend.classList.remove("extended");
+    paraContainer.querySelector("a").innerText = "View More";
+  } else {
+    allEvent.forEach((event) => {
+      const paraContainerForAll = document.querySelector(`#${event}`);
+      const ParaToExtendForAll = paraContainerForAll.querySelector(`p`);
+      ParaToExtendForAll.style.height = `100px`;
+      ParaToExtendForAll.classList.remove("extended");
+      paraContainerForAll.querySelector("a").innerText = "View More";
+    });
+    ParaToExtend.style.height = `${ParaToExtend.scrollHeight}px`;
+    ParaToExtend.classList.add("extended");
+    paraContainer.querySelector("a").innerText = "View Less";
+  }
+}
+
+// SUPPORTING COMMUNITY EVENT CHANGE IMAGE
+
+const communityImage = document.querySelector(".how-it-work-image");
+console.log(communityImage);
+const communityItems = document.querySelectorAll(".how-content");
+
+communityItems.forEach((item, index) => {
+  item.addEventListener("mouseover", () => {
+    gsap.to(communityImage, {
+      opacity: 0,
+      duration: 0.3,
+    });
+    setTimeout(() => {
+      if (index == 0) {
+        communityImage.style.backgroundImage =
+          "url('/res/image/supporting_main.png')";
+      } else if (index == 1) {
+        communityImage.style.backgroundImage =
+          "url('/res/image/about_us_leadership_2.png')";
+      } else if (index == 2) {
+        communityImage.style.backgroundImage =
+          "url('/res/image/supporting_main.png')";
+      } else if (index == 3) {
+        communityImage.style.backgroundImage =
+          "url('/res/image/about_us_leadership_2.png')";
+      }
+    }, 300);
+    gsap.to(communityImage, {
+      opacity: 1,
+      delay: 0.3,
+      duration: 0.3,
+    });
+  });
+});
+
+

@@ -243,3 +243,27 @@ events.forEach((eventItem) => {
     });
   }
 });
+
+const allEvents = document.querySelectorAll(".event");
+
+allEvents.forEach((eventItem) => {
+  if (eventItem.classList.contains("second-event")) {
+    gsap.from(eventItem, {
+      x: "150%",
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: eventItem,
+        start: "top 70%",
+      },
+    });
+  } else {
+    gsap.from(eventItem, {
+      x: "-150%",
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: eventItem,
+        start: "top 70%",
+      },
+    });
+  }
+});

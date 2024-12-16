@@ -677,10 +677,6 @@ ul {
 }
 
 .award-image {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url('../res/image/event_image_1.png');
   height: 500px;
   overflow: hidden;
 }
@@ -688,7 +684,11 @@ ul {
 .award-image-overlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(201, 209, 220, 1);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../res/image/event_image_1.png');
+
 }
 
 .award-content > h1 {

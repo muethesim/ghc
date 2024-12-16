@@ -688,6 +688,10 @@ ul {
   flex-direction: row;
 }
 
+.event-items > div {
+  flex: 1;
+}
+
 .e-item {
   display: flex;
   flex-direction: column;
@@ -720,8 +724,10 @@ ul {
   font-weight: 400;
   font-size: 14px;
   line-height: 26px;
-  min-height: 100px;
+  height: 100px;
   margin-bottom: 10px;
+  overflow: hidden;
+  transition: height 0.7s ease;
 }
 
 .event-content > a {
@@ -1228,8 +1234,10 @@ ul {
 }
 
 .how-it-work-image {
-  background: url("../res/image/supporting_main.png") no-repeat center center;
+  background-image: url("../res/image/supporting_main.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   width: 100%;
   position: relative;
 }
@@ -1508,7 +1516,7 @@ ul {
 
 .history-status-bar > div {
   height: 7px;
-  width: 20%;
+  width: 0%;
   background-color: rgba(56, 56, 56, 1);
   border-radius: 5px;
   transform: translateY(-1px);
@@ -1652,7 +1660,7 @@ ul {
 
 .number-status-bar > div {
   height: 7px;
-  width: 20%;
+  width: 0%;
   background-color: white;
   border-radius: 5px;
   transform: translateY(-1px);

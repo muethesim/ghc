@@ -776,6 +776,7 @@ ul {
   background-color: rgba(240, 241, 245, 1);
   padding-top: 60px;
   padding-bottom: 60px;
+  background-color: rgba(228, 240, 255, 1);
 }
 
 .more-from-events-container {
@@ -791,10 +792,21 @@ ul {
   font-weight: 400;
 }
 
+.more-from-events-container > p {
+  font-family: GoogleSans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}
+
 .event-items {
   display: flex;
   gap: 30px;
   flex-direction: row;
+}
+
+.event-items > div {
+  flex: 1;
 }
 
 .e-item {
@@ -829,8 +841,10 @@ ul {
   font-weight: 400;
   font-size: 14px;
   line-height: 26px;
-  min-height: 100px;
+  height: 100px;
   margin-bottom: 10px;
+  overflow: hidden;
+  transition: height 0.7s ease;
 }
 
 .event-content > a {

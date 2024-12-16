@@ -220,19 +220,69 @@ headerNavItems.forEach((element) => {
 const awardItems = document.querySelectorAll(".award-item");
 
 awardItems.forEach((award) => {
-  var awardImageOverlay = award.querySelector(
-    ".award-image > .award-image-overlay"
-  );
+  var awardImage = award.querySelector(".award-image > .award-image-overlay");
+  if (award.classList.contains("award-inverted")) {
+    gsap.from(award, {
+      x: "150%",
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: award,
+        start: "top 90%",
+      },
+    });
+  } else {
+    gsap.from(award, {
+      x: "-150%",
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: award,
+        start: "top 90%",
+      },
+    });
+  }
   award.addEventListener("mouseover", () => {
-    gsap.to(awardImageOverlay, {
-      x: "100%",
-      duration: 0.5,
+    gsap.to(awardImage, {
+      transform: "scale(1.2)",
     });
   });
   award.addEventListener("mouseleave", () => {
-    gsap.to(awardImageOverlay, {
-      x: 0,
-      duration: 0.5,
+    gsap.to(awardImage, {
+      transform: "scale(1)",
     });
+  });
+  var contentHeading = award.querySelector("h1");
+  var contentParas = award.querySelectorAll("p");
+  var contentMore = award.querySelectorAll("a");
+  gsap.from(contentHeading, {
+    y: 20,
+    opacity: 0,
+    duration: 0.8,
+    delay: 0.8,
+    scrollTrigger: {
+      trigger: award,
+      start: "top 90%",
+    },
+  });
+  contentParas.forEach((para) => {
+    gsap.from(para, {
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      delay: 0.8,
+      scrollTrigger: {
+        trigger: award,
+        start: "top 90%",
+      },
+    });
+  });
+  gsap.from(contentMore, {
+    y: 20,
+    opacity: 0,
+    duration: 0.8,
+    delay: 0.8,
+    scrollTrigger: {
+      trigger: award,
+      start: "top 90%",
+    },
   });
 });
