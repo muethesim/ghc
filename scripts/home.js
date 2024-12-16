@@ -601,6 +601,12 @@ const dropDownSmallItems = [
   "suites",
   "fahad_foods",
   "park",
+  "great",
+  "diversity",
+  "world_travel",
+  "freddie",
+  "kincentric",
+  "top_employer"
 ];
 
 dropDownSmallItems.forEach((item) => {

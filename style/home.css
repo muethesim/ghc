@@ -587,7 +587,8 @@ ul {
 .venture-image-container {
   mask-image: url("../res/image/layout.png");
   -webkit-mask-image: url("../res/image/layout.png");
-  background: url("../res/image/home_venture_1.jpeg") no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   background-color: rgba(217, 217, 217, 1);
   mask-repeat: no-repeat;
