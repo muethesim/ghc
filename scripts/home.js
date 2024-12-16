@@ -601,12 +601,23 @@ const dropDownSmallItems = [
   "suites",
   "fahad_foods",
   "park",
+  "hotelspa2",
+  "residence2",
+  "suites2",
+  "fahad_foods2",
+  "park2",
   "great",
   "diversity",
   "world_travel",
   "freddie",
   "kincentric",
-  "top_employer"
+  "top_employer",
+  "great2",
+  "diversity2",
+  "world_travel2",
+  "freddie2",
+  "kincentric2",
+  "top_employer2"
 ];
 
 dropDownSmallItems.forEach((item) => {
