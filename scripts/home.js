@@ -648,16 +648,19 @@ dropDownSmallItems.forEach((item) => {
 // HOVER
 
 const navigationList = document.querySelectorAll(".navigations > li");
-
-console.log(navigationList);
+var prevTextColor = window.getComputedStyle(navigationList[2].querySelector("span")).color;
 
 navigationList.forEach((nav) => {
-  console.log(nav);
   nav.addEventListener("mouseover", () => {
+    var nextColor = window.getComputedStyle(nav.querySelector("span")).color
+    if (nextColor == "white" || nextColor == "rgb(65, 199, 223)" || nextColor == "rgb(255, 255, 255)") {
+      prevTextColor = nextColor
+      console.log(prevTextColor)
+    }
     nav.querySelector("span").style.color = "#41c7df";
   });
   nav.addEventListener("mouseleave", () => {
-    nav.querySelector("span").style.color = "white";
+    nav.querySelector("span").style.color = prevTextColor;
   });
 });
 

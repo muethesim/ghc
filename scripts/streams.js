@@ -117,13 +117,7 @@ gsap.from(".main-body .main-button", {
   y: 100,
 });
 
-// SHIVERING
-const headerNavItems = document.querySelectorAll(".navigations > li > a > div");
-headerNavItems.forEach((element) => {
-  var elementWidth = element.offsetWidth;
-  elementWidth += 3;
-  element.style.width = `${elementWidth}px`;
-});
+ 
 
 gsap.from(".description > h1", {
   duration: 0.5,

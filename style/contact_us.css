@@ -1003,10 +1003,9 @@ ul {
   width: 100%;
 } */
 
-@media only screen and (max-width: 1200px) {
-  .drop-down {
-    padding: 20px 90px;
-    width: calc(100% - 180px);
+@media only screen and (max-width: 2000px) {
+  .drop-down-wrapper {
+    max-width: 900px;
   }
 }
 

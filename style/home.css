@@ -738,7 +738,7 @@ ul {
 
 @media only screen and (max-width: 520px) {
   .ongoing-ventures > h1 {
-    width: 100%;
+    width: calc(100% - 90px);
   }
 
   .venture-data {
@@ -1303,12 +1303,6 @@ ul {
   width: 100%;
 } */
 
-@media only screen and (max-width: 1200px) {
-  .drop-down {
-    padding: 20px 90px;
-    width: calc(100% - 180px);
-  }
-}
 
 .drop-down-navigation-description.multiple {
   display: none;
@@ -1330,6 +1324,16 @@ ul {
 .empty-div.multiple {
   display: grid;
 }
+
+
+
+/* MORE */
+@media only screen and (max-width: 2000px) {
+  .drop-down-wrapper {
+    max-width: 900px;
+  }
+}
+
 
 /* ------------------------------------ REMOVABLE  ----------------------------------------- */
 

@@ -454,13 +454,7 @@ gsap.from(".locations > h1", {
   },
 });
 
-// SHIVERING
-const headerNavItems = document.querySelectorAll(".navigations > li > a > div");
-headerNavItems.forEach((element) => {
-  var elementWidth = element.offsetWidth;
-  elementWidth += 3;
-  element.style.width = `${elementWidth}px`;
-});
+ 
 
 // document.querySelector("#close-removable").addEventListener("click", () => {
 //   document.querySelector(".removable").style.display = `none`

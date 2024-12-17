@@ -209,13 +209,7 @@ aboutUsNav.addEventListener("click", () => {
   }
 });
 
-// SHIVERING
-const headerNavItems = document.querySelectorAll(".navigations > li > a > div");
-headerNavItems.forEach((element) => {
-  var elementWidth = element.offsetWidth;
-  elementWidth += 3;
-  element.style.width = `${elementWidth}px`;
-});
+ 
 
 // MORE
 
