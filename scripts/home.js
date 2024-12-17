@@ -546,7 +546,7 @@ var dropDownItems = [
   "hospitality_busineses",
   "restaurants",
   "events",
-  "awards"
+  "awards",
 ];
 
 var emptyDivs = document.querySelectorAll(".empty-div");
@@ -617,7 +617,7 @@ const dropDownSmallItems = [
   "world_travel2",
   "freddie2",
   "kincentric2",
-  "top_employer2"
+  "top_employer2",
 ];
 
 dropDownSmallItems.forEach((item) => {
@@ -644,24 +644,4 @@ dropDownSmallItems.forEach((item) => {
       document.querySelector(`.${item}-description`).style.display = "none";
     });
 });
-
-// HOVER
-
-const navigationList = document.querySelectorAll(".navigations > li");
-var prevTextColor = window.getComputedStyle(navigationList[2].querySelector("span")).color;
-
-navigationList.forEach((nav) => {
-  nav.addEventListener("mouseover", () => {
-    var nextColor = window.getComputedStyle(nav.querySelector("span")).color
-    if (nextColor == "white" || nextColor == "rgb(65, 199, 223)" || nextColor == "rgb(255, 255, 255)") {
-      prevTextColor = nextColor
-      console.log(prevTextColor)
-    }
-    nav.querySelector("span").style.color = "#41c7df";
-  });
-  nav.addEventListener("mouseleave", () => {
-    nav.querySelector("span").style.color = prevTextColor;
-  });
-});
-
 

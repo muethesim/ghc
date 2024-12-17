@@ -220,6 +220,10 @@ ul {
   padding: 10px;
 }
 
+.header-container .navigations > li:hover a {
+  color: #41c7df !important;
+}
+
 .header-container ul > li > a:focus {
 }
 
@@ -901,6 +905,13 @@ ul {
   width: 24%;
   padding-top: 20px;
   padding-bottom: 20px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.drop-down-navigation-items::-webkit-scrollbar {
+  display: none;
 }
 
 .empty-div {

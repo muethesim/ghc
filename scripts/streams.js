@@ -117,8 +117,6 @@ gsap.from(".main-body .main-button", {
   y: 100,
 });
 
- 
-
 gsap.from(".description > h1", {
   duration: 0.5,
   opacity: 0,
@@ -285,8 +283,6 @@ rightHotelDescriptions.forEach((leftDescriptionDiv) => {
   });
 });
 
-
-
 const dropDownDivAboutUs = document.querySelector(".about-us-drop-down");
 const dropDownDivBussinessStreams = document.querySelector(
   ".bussiness-stream-drop-down"
@@ -375,7 +371,7 @@ var dropDownItems = [
   "hospitality_busineses",
   "restaurants",
   "events",
-  "awards"
+  "awards",
 ];
 
 var emptyDivs = document.querySelectorAll(".empty-div");
@@ -446,7 +442,7 @@ const dropDownSmallItems = [
   "world_travel2",
   "freddie2",
   "kincentric2",
-  "top_employer2"
+  "top_employer2",
 ];
 
 dropDownSmallItems.forEach((item) => {
@@ -472,20 +468,4 @@ dropDownSmallItems.forEach((item) => {
     .addEventListener("mouseleave", () => {
       document.querySelector(`.${item}-description`).style.display = "none";
     });
-});
-
-// HOVER
-
-const navigationList = document.querySelectorAll(".navigations > li");
-
-console.log(navigationList);
-
-navigationList.forEach((nav) => {
-  console.log(nav);
-  nav.addEventListener("mouseover", () => {
-    nav.querySelector("span").style.color = "#41c7df";
-  });
-  nav.addEventListener("mouseleave", () => {
-    nav.querySelector("span").style.color = "white";
-  });
 });
