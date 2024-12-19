@@ -473,3 +473,10 @@ dropDownSmallItems.forEach((item) => {
 });
 
  
+document.querySelector("#awards").addEventListener("mouseover", () => {
+  document.querySelector(".media-room-drop-down .drop-down-description > a").href = "/awards.html"
+})
+
+document.querySelector("#events").addEventListener("mouseover", () => {
+  document.querySelector(".media-room-drop-down .drop-down-description > a").href = "/event_list.html"
+})

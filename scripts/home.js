@@ -562,6 +562,14 @@ var dropDownItems = [
   "awards",
 ];
 
+document.querySelector("#awards").addEventListener("mouseover", () => {
+  document.querySelector(".media-room-drop-down .drop-down-description > a").href = "/awards.html"
+})
+
+document.querySelector("#events").addEventListener("mouseover", () => {
+  document.querySelector(".media-room-drop-down .drop-down-description > a").href = "/event_list.html"
+})
+
 var emptyDivs = document.querySelectorAll(".empty-div");
 dropDownItems.forEach((item) => {
   document.querySelector(`#${item}`).addEventListener("mouseover", () => {

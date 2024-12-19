@@ -20,7 +20,7 @@ var carousel = document.querySelector("[data-carousel]");
 var slides = document.getElementsByClassName("carousel-cell");
 var flkty = new Flickity(carousel, options);
 
- var headerContainerWidthForDropDown =
+var headerContainerWidthForDropDown =
   document.querySelector(".header-container").offsetWidth;
 const dropDownWrappers = document.querySelectorAll(".drop-down-wrapper");
 dropDownWrappers.forEach((dropDownWrapper) => {
@@ -37,8 +37,8 @@ function resizeEvents() {
 }
 
 document.querySelector(".main-logo").addEventListener("click", () => {
-  window.location.href = "/"
-})
+  window.location.href = "/";
+});
 
 // HUMBERGER
 
@@ -484,5 +484,17 @@ dropDownSmallItems.forEach((item) => {
 });
 
 document.querySelector(".main-logo").addEventListener("click", () => {
-  window.location.href = "/"
-})
+  window.location.href = "/";
+});
+
+document.querySelector("#awards").addEventListener("mouseover", () => {
+  document.querySelector(
+    ".media-room-drop-down .drop-down-description > a"
+  ).href = "/awards.html";
+});
+
+document.querySelector("#events").addEventListener("mouseover", () => {
+  document.querySelector(
+    ".media-room-drop-down .drop-down-description > a"
+  ).href = "/event_list.html";
+});
