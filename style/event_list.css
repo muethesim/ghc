@@ -152,6 +152,10 @@ ul {
   align-items: center;
 }
 
+.main-logo {
+  cursor: pointer;;
+}
+
 .header-container {
   display: flex;
   flex-direction: row;

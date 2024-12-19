@@ -152,6 +152,10 @@ ul {
   align-items: center;
 }
 
+.main-logo {
+  cursor: pointer;;
+}
+
 .header-container {
   display: flex;
   flex-direction: row;
@@ -1150,7 +1154,8 @@ ul {
 }
 
 .drop-down.active {
-  height: 70vh;
+  height: 65vh;
+  max-height: 580px;
   transition: all 1s ease-in-out;
 }
 
@@ -1206,7 +1211,7 @@ ul {
 
 .drop-down-navigation-items {
   background-color: rgba(61, 81, 108, 1);
-  width: 24%;
+  width: 30%;
   padding-top: 20px;
   padding-bottom: 20px;
   overflow-y: auto;
@@ -1340,10 +1345,12 @@ ul {
   display: grid;
 }
 
-
+.drop-down-wrapper {
+  max-width: 1150px;
+}
 
 /* MORE */
-@media only screen and (max-width: 2000px) {
+@media only screen and (max-width: 1200px) {
   .drop-down-wrapper {
     max-width: 900px;
   }

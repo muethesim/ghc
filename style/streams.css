@@ -95,6 +95,14 @@ ul {
   align-items: center;
 }
 
+.main-logo {
+  cursor: pointer;;
+}
+
+.main-logo {
+  cursor: pointer;;
+}
+
 .header-container {
   display: flex;
   flex-direction: row;
@@ -1066,3 +1074,5 @@ ul {
   gap: 50px;
   display: none;
 }
+
+

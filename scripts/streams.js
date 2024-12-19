@@ -19,13 +19,24 @@ var carousel = document.querySelector("[data-carousel]");
 var slides = document.getElementsByClassName("carousel-cell");
 var flkty = new Flickity(carousel, options);
 
-flkty.on("scroll", function () {
-  flkty.slides.forEach(function (slide, i) {
-    var image = slides[i];
-    var x = ((slide.target + flkty.x) * -1) / 3;
-    image.style.backgroundPosition = x + "px";
-  });
-});
+var headerContainerWidth =
+  document.querySelector(".header-container").offsetWidth;
+document.querySelector(
+  ".drop-down-wrapper"
+).style.width = `${headerContainerWidth}px`;
+
+// RESIZE LISTENER
+function resizeEvents() {
+  headerContainerWidth =
+    document.querySelector(".header-container").offsetWidth;
+  document.querySelector(
+    ".drop-down-wrapper"
+  ).style.width = `${headerContainerWidth}px`;
+}
+
+document.querySelector(".main-logo").addEventListener("click", () => {
+  window.location.href = "/"
+})
 
 // HUMBERGER
 
@@ -469,3 +480,7 @@ dropDownSmallItems.forEach((item) => {
       document.querySelector(`.${item}-description`).style.display = "none";
     });
 });
+
+document.querySelector(".main-logo").addEventListener("click", () => {
+  window.location.href = "/"
+})
