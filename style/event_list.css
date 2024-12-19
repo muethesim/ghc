@@ -883,7 +883,8 @@ ul {
 }
 
 .drop-down.active {
-  height: 70vh;
+  height: 65vh;
+  max-height: 580px;
   transition: all 1s ease-in-out;
 }
 
@@ -939,7 +940,7 @@ ul {
 
 .drop-down-navigation-items {
   background-color: rgba(61, 81, 108, 1);
-  width: 24%;
+  width: 220px;
   padding-top: 20px;
   padding-bottom: 20px;
   overflow-y: auto;
@@ -1051,11 +1052,7 @@ ul {
   width: 100%;
 } */
 
-@media only screen and (max-width: 2000px) {
-  .drop-down-wrapper {
-    max-width: 900px;
-  }
-}
+ 
 
 .drop-down-navigation-description.multiple {
   display: none;

@@ -4,6 +4,7 @@ var options = {
   accessibility: true,
   prevNextButtons: true,
   pageDots: true,
+  wrapAround: true,
   setGallerySize: false,
   autoPlay: 3000,
   arrowShape: {
@@ -20,19 +21,20 @@ var carousel = document.querySelector("[data-carousel]");
 var slides = document.getElementsByClassName("carousel-cell");
 var flkty = new Flickity(carousel, options);
 
-var headerContainerWidth =
+var headerContainerWidthForDropDown =
   document.querySelector(".header-container").offsetWidth;
+console.log(headerContainerWidthForDropDown)
 document.querySelector(
   ".drop-down-wrapper"
-).style.width = `${headerContainerWidth}px`;
+).style.width = `${headerContainerWidthForDropDown}px`;
 
 // RESIZE LISTENER
 function resizeEvents() {
-  headerContainerWidth =
+  headerContainerWidthForDropDown =
     document.querySelector(".header-container").offsetWidth;
   document.querySelector(
     ".drop-down-wrapper"
-  ).style.width = `${headerContainerWidth}px`;
+  ).style.width = `${headerContainerWidthForDropDown}px`;
 }
 
 document.querySelector(".main-logo").addEventListener("click", () => {

@@ -4,6 +4,7 @@ var options = {
   accessibility: true,
   prevNextButtons: true,
   pageDots: true,
+  wrapAround: true,
   setGallerySize: false,
   autoPlay: 3000,
   arrowShape: {
@@ -20,38 +21,25 @@ var carousel = document.querySelector("[data-carousel]");
 var slides = document.getElementsByClassName("carousel-cell");
 var flkty = new Flickity(carousel, options);
 
-var headerContainerWidth =
-  document.querySelector(".header-container").offsetWidth;
-document.querySelector(
-  ".drop-down-wrapper"
-).style.width = `${headerContainerWidth}px`;
 
-// RESIZE LISTENER
-function resizeEvents() {
-  headerContainerWidth =
-    document.querySelector(".header-container").offsetWidth;
-  document.querySelector(
-    ".drop-down-wrapper"
-  ).style.width = `${headerContainerWidth}px`;
-}
 
 document.querySelector(".main-logo").addEventListener("click", () => {
   window.location.href = "/";
 });
 
-var headerContainerWidth =
+var headerContainerWidthForDropDown =
   document.querySelector(".header-container").offsetWidth;
 document.querySelector(
   ".drop-down-wrapper"
-).style.width = `${headerContainerWidth}px`;
+).style.width = `${headerContainerWidthForDropDown}px`;
 
 // RESIZE LISTENER
 function resizeEvents() {
-  headerContainerWidth =
+  headerContainerWidthForDropDown =
     document.querySelector(".header-container").offsetWidth;
   document.querySelector(
     ".drop-down-wrapper"
-  ).style.width = `${headerContainerWidth}px`;
+  ).style.width = `${headerContainerWidthForDropDown}px`;
 }
 
 // Number
@@ -670,3 +658,23 @@ dropDownSmallItems.forEach((item) => {
       document.querySelector(`.${item}-description`).style.display = "none";
     });
 });
+
+
+
+var headerContainerWidthForDropDown =
+document.querySelector(".header-container").offsetWidth;
+document.querySelector(
+  ".drop-down-wrapper"
+).style.width = `${headerContainerWidthForDropDown}px`;
+console.log(document.querySelector(
+  ".drop-down-wrapper"
+))
+
+// RESIZE LISTENER
+function resizeEvents() {
+  headerContainerWidthForDropDown =
+    document.querySelector(".header-container").offsetWidth;
+  document.querySelector(
+    ".drop-down-wrapper"
+  ).style.width = `${headerContainerWidthForDropDown}px`;
+}
