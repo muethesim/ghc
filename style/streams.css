@@ -514,7 +514,9 @@ ul {
 .left-hotel-details > .hotel-detail-image {
   width: 70%;
   height: 100%;
-  background-color: rgba(201, 209, 220, 1);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hotel-detail-description {
@@ -566,7 +568,9 @@ ul {
   right: 0;
   width: 70%;
   height: 100%;
-  background-color: rgba(201, 209, 220, 1);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media only screen and (max-width: 1200px) {
