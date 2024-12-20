@@ -192,17 +192,17 @@ const collapsibleContainers = document.querySelectorAll(".collapsible");
 collapsibleContainers.forEach((container, index) => {
   var image_url = "";
   if (index == 0) {
-    image_url = '"/res/image/home_expand.png"';
+    image_url = '"/res/image/home_horizon_1.jpg"';
   } else if (index == 1) {
-    image_url = '"/res/image/home_contact.jpeg"';
+    image_url = '"/res/image/home_horizon_2.jpg"';
   } else if (index == 2) {
-    image_url = '"/res/image/home_expand.png"';
+    image_url = '"/res/image/home_horizon_3.jpg"';
   } else if (index == 3) {
-    image_url = '"/res/image/home_contact.jpeg"';
+    image_url = '"/res/image/home_horizon_4.jpg"';
   } else if (index == 4) {
-    image_url = '"/res/image/home_expand.png"';
+    image_url = '"/res/image/home_horizon_5.jpg"';
   } else if (index == 5) {
-    image_url = '"/res/image/home_contact.jpeg"';
+    image_url = '"/res/image/home_horizon_5.jpg"';
   }
   container.addEventListener("mouseover", () => {
     if (index != collapsibleCurrentIndex) {
@@ -213,6 +213,7 @@ collapsibleContainers.forEach((container, index) => {
       gsap.to(".horizon-image-container", {
         backgroundImage: `url(${image_url})`,
         delay: 0.2,
+        duration: 0.2
       });
       gsap.to(".horizon-image-container", {
         opacity: 1,

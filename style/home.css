@@ -455,7 +455,7 @@ ul {
 .horizon-image-container {
   width: 250%;
   height: 1224px;
-  background: url("../res/image/home_expand.png") no-repeat center center;
+  background: url("../res/image/home_horizon_1.jpg") no-repeat center center;
   background-size: cover;
 }
 
@@ -793,7 +793,7 @@ ul {
 }
 
 .contact-image-container {
-  background: url("../res/image/home_contact.jpeg") no-repeat center center;
+  background: url("../res/image/home_contact.png") no-repeat center center;
   background-size: cover;
   width: 62%;
   height: 75vh;
