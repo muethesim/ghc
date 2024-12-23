@@ -153,7 +153,7 @@ ul {
 }
 
 .main-logo {
-  cursor: pointer;;
+  cursor: pointer;
 }
 
 .header-container {
@@ -1591,7 +1591,6 @@ ul {
   }
 }
 
-
 /* ------------------------------ DROP DOWN ------------------------------------- */
 
 .drop-down {
@@ -1778,8 +1777,6 @@ ul {
   width: 100%;
 } */
 
- 
-
 .drop-down-navigation-description.multiple {
   display: none;
 }
@@ -1815,4 +1812,112 @@ ul {
   flex-direction: row;
   gap: 50px;
   display: none;
+}
+
+/* INSIGHT */
+.insight-div {
+  width: calc(100% - 240px);
+  padding-left: 120px;
+  padding-right: 120px;
+  background-color: rgba(201, 209, 220, 1);
+}
+
+.insight-div > h1 {
+  margin-left: 120px;
+  margin-bottom: 76px;
+  font-family: Felis;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  width: 40%;
+}
+
+.insight-corousal {
+  width: 100%;
+  height: 568px;
+  display: flex;
+  overflow: hidden;
+}
+
+.insights {
+  display: flex;
+  flex-direction: column;
+  flex: 0.9;
+}
+
+.insight-corousal-controller {
+  flex: 0.1;
+  background-color: #41c7df;
+}
+
+.insight-corousal-child {
+  display: flex;
+  width: 100%;
+  height: 568px;
+  flex: 1;
+  min-height: 568px;
+}
+
+.insight-corousal-image {
+  flex: 0.4;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.insight-corousal-body {
+  background-color: white;
+  flex: 0.6;
+  padding: 70px 80px;
+}
+
+.insight-image-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(12px);
+}
+
+.insight-corousal-body > span {
+  font-family: Switzer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(80, 90, 128, 1);
+}
+
+.insight-corousal-body > h1 {
+  font-family: Graphik;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  margin-top: 10px;
+  color: rgba(7, 16, 51, 1);
+  width: 50%;
+}
+
+.insight-corousal-body > p {
+  font-family: GoogleSans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.6px;
+  text-align: left;
+  color: rgba(80, 90, 128, 1);
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.insight-corousal-body > a {
+  color: rgba(65, 199, 223, 1);
+
+}
+
+.insight-corousal-body > a > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
