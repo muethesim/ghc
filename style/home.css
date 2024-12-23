@@ -1268,9 +1268,12 @@ ul {
   height: -webkit-fill-available;
 }
 
+
+
 .drop-down-navigation-description > img {
   width: 100%;
   height: 46%;
+  object-fit: cover;
 }
 
 .drop-down-navigation-description > h1 {
