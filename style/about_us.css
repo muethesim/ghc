@@ -906,10 +906,13 @@ ul {
   }
 }
 
+/* -------------------------------- VIDEO ------------------------------------------ */
+
 .video {
   padding: 0;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .video > video {
@@ -918,27 +921,46 @@ ul {
 
 .video-overlay {
   position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #aab8c2;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.video-overlay > img {
+  width: 50%;
+  height: 50%;
+}
+
+.play-button-div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
   top: 0;
-  z-index: 10;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .play-button {
-  border-radius: 50%;
+  background-color: rgba(201, 209, 220, 0.9);
   height: 124px;
   width: 124px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(201, 209, 220, 0.9);
-  color: white;
+  color: #fff;
+  font-family: Graphik;
   font-size: 12px;
   font-weight: 700;
+  line-height: 20;
+  letter-spacing: 0.192px;
+  cursor: pointer;
 }
 
 /* ------------------------------------- MEET OUR TEAM ---------------------------------------------- */
@@ -1724,6 +1746,7 @@ ul {
 .drop-down-navigation-description > img {
   width: 100%;
   height: 46%;
+  object-fit: cover;
 }
 
 .drop-down-navigation-description > h1 {
@@ -1913,7 +1936,6 @@ ul {
 
 .insight-corousal-body > a {
   color: rgba(65, 199, 223, 1);
-
 }
 
 .insight-corousal-body > a > div {

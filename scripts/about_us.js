@@ -21,7 +21,7 @@
 // var slides = document.getElementsByClassName("carousel-cell");
 // var flkty = new Flickity(carousel, options);
 
- var headerContainerWidthForDropDown =
+var headerContainerWidthForDropDown =
   document.querySelector(".header-container").offsetWidth;
 const dropDownWrappers = document.querySelectorAll(".drop-down-wrapper");
 dropDownWrappers.forEach((dropDownWrapper) => {
@@ -38,8 +38,8 @@ function resizeEvents() {
 }
 
 document.querySelector(".main-logo").addEventListener("click", () => {
-  window.location.href = "/"
-})
+  window.location.href = "/";
+});
 
 // HEADER TRANSITION
 
@@ -221,8 +221,6 @@ aboutUsNav.addEventListener("click", () => {
     isAboutUsActive = true;
   }
 });
-
- 
 
 const managersMembersTeam = document.querySelector("#managers_members_team");
 const boardMembersTeam = document.querySelector("#board_members_team");
@@ -488,8 +486,6 @@ communityItems.forEach((item, index) => {
   });
 });
 
-
-
 const dropDownDivAboutUs = document.querySelector(".about-us-drop-down");
 const dropDownDivBussinessStreams = document.querySelector(
   ".bussiness-stream-drop-down"
@@ -578,7 +574,7 @@ var dropDownItems = [
   "hospitality_busineses",
   "restaurants",
   "events",
-  "awards"
+  "awards",
 ];
 
 var emptyDivs = document.querySelectorAll(".empty-div");
@@ -649,7 +645,7 @@ const dropDownSmallItems = [
   "world_travel2",
   "freddie2",
   "kincentric2",
-  "top_employer2"
+  "top_employer2",
 ];
 
 dropDownSmallItems.forEach((item) => {
@@ -677,52 +673,69 @@ dropDownSmallItems.forEach((item) => {
     });
 });
 
- 
 document.querySelector("#awards").addEventListener("mouseover", () => {
-  document.querySelector(".media-room-drop-down .drop-down-description > a").href = "/awards.html"
-})
+  document.querySelector(
+    ".media-room-drop-down .drop-down-description > a"
+  ).href = "/awards.html";
+});
 
 document.querySelector("#events").addEventListener("mouseover", () => {
-  document.querySelector(".media-room-drop-down .drop-down-description > a").href = "/event_list.html"
-})
+  document.querySelector(
+    ".media-room-drop-down .drop-down-description > a"
+  ).href = "/event_list.html";
+});
 
-
-function clickAndDrag(selector, scroll_speed = 3, classOnEvent = 'grabbed_elem') {
+function clickAndDrag(
+  selector,
+  scroll_speed = 3,
+  classOnEvent = "grabbed_elem"
+) {
   const slider = document.querySelector(selector);
   let isDown = false;
   let startX;
   let scrollLeft;
 
-  slider.addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      isDown = true;
-      slider.classList.add(classOnEvent);
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-  
-      // prevent default child behavior
-      document.body.addEventListener('click', function( event ){
-          if (slider.contains(event.target)) {
-              event.preventDefault();
-          }
-      });
+  slider.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    isDown = true;
+    slider.classList.add(classOnEvent);
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+
+    // prevent default child behavior
+    document.body.addEventListener("click", function (event) {
+      if (slider.contains(event.target)) {
+        event.preventDefault();
+      }
+    });
   });
-  slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove(classOnEvent);
+  slider.addEventListener("mouseleave", () => {
+    isDown = false;
+    slider.classList.remove(classOnEvent);
   });
-  slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove(classOnEvent);
+  slider.addEventListener("mouseup", () => {
+    isDown = false;
+    slider.classList.remove(classOnEvent);
   });
-  slider.addEventListener('mousemove', (e) => {
-      if(!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * scroll_speed; //scroll-fast
-      slider.scrollLeft = scrollLeft - walk;
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * scroll_speed; //scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
   });
 }
 
-clickAndDrag(".history-corousal")
-clickAndDrag(".number-corousal")
+clickAndDrag(".history-corousal");
+clickAndDrag(".number-corousal");
+
+const playButton = document.querySelector(".play-button");
+const playButtonDiv = document.querySelector(".play-button-div");
+const videoOverlay = document.querySelector(".video-overlay");
+const playableVideo = document.querySelector(".video > video");
+
+playButton.addEventListener("click", () => {
+  playButtonDiv.style.display = "none";
+  videoOverlay.style.display = "none";
+  playableVideo.play();
+});
