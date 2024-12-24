@@ -213,7 +213,7 @@ collapsibleContainers.forEach((container, index) => {
       gsap.to(".horizon-image-container", {
         backgroundImage: `url(${image_url})`,
         delay: 0.2,
-        duration: 0.2
+        duration: 0.2,
       });
       gsap.to(".horizon-image-container", {
         opacity: 1,
@@ -557,30 +557,45 @@ var dropDownItems = [
   "ghc_in_numbers",
   "our_history",
   "company_esg",
-  "hospitality_busineses",
-  "restaurants",
   "events",
   "awards",
+  "hotels",
+  "apartments",
+  "food_beverage",
+  "eatery_dining",
+  "leisure_amusement",
 ];
 
 document.querySelector("#awards").addEventListener("mouseover", () => {
-  document.querySelector(".media-room-drop-down .drop-down-description > a").href = "/awards.html"
-})
+  document.querySelector(
+    ".media-room-drop-down .drop-down-description > a"
+  ).href = "/awards.html";
+});
 
 document.querySelector("#events").addEventListener("mouseover", () => {
-  document.querySelector(".media-room-drop-down .drop-down-description > a").href = "/event_list.html"
-})
+  document.querySelector(
+    ".media-room-drop-down .drop-down-description > a"
+  ).href = "/event_list.html";
+});
 
 var emptyDivs = document.querySelectorAll(".empty-div");
 dropDownItems.forEach((item) => {
+  console.log(item);
   document.querySelector(`#${item}`).addEventListener("mouseover", () => {
-    document.querySelector(`.${item}-description`).style.display = "flex";
+    console.log(
+      document
+        .querySelector(`.${item}-description`)
+        .classList.contains("multiple")
+    );
     if (
       document
         .querySelector(`.${item}-description`)
         .classList.contains("multiple")
     ) {
+      console.log("HEREE");
       document.querySelector(`.${item}-description`).style.display = "grid";
+    } else {
+      document.querySelector(`.${item}-description`).style.display = "flex";
     }
     emptyDivs.forEach((empty) => {
       empty.style.display = "none";
@@ -595,12 +610,15 @@ dropDownItems.forEach((item) => {
   document
     .querySelector(`.${item}-description`)
     .addEventListener("mouseover", () => {
+      console.log("HERE 2");
       document.querySelector(`.${item}-description`).style.display = "flex";
       if (
         document
           .querySelector(`.${item}-description`)
           .classList.contains("multiple")
       ) {
+        console.log("HERE 3");
+
         document.querySelector(`.${item}-description`).style.display = "grid";
       }
       emptyDivs.forEach((empty) => {
@@ -618,16 +636,8 @@ dropDownItems.forEach((item) => {
 });
 
 const dropDownSmallItems = [
-  "hotelspa",
-  "residence",
-  "suites",
-  "fahad_foods",
-  "park",
-  "hotelspa2",
-  "residence2",
-  "suites2",
-  "fahad_foods2",
-  "park2",
+  "doha_hotelspa",
+  "doha_residence",
   "qatar_tourism_event",
   "hotels_event",
   "fact_event",
@@ -636,7 +646,7 @@ const dropDownSmallItems = [
   "world_luxury_event",
   "world_travel_event",
   "qatar_tourism",
-  "hotels",
+  "hotels_com",
   "fact",
   "booking",
   "ohlala",
@@ -645,10 +655,19 @@ const dropDownSmallItems = [
   "qatar_choice",
   "hotilier",
   "timeout_doha",
-  "time_dining",
+  // "fact_dining",
+  "gulf_hotels",
+  "fahed_foods",
+  "nac",
+  "feryah_pastry",
+  "tawlt_beirut",
+  "fino_pizza",
+  "hungry_human",
+  "park_900",
 ];
 
 dropDownSmallItems.forEach((item) => {
+  console.log(item);
   document.querySelector(`#${item}`).addEventListener("mouseover", () => {
     document.querySelector(`.${item}-description`).style.display = "flex";
   });
@@ -671,4 +690,25 @@ dropDownSmallItems.forEach((item) => {
     .addEventListener("mouseleave", () => {
       document.querySelector(`.${item}-description`).style.display = "none";
     });
+});
+
+const navigationPaths = {
+  our_story: "/about_us.html#story_div",
+  messages: "/about_us.html#message_div",
+  board_of_directors: "/about_us.html#managers_members_team",
+  board_of_members: "/about_us.html#board_members_team",
+  our_vision: "/about_us.html#vision_moral",
+  our_mission: "/about_us.html#mission_moral",
+  our_values: "/about_us.html#values_moral",
+  ghc_in_numbers: "/about_us.html#numbers_div",
+  our_history: "/about_us.html#history_div",
+  company_esg: "/about_us.html#esg_div",
+};
+
+const aboutUsLearnMoreButton = document.querySelector("#about_us_learn_more");
+
+Object.entries(navigationPaths).forEach(([div, paths]) => {
+  document.querySelector(`#${div}`).addEventListener("click", () => {
+    aboutUsLearnMoreButton.href = paths;
+  });
 });

@@ -196,31 +196,31 @@ gsap.from(".contact-data-container > a >.main-button", {
   },
 });
 
-const headerContainer = document.querySelector(".header");
-const headerContainerWidth = headerContainer.offsetHeight;
-const dropDown = document.querySelector(".drop-down");
+// const headerContainer = document.querySelector(".header");
+// const headerContainerWidth = headerContainer.offsetHeight;
+// const dropDown = document.querySelector(".drop-down");
 
-dropDown.style.top = `${headerContainerWidth}px`;
+// dropDown.style.top = `${headerContainerWidth}px`;
 
-const aboutUsNav = document.querySelector(".about-us-nav");
-var isAboutUsActive = false;
-const dropDownTop = dropDown.style.transform;
-console.log(dropDownTop);
-aboutUsNav.addEventListener("click", () => {
-  if (isAboutUsActive) {
-    gsap.to(".drop-down", {
-      y: "-150%",
-      duration: 0.5,
-    });
-    isAboutUsActive = false;
-  } else {
-    gsap.to(".drop-down", {
-      y: 0,
-      duration: 0.5,
-    });
-    isAboutUsActive = true;
-  }
-});
+// const aboutUsNav = document.querySelector(".about-us-nav");
+// var isAboutUsActive = false;
+// const dropDownTop = dropDown.style.transform;
+// console.log(dropDownTop);
+// aboutUsNav.addEventListener("click", () => {
+//   if (isAboutUsActive) {
+//     gsap.to(".drop-down", {
+//       y: "-150%",
+//       duration: 0.5,
+//     });
+//     isAboutUsActive = false;
+//   } else {
+//     gsap.to(".drop-down", {
+//       y: 0,
+//       duration: 0.5,
+//     });
+//     isAboutUsActive = true;
+//   }
+// });
 
 const managersMembersTeam = document.querySelector("#managers_members_team");
 const boardMembersTeam = document.querySelector("#board_members_team");
@@ -560,6 +560,8 @@ document.addEventListener("click", function (event) {
 
 // DROPDOWNVIEW ABOUT US
 
+// DROPDOWNVIEW ABOUT US
+
 var dropDownItems = [
   "our_story",
   "messages",
@@ -571,22 +573,45 @@ var dropDownItems = [
   "ghc_in_numbers",
   "our_history",
   "company_esg",
-  "hospitality_busineses",
-  "restaurants",
   "events",
   "awards",
+  "hotels",
+  "apartments",
+  "food_beverage",
+  "eatery_dining",
+  "leisure_amusement",
 ];
+
+document.querySelector("#awards").addEventListener("mouseover", () => {
+  document.querySelector(
+    ".media-room-drop-down .drop-down-description > a"
+  ).href = "/awards.html";
+});
+
+document.querySelector("#events").addEventListener("mouseover", () => {
+  document.querySelector(
+    ".media-room-drop-down .drop-down-description > a"
+  ).href = "/event_list.html";
+});
 
 var emptyDivs = document.querySelectorAll(".empty-div");
 dropDownItems.forEach((item) => {
+  console.log(item);
   document.querySelector(`#${item}`).addEventListener("mouseover", () => {
-    document.querySelector(`.${item}-description`).style.display = "flex";
+    console.log(
+      document
+        .querySelector(`.${item}-description`)
+        .classList.contains("multiple")
+    );
     if (
       document
         .querySelector(`.${item}-description`)
         .classList.contains("multiple")
     ) {
+      console.log("HEREE");
       document.querySelector(`.${item}-description`).style.display = "grid";
+    } else {
+      document.querySelector(`.${item}-description`).style.display = "flex";
     }
     emptyDivs.forEach((empty) => {
       empty.style.display = "none";
@@ -601,12 +626,15 @@ dropDownItems.forEach((item) => {
   document
     .querySelector(`.${item}-description`)
     .addEventListener("mouseover", () => {
+      console.log("HERE 2");
       document.querySelector(`.${item}-description`).style.display = "flex";
       if (
         document
           .querySelector(`.${item}-description`)
           .classList.contains("multiple")
       ) {
+        console.log("HERE 3");
+
         document.querySelector(`.${item}-description`).style.display = "grid";
       }
       emptyDivs.forEach((empty) => {
@@ -624,31 +652,38 @@ dropDownItems.forEach((item) => {
 });
 
 const dropDownSmallItems = [
-  "hotelspa",
-  "residence",
-  "suites",
-  "fahad_foods",
-  "park",
-  "hotelspa2",
-  "residence2",
-  "suites2",
-  "fahad_foods2",
-  "park2",
-  "great",
-  "diversity",
+  "doha_hotelspa",
+  "doha_residence",
+  "qatar_tourism_event",
+  "hotels_event",
+  "fact_event",
+  "booking_event",
+  "ohlala_event",
+  "world_luxury_event",
+  "world_travel_event",
+  "qatar_tourism",
+  "hotels_com",
+  "fact",
+  "booking",
+  "ohlala",
+  "world_luxury",
   "world_travel",
-  "freddie",
-  "kincentric",
-  "top_employer",
-  "great2",
-  "diversity2",
-  "world_travel2",
-  "freddie2",
-  "kincentric2",
-  "top_employer2",
+  "qatar_choice",
+  "hotilier",
+  "timeout_doha",
+  // "fact_dining",
+  "gulf_hotels",
+  "fahed_foods",
+  "nac",
+  "feryah_pastry",
+  "tawlt_beirut",
+  "fino_pizza",
+  "hungry_human",
+  "park_900",
 ];
 
 dropDownSmallItems.forEach((item) => {
+  console.log(item);
   document.querySelector(`#${item}`).addEventListener("mouseover", () => {
     document.querySelector(`.${item}-description`).style.display = "flex";
   });
@@ -738,4 +773,15 @@ playButton.addEventListener("click", () => {
   playButtonDiv.style.display = "none";
   videoOverlay.style.display = "none";
   playableVideo.play();
+});
+
+// GOTO
+window.addEventListener("load", () => {
+  const hash = window.location.hash; // Get the fragment identifier (e.g., #story_div)
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling to the element
+    }
+  }
 });
