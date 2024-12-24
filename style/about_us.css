@@ -1846,6 +1846,11 @@ ul {
   background-color: rgba(201, 209, 220, 1);
 }
 
+.insight-corousal-wrapper {
+  display: flex;
+  height: 568px;
+}
+
 .insight-div > h1 {
   margin-left: 120px;
   margin-bottom: 76px;
@@ -1861,17 +1866,20 @@ ul {
   height: 568px;
   display: flex;
   overflow: hidden;
+  flex: 0.9;
 }
 
 .insights {
   display: flex;
   flex-direction: column;
-  flex: 0.9;
 }
 
 .insight-corousal-controller {
   flex: 0.1;
-  background-color: #41c7df;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .insight-corousal-child {
@@ -1943,4 +1951,99 @@ ul {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.control-button {
+  width: 100%;
+  aspect-ratio: 1.5 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-control-button {
+  opacity: 0.4;
+  background: white;
+}
+
+
+.bottom-control-arrow > g > path {
+  stroke: #143199;
+}
+
+.bottom-control-button {
+  background: white;
+}
+
+.controller-position {
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  opacity: 0.4;
+}
+
+.insight-control-positions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .insight-corousal-wrapper {
+    flex-direction: column;
+  }
+
+  .control-button {
+    max-width: 140px;
+    width: 20vw;
+  }
+
+  .insight-corousal-controller {
+    flex-direction: row;
+  }
+
+  .insight-controllers {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .insight-control-positions {
+    flex-direction: row;
+    margin: 0;
+    margin-right: 10px;
+  }
+
+  .insight-corousal-body > h1 {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .insight-corousal-image {
+    display: none;
+  }
+
+  .insight-corousal-body {
+    flex: 1;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .insight-div {
+    width: calc(100% - 90px);
+    padding: 45px;
+  }
+
+  .insight-corousal-body {
+    padding: 35px 40px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .insight-corousal-body > h1 {
+    width: 100%;
+  }
 }

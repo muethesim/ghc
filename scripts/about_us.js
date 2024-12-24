@@ -785,3 +785,70 @@ window.addEventListener("load", () => {
     }
   }
 });
+
+// ADJUST HEIGHT
+
+var heightForCorousal =
+  document.querySelector(".insight-corousal").offsetHeight;
+
+if (screen.width <= 1200) {
+  heightForCorousal += document.querySelector(
+    ".insight-corousal-controller"
+  ).offsetHeight;
+  document.querySelector(
+    ".insight-corousal-wrapper"
+  ).style.height = `${heightForCorousal}px`;
+}
+
+// MESSAGE COROUSAL
+
+const downButton = document.querySelector(".bottom-control-button");
+const upButton = document.querySelector(".top-control-button");
+const corousalPositions = document.querySelectorAll(".controller-position");
+
+const maxCorousalCount = corousalPositions.length;
+
+var corousalCount = 0;
+corousalPositions[corousalCount].style.opacity = 1;
+
+downButton.addEventListener("click", () => {
+  if (corousalCount < maxCorousalCount - 1) {
+    corousalCount++;
+    corousalPositions.forEach((positionItem) => {
+      positionItem.style.opacity = 0.4;
+    });
+    corousalPositions[corousalCount].style.opacity = 1;
+    gsap.to(".insights", {
+      y: `-${corousalCount * heightForCorousal}px`,
+      duration: 1,
+    });
+  }
+  if (corousalCount == maxCorousalCount - 1) {
+    downButton.style.opacity = 0.4;
+  }
+
+  if (corousalCount > 0) {
+    upButton.style.opacity = 1;
+  }
+});
+
+upButton.addEventListener("click", () => {
+  if (corousalCount > 0) {
+    corousalCount--;
+    corousalPositions.forEach((positionItem) => {
+      positionItem.style.opacity = 0.4;
+    });
+    corousalPositions[corousalCount].style.opacity = 1;
+    gsap.to(".insights", {
+      y: `-${corousalCount * heightForCorousal}px`,
+      duration: 1,
+    });
+  }
+  if (corousalCount == 0) {
+    upButton.style.opacity = 0.4;
+  }
+
+  if (corousalCount == maxCorousalCount - 2) {
+    downButton.style.opacity = 1;
+  }
+});
