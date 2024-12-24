@@ -1310,6 +1310,13 @@ ul {
   height: inherit;
   padding-top: 20px;
   padding-bottom: 20px;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.second-option::-webkit-scrollbar {
+  display: none;
 }
 
 .drop-down-navigation-description.small > img {
