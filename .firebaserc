@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "ghc-web"
-  }
+    "default": "ghc-new"
+  },
+  "targets": {},
+  "etags": {}
 }
