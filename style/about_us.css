@@ -2029,6 +2029,10 @@ ul {
   .insight-corousal-body {
     flex: 1;
   }
+
+  .insight-div > h1 {
+    margin-left: 0;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -2039,6 +2043,10 @@ ul {
 
   .insight-corousal-body {
     padding: 35px 40px;
+  }
+
+  .insight-div > h1 {
+    width: 80%;
   }
 }
 

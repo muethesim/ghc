@@ -691,24 +691,3 @@ dropDownSmallItems.forEach((item) => {
       document.querySelector(`.${item}-description`).style.display = "none";
     });
 });
-
-const navigationPaths = {
-  our_story: "/about_us.html#story_div",
-  messages: "/about_us.html#message_div",
-  board_of_directors: "/about_us.html#managers_members_team",
-  board_of_members: "/about_us.html#board_members_team",
-  our_vision: "/about_us.html#vision_moral",
-  our_mission: "/about_us.html#mission_moral",
-  our_values: "/about_us.html#values_moral",
-  ghc_in_numbers: "/about_us.html#numbers_div",
-  our_history: "/about_us.html#history_div",
-  company_esg: "/about_us.html#esg_div",
-};
-
-const aboutUsLearnMoreButton = document.querySelector("#about_us_learn_more");
-
-Object.entries(navigationPaths).forEach(([div, paths]) => {
-  document.querySelector(`#${div}`).addEventListener("click", () => {
-    aboutUsLearnMoreButton.href = paths;
-  });
-});
