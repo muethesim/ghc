@@ -1344,6 +1344,9 @@ ul {
 .history-image {
   height: 318px;
   position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .history-description {
@@ -1383,41 +1386,6 @@ ul {
   font-weight: 500;
   font-size: 22px;
   line-height: 26.4px;
-}
-
-.history-image-1 {
-  background: url("../res/image/about_us_history_1.png") no-repeat center center;
-  background-size: cover;
-}
-
-.history-image-2 {
-  background: url("../res/image/about_us_history_1.png") no-repeat center center;
-  background-size: cover;
-}
-
-.history-image-3 {
-  background: url("../res/image/about_us_history_1.png") no-repeat center center;
-  background-size: cover;
-}
-
-.history-image-4 {
-  background: url("../res/image/about_us_history_1.png") no-repeat center center;
-  background-size: cover;
-}
-
-.history-image-5 {
-  background: url("../res/image/about_us_history_1.png") no-repeat center center;
-  background-size: cover;
-}
-
-.history-image-6 {
-  background: url("../res/image/about_us_history_1.png") no-repeat center center;
-  background-size: cover;
-}
-
-.history-image-7 {
-  background: url("../res/image/about_us_history_1.png") no-repeat center center;
-  background-size: cover;
 }
 
 .history-status-bar {
