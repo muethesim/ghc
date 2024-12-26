@@ -566,19 +566,23 @@ var dropDownItems = [
   "leisure_amusement",
 ];
 
-document.querySelector("#awards").addEventListener("mouseover", () => {
+document.querySelector("#awards").addEventListener("click", () => {
+  console.log("HERE");
   document.querySelector(
     ".media-room-drop-down .drop-down-description > a"
   ).href = "/awards.html";
 });
 
-document.querySelector("#events").addEventListener("mouseover", () => {
+document.querySelector("#events").addEventListener("click", () => {
   document.querySelector(
     ".media-room-drop-down .drop-down-description > a"
   ).href = "/event_list.html";
 });
 
 var emptyDivs = document.querySelectorAll(".empty-div");
+// var smallEmptyDiv = document.querySelectorAll(
+//   ".drop-down-navigation-description.small.empty-div"
+// );
 dropDownItems.forEach((item) => {
   console.log(item);
   document.querySelector(`#${item}`).addEventListener("mouseover", () => {
@@ -610,15 +614,12 @@ dropDownItems.forEach((item) => {
   document
     .querySelector(`.${item}-description`)
     .addEventListener("mouseover", () => {
-      console.log("HERE 2");
       document.querySelector(`.${item}-description`).style.display = "flex";
       if (
         document
           .querySelector(`.${item}-description`)
           .classList.contains("multiple")
       ) {
-        console.log("HERE 3");
-
         document.querySelector(`.${item}-description`).style.display = "grid";
       }
       emptyDivs.forEach((empty) => {

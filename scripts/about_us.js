@@ -582,13 +582,13 @@ var dropDownItems = [
   "leisure_amusement",
 ];
 
-document.querySelector("#awards").addEventListener("mouseover", () => {
+document.querySelector("#awards").addEventListener("click", () => {
   document.querySelector(
     ".media-room-drop-down .drop-down-description > a"
   ).href = "/awards.html";
 });
 
-document.querySelector("#events").addEventListener("mouseover", () => {
+document.querySelector("#events").addEventListener("click", () => {
   document.querySelector(
     ".media-room-drop-down .drop-down-description > a"
   ).href = "/event_list.html";
@@ -708,13 +708,14 @@ dropDownSmallItems.forEach((item) => {
     });
 });
 
-document.querySelector("#awards").addEventListener("mouseover", () => {
+document.querySelector("#awards").addEventListener("click", () => {
+  console.log("HERE")
   document.querySelector(
     ".media-room-drop-down .drop-down-description > a"
   ).href = "/awards.html";
 });
 
-document.querySelector("#events").addEventListener("mouseover", () => {
+document.querySelector("#events").addEventListener("click", () => {
   document.querySelector(
     ".media-room-drop-down .drop-down-description > a"
   ).href = "/event_list.html";
