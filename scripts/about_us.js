@@ -466,16 +466,16 @@ communityItems.forEach((item, index) => {
     setTimeout(() => {
       if (index == 0) {
         communityImage.style.backgroundImage =
-          "url('/res/image/supporting_main.png')";
+          "url('/res/image/about_us/about_us_leadership_1.png')";
       } else if (index == 1) {
         communityImage.style.backgroundImage =
-          "url('/res/image/about_us_leadership_2.png')";
+          "url('/res/image/about_us/about_us_leadership_2.png')";
       } else if (index == 2) {
         communityImage.style.backgroundImage =
-          "url('/res/image/supporting_main.png')";
+          "url('/res/image/about_us/about_us_leadership_3.png')";
       } else if (index == 3) {
         communityImage.style.backgroundImage =
-          "url('/res/image/about_us_leadership_2.png')";
+          "url('/res/image/about_us/about_us_leadership_4.png')";
       }
     }, 300);
     gsap.to(communityImage, {

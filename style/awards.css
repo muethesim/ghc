@@ -153,7 +153,7 @@ ul {
 }
 
 .main-logo {
-  cursor: pointer;;
+  cursor: pointer;
 }
 
 .header-container {
@@ -221,6 +221,10 @@ ul {
 
 .header-container ul > li > a > div {
   padding: 10px;
+}
+
+.header-container .navigations > li:hover a {
+  color: #41c7df !important;
 }
 
 .header-container .navigations > li:hover a {
@@ -582,7 +586,7 @@ ul {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('../res/image/event_image_1.png');
+  background-image: url('../res/image/awards/awards_master.png');
 
 }
 
@@ -935,6 +939,7 @@ ul {
   font-size: 40px;
   font-weight: 400;
   height: 50px;
+  color: rgba(226, 180, 26, 1);
 }
 
 .drop-down-description > p {
@@ -1043,6 +1048,21 @@ ul {
   /* display: flex;
   flex-direction: row; */
   overflow: hidden;
+}
+
+.second-option {
+  background-color: rgba(51, 68, 91, 1);
+  width: 100%;
+  height: inherit;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.second-option::-webkit-scrollbar {
+  display: none;
 }
 
 .second-option {

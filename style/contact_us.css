@@ -903,6 +903,7 @@ ul {
   font-size: 40px;
   font-weight: 400;
   height: 50px;
+  color: rgba(226, 180, 26, 1);
 }
 
 .drop-down-description > p {
@@ -1011,6 +1012,21 @@ ul {
   /* display: flex;
   flex-direction: row; */
   overflow: hidden;
+}
+
+.second-option {
+  background-color: rgba(51, 68, 91, 1);
+  width: 100%;
+  height: inherit;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.second-option::-webkit-scrollbar {
+  display: none;
 }
 
 .second-option {
