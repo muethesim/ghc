@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "ghc-new"
+    "default": "ghc-new-host",
+    "dev": "ghc-new-host"
   },
   "targets": {},
   "etags": {}
