@@ -709,7 +709,7 @@ dropDownSmallItems.forEach((item) => {
 });
 
 document.querySelector("#awards").addEventListener("click", () => {
-  console.log("HERE")
+  console.log("HERE");
   document.querySelector(
     ".media-room-drop-down .drop-down-description > a"
   ).href = "/awards.html";
@@ -852,4 +852,37 @@ upButton.addEventListener("click", () => {
   if (corousalCount == maxCorousalCount - 2) {
     downButton.style.opacity = 1;
   }
+});
+
+// ABOUT US CLOSING
+
+const closingAttributes = [
+  "our_story-description",
+  "messages-description",
+  "board_of_directors-description",
+  "board_of_members-description",
+  "our_vision-description",
+  "our_mission-description",
+  "our_values-description",
+  "ghc_in_numbers-description",
+  "our_history-description",
+  "company_esg-description",
+];
+
+closingAttributes.forEach((clsattr) => {
+  document.querySelector(`.${clsattr} > a`).addEventListener("click", () => {
+    document.querySelectorAll(".active").forEach((dropDownSingleItem) => {
+      if (dropDownSingleItem.classList.contains("active")) {
+        dropDownSingleItem.classList.remove("active");
+      }
+    });
+  });
+});
+
+document.querySelector("#about_us_learn_more").addEventListener("click", () => {
+  document.querySelectorAll(".active").forEach((dropDownSingleItem) => {
+    if (dropDownSingleItem.classList.contains("active")) {
+      dropDownSingleItem.classList.remove("active");
+    }
+  });
 });

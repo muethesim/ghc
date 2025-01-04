@@ -693,3 +693,6 @@ fetch("/res/svg/qatar_map.svg")
       });
     });
   });
+
+
+  

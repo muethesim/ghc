@@ -912,12 +912,17 @@ ul {
   outline: none;
 }
 
+
 .footer-left > p {
   font-family: GoogleSans;
   font-size: 1rem;
   line-height: 19.2px;
-  color: white;
+  color: transparent;
   margin-top: 114px;
+  cursor: default;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .footer-right {
