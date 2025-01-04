@@ -1090,9 +1090,10 @@ height: -moz-available;
 }
 
 .drop-down-navigation-description.empty-div.multiple > img {
-  height: inherit;
+  height: -webkit-fill-available;
   width: -webkit-fill-available;
-width: -moz-available;
+  width: -moz-available;
+  height: -moz-available;
   padding: 24px;
 }
 
