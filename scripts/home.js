@@ -305,71 +305,6 @@ humburgerPlate.addEventListener("click", () => {
   }
 });
 
-// MAP
-
-var mapAreas = [
-  ".asia-1",
-  ".asia-2",
-  ".australia-1",
-  ".africa-1",
-  ".europe-1",
-  ".europe-2",
-  ".south-america-1",
-  ".america-1",
-  ".america-2",
-  ".america-3",
-];
-
-mapAreas.forEach((loc) => {
-  var placePin = document.querySelector(`${loc}-pin`);
-  var placeCircle = document.querySelector(`${loc}-circle`);
-  var placeText = document.querySelector(`${loc}-text`);
-  placePin.addEventListener("mouseover", () => {
-    placeText.style.display = "block";
-    gsap.to(placeText, {
-      opacity: 1,
-      duration: 0.3,
-    });
-    gsap.to(placeCircle, {
-      fill: "rgba(226, 180, 26, 1)",
-      duration: 0.3,
-    });
-  });
-  placeCircle.addEventListener("mouseover", () => {
-    placeText.style.display = "block";
-    gsap.to(placeText, {
-      opacity: 1,
-      duration: 0.3,
-    });
-    gsap.to(placeCircle, {
-      fill: "rgba(226, 180, 26, 1)",
-      duration: 0.3,
-    });
-  });
-  placePin.addEventListener("mouseleave", () => {
-    placeText.style.display = "none";
-    gsap.to(placeText, {
-      opacity: 0,
-      duration: 0.3,
-    });
-    gsap.to(placeCircle, {
-      fill: "rgba(65, 199, 223, 1)",
-      duration: 0.3,
-    });
-  });
-  placeCircle.addEventListener("mouseleave", () => {
-    placeText.style.display = "none";
-    gsap.to(placeText, {
-      opacity: 0,
-      duration: 0.3,
-    });
-    gsap.to(placeCircle, {
-      fill: "rgba(65, 199, 223, 1)",
-      duration: 0.3,
-    });
-  });
-});
-
 // Description
 
 gsap.from(".description > h1", {
@@ -692,3 +627,69 @@ dropDownSmallItems.forEach((item) => {
       document.querySelector(`.${item}-description`).style.display = "none";
     });
 });
+
+// MAP SETTINGS
+fetch("/res/svg/qatar_map.svg")
+  .then((data) => {
+    return data.text();
+  })
+  .then((svg_data) => {
+    document.querySelector(".location-map").innerHTML = svg_data;
+  })
+  .then(() => {
+    // MAP
+
+    var mapAreas = [".pin-1", ".pin-2"];
+
+    mapAreas.forEach((loc) => {
+      console.log(`${loc}-pin`);
+      var placePin = document.querySelector(`${loc}-pin`);
+      var placeCircle = document.querySelector(`${loc}-circle`);
+      var placeText = document.querySelector(`${loc}-text`);
+
+      placePin.addEventListener("mouseover", () => {
+        placeText.style.display = "block";
+        gsap.to(placeText, {
+          opacity: 1,
+          duration: 0.3,
+        });
+        gsap.to(placeCircle, {
+          fill: "rgba(226, 180, 26, 1)",
+          duration: 0.3,
+        });
+      });
+      placeCircle.addEventListener("mouseover", () => {
+        placeText.style.display = "block";
+        gsap.to(placeText, {
+          opacity: 1,
+          duration: 0.3,
+        });
+        gsap.to(placeCircle, {
+          fill: "rgba(226, 180, 26, 1)",
+          duration: 0.3,
+        });
+      });
+      placePin.addEventListener("mouseleave", () => {
+        placeText.style.display = "none";
+        gsap.to(placeText, {
+          opacity: 0,
+          duration: 0.3,
+        });
+        gsap.to(placeCircle, {
+          fill: "rgba(65, 199, 223, 1)",
+          duration: 0.3,
+        });
+      });
+      placeCircle.addEventListener("mouseleave", () => {
+        placeText.style.display = "none";
+        gsap.to(placeText, {
+          opacity: 0,
+          duration: 0.3,
+        });
+        gsap.to(placeCircle, {
+          fill: "rgba(65, 199, 223, 1)",
+          duration: 0.3,
+        });
+      });
+    });
+  });

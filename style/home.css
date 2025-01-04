@@ -688,9 +688,11 @@ ul {
   line-height: 2.5rem;
 }
 
-.locations > svg {
+.location-map {
   margin: 0 0px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .hide {
