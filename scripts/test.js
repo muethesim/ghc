@@ -21,7 +21,7 @@ var carousel = document.querySelector("[data-carousel]");
 var slides = document.getElementsByClassName("carousel-cell");
 var flkty = new Flickity(carousel, options);
 
- var headerContainerWidthForDropDown =
+var headerContainerWidthForDropDown =
   document.querySelector(".header-container").offsetWidth;
 const dropDownWrappers = document.querySelectorAll(".drop-down-wrapper");
 dropDownWrappers.forEach((dropDownWrapper) => {
@@ -38,8 +38,8 @@ function resizeEvents() {
 }
 
 document.querySelector(".main-logo").addEventListener("click", () => {
-  window.location.href = "/"
-})
+  window.location.href = "/";
+});
 
 // Number
 
@@ -467,8 +467,6 @@ gsap.from(".locations > h1", {
   },
 });
 
- 
-
 // document.querySelector("#close-removable").addEventListener("click", () => {
 //   document.querySelector(".removable").style.display = `none`
 // })
@@ -483,13 +481,13 @@ document.querySelector(".about-us-nav").addEventListener("click", () => {
   }
 });
 
-const headerDivMain = document.querySelector(".header")
-const allDropDown = document.querySelectorAll(".drop-down")
+const headerDivMain = document.querySelector(".header");
+const allDropDown = document.querySelectorAll(".drop-down");
 
 document.addEventListener("click", function (event) {
   if (!headerDivMain.contains(event.target)) {
     allDropDown.forEach((item) => {
-      item.classList.remove("active")
-    })
+      item.classList.remove("active");
+    });
   }
 });

@@ -516,3 +516,75 @@ document.querySelector("#awards").addEventListener("mouseover", () => {
 document.querySelector("#events").addEventListener("mouseover", () => {
   document.querySelector(".media-room-drop-down .drop-down-description > a").href = "/event_list.html"
 })
+
+
+const markingModel = {
+  "our_story-description": ["our_story"],
+  "messages-description": ["messages"],
+  "board_of_directors-description": ["board_of_directors"],
+  "board_of_members-description": ["board_of_members"],
+  "our_vision-description": ["our_vision"],
+  "our_mission-description": ["our_mission"],
+  "our_values-description": ["our_values"],
+  "ghc_in_numbers-description": ["ghc_in_numbers"],
+  "our_history-description": ["our_history"],
+  "company_esg-description": ["company_esg"],
+  "hotels-description": ["hotels"],
+  "doha_hotelspa-description": ["doha_hotelspa"],
+  "doha_residence-description": ["doha_residence"],
+  "apartments-description": ["apartments"],
+  "food_beverage-description": ["food_beverage"],
+  "fahed_foods-description": ["fahed_foods"],
+  "eatery_dining-description": ["eatery_dining"],
+  "gulf_hotels-description": ["gulf_hotels"],
+  "nac-description": ["nac"],
+  "feryah_pastry-description": ["feryah_pastry"],
+  "tawlt_beirut-description": ["tawlt_beirut"],
+  "fino_pizza-description": ["fino_pizza"],
+  "hungry_human-description": ["hungry_human"],
+  "leisure_amusement-description": ["leisure_amusement"],
+  "park_900-description": ["park_900"],
+  "events-description": ["events"],
+  "awards-description": ["awards"],
+  "qatar_tourism_event-description": ["qatar_tourism_event"],
+  "hotels_event-description": ["hotels_event"],
+  "fact_event-description": ["fact_event"],
+  "booking_event-description": ["booking_event"],
+  "ohlala_event-description": ["ohlala_event"],
+  "world_luxury_event-description": ["world_luxury_event"],
+  "world_travel_event-description": ["world_travel_event"],
+  "qatar_tourism-description": ["qatar_tourism"],
+  "hotels_com-description": ["hotels_com"],
+  "fact-description": ["fact"],
+  "booking-description": ["booking"],
+  "ohlala-description": ["ohlala"],
+  "world_luxury-description": ["world_luxury"],
+  "world_travel-description": ["world_travel"],
+  "qatar_choice-description": ["qatar_choice"],
+  "hotilier-description": ["hotilier"],
+  "timeout_doha-description": ["timeout_doha"],
+};
+
+const markingModelKeys = Object.keys(markingModel);
+markingModelKeys.forEach((markingKeys) => {
+  document
+    .querySelector(`.${markingKeys}`)
+    .addEventListener("mouseover", () => {
+      markingModel[markingKeys].forEach((toLineDiv) => {
+        var liItemToActive = document.querySelector(`#${toLineDiv}`);
+        if (!liItemToActive.classList.contains("active")) {
+          liItemToActive.classList.add("active");
+        }
+      });
+    });
+  document
+    .querySelector(`.${markingKeys}`)
+    .addEventListener("mouseleave", () => {
+      markingModel[markingKeys].forEach((toLineDiv) => {
+        var liItemToActive = document.querySelector(`#${toLineDiv}`);
+        if (liItemToActive.classList.contains("active")) {
+          liItemToActive.classList.remove("active");
+        }
+      });
+    });
+});

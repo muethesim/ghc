@@ -912,7 +912,6 @@ ul {
   outline: none;
 }
 
-
 .footer-left > p {
   font-family: GoogleSans;
   font-size: 1rem;
@@ -1249,6 +1248,10 @@ ul {
   width: 100%;
 }
 
+.nav-items li.active > a {
+  color: rgba(226, 180, 26, 1);
+}
+
 .nav-items li:hover > a {
   color: rgba(226, 180, 26, 1);
 }
@@ -1258,6 +1261,10 @@ ul {
   height: 0.5px;
   background-color: rgba(226, 180, 26, 1);
   transition: width 0.3s ease-in-out;
+}
+
+.nav-items li.active > .a-line {
+  width: 100%;
 }
 
 .nav-items li:hover > .a-line {
@@ -1287,6 +1294,7 @@ ul {
   display: flex;
   flex-direction: column;
   height: -webkit-fill-available;
+  height: -moz-available;
 }
 
 .drop-down-navigation-description > img {
@@ -1346,6 +1354,7 @@ ul {
 .drop-down-navigation-description.empty-div.multiple > img {
   height: inherit;
   width: -webkit-fill-available;
+  width: -moz-available;
   padding: 24px;
 }
 
@@ -1360,6 +1369,7 @@ ul {
 .drop-down-navigation-description.empty-div.multiple > img {
   height: inherit;
   width: -webkit-fill-available;
+  width: -moz-available;
   padding: 24px;
 }
 
@@ -1387,10 +1397,12 @@ ul {
 
 .drop-down-navigation-description {
   display: none;
+  height: auto;
 }
 
 .drop-down-navigation-description.empty-div {
   display: flex;
+  height: auto;
 }
 
 .drop-down-navigation-description.hospitality_busineses-description,
