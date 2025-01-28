@@ -21,7 +21,7 @@
 // var slides = document.getElementsByClassName("carousel-cell");
 // var flkty = new Flickity(carousel, options);
 
- var headerContainerWidthForDropDown =
+var headerContainerWidthForDropDown =
   document.querySelector(".header-container").offsetWidth;
 const dropDownWrappers = document.querySelectorAll(".drop-down-wrapper");
 dropDownWrappers.forEach((dropDownWrapper) => {
@@ -38,8 +38,8 @@ function resizeEvents() {
 }
 
 document.querySelector(".main-logo").addEventListener("click", () => {
-  window.location.href = "/"
-})
+  window.location.href = "/";
+});
 
 // HEADER TRANSITION
 
@@ -108,19 +108,24 @@ gsap.from(".main-body .main-button", {
 
 const humburgerPlate = document.querySelector(".plates");
 const humburgerSinglePlate = document.querySelector(".plates");
-const menuScreen = document.querySelector(".menu-screen");
+const menuScreen = document.querySelector(".mobile-drop-down-items.initial");
+const mobileDropDown = document.querySelector(".drop-down-mobile");
 const body = document.querySelector("html");
 const lineContainer = document.querySelector(".line");
 var isMobileMenuOpened = false;
 var strokeColor = `rgba(11, 22, 33, 1)`;
+const mobileListItems = document.querySelectorAll(".mobile-list-items");
+
 
 humburgerPlate.addEventListener("click", () => {
   // document.body.scrollTop = document.documentElement.scrollTop = 0;
   if (!isMobileMenuOpened) {
-    gsap.to(menuScreen, {
-      x: 0,
-      duration: 1,
-    });
+    // gsap.to(menuScreen, {
+    //   x: 0,
+    //   duration: 1,
+    // });
+    menuScreen.classList.add("active");
+    mobileDropDown.classList.add("active");
     gsap.to(".line", {
       stroke: "white",
     });
@@ -128,9 +133,14 @@ humburgerPlate.addEventListener("click", () => {
     strokeColor = lineContainer.style.stroke;
     body.style.overflow = "hidden";
   } else {
-    gsap.to(menuScreen, {
-      x: "100%",
-      duration: 1,
+    // gsap.to(menuScreen, {
+    //   x: "-100%",
+    //   duration: 1,
+    // });
+    menuScreen.classList.remove("active");
+    mobileDropDown.classList.remove("active");
+    mobileListItems.forEach((item) => {
+      closeMobileNavBarItem(item.id);
     });
     gsap.to(".line", {
       stroke: `${strokeColor}`,
@@ -222,8 +232,6 @@ const headerContainer = document.querySelector(".header");
 //   }
 // });
 
- 
-
 // EVENT ITEMS HOVER
 const events = document.querySelectorAll(".event");
 
@@ -274,8 +282,6 @@ allEvents.forEach((eventItem) => {
     });
   }
 });
-
-
 
 const dropDownDivAboutUs = document.querySelector(".about-us-drop-down");
 const dropDownDivBussinessStreams = document.querySelector(
@@ -374,7 +380,7 @@ var dropDownItems = [
 ];
 
 document.querySelector("#awards").addEventListener("click", () => {
-  console.log("HERE")
+  console.log("HERE");
   document.querySelector(
     ".media-room-drop-down .drop-down-description > a"
   ).href = "/awards.html";
@@ -497,14 +503,17 @@ dropDownSmallItems.forEach((item) => {
     });
 });
 
- 
 document.querySelector("#awards").addEventListener("mouseover", () => {
-  document.querySelector(".media-room-drop-down .drop-down-description > a").href = "/awards.html"
-})
+  document.querySelector(
+    ".media-room-drop-down .drop-down-description > a"
+  ).href = "/awards.html";
+});
 
 document.querySelector("#events").addEventListener("mouseover", () => {
-  document.querySelector(".media-room-drop-down .drop-down-description > a").href = "/event_list.html"
-})
+  document.querySelector(
+    ".media-room-drop-down .drop-down-description > a"
+  ).href = "/event_list.html";
+});
 
 const markingModel = {
   "our_story-description": ["our_story"],
@@ -574,3 +583,19 @@ markingModelKeys.forEach((markingKeys) => {
       });
     });
 });
+
+// MOBILE NAV BAR
+
+function openMobileNavBarItem(navId) {
+  gsap.to(`#${navId}`, {
+    x: 0,
+    duration: 0.8,
+  });
+}
+
+function closeMobileNavBarItem(navId) {
+  gsap.to(`#${navId}`, {
+    x: "-100%",
+    duration: 0.8,
+  });
+}

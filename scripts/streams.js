@@ -44,23 +44,31 @@ document.querySelector(".main-logo").addEventListener("click", () => {
 
 const humburgerPlate = document.querySelector(".plates");
 const humburgerSinglePlate = document.querySelector(".plates");
-const menuScreen = document.querySelector(".menu-screen");
+const menuScreen = document.querySelector(".mobile-drop-down-items.initial");
+const mobileDropDown = document.querySelector(".drop-down-mobile");
 const body = document.querySelector("html");
 var isMobileMenuOpened = false;
 
 humburgerPlate.addEventListener("click", () => {
   document.body.scrollTop = document.documentElement.scrollTop = 0;
   if (!isMobileMenuOpened) {
-    gsap.to(menuScreen, {
-      x: 0,
-      duration: 1,
-    });
+        // gsap.to(menuScreen, {
+    //   x: 0,
+    //   duration: 1,
+    // });
+    menuScreen.classList.add("active");
+    mobileDropDown.classList.add("active");
     isMobileMenuOpened = true;
     body.style.overflow = "hidden";
   } else {
-    gsap.to(menuScreen, {
-      x: "100%",
-      duration: 1,
+    // gsap.to(menuScreen, {
+    //   x: "-100%",
+    //   duration: 1,
+    // });
+    menuScreen.classList.remove("active");
+    mobileDropDown.classList.remove("active");
+    mobileListItems.forEach((item) => {
+      closeMobileNavBarItem(item.id);
     });
     isMobileMenuOpened = false;
     body.style.overflow = "scroll";
@@ -602,3 +610,20 @@ markingModelKeys.forEach((markingKeys) => {
       });
     });
 });
+
+// MOBILE NAV BAR
+
+function openMobileNavBarItem(navId) {
+  gsap.to(`#${navId}`, {
+    x: 0,
+    duration: 0.8,
+  });
+}
+
+function closeMobileNavBarItem(navId) {
+  gsap.to(`#${navId}`, {
+    x: "-100%",
+    duration: 0.8,
+  });
+}
+

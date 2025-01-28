@@ -272,19 +272,24 @@ else {
 
 const humburgerPlate = document.querySelector(".plates");
 const humburgerSinglePlate = document.querySelector(".plates");
-const menuScreen = document.querySelector(".menu-screen");
+const menuScreen = document.querySelector(".mobile-drop-down-items.initial");
+const mobileDropDown = document.querySelector(".drop-down-mobile");
 const body = document.querySelector("html");
 const lineContainer = document.querySelector(".line");
 var isMobileMenuOpened = false;
 var strokeColor = `rgba(11, 22, 33, 1)`;
+const mobileListItems = document.querySelectorAll(".mobile-list-items");
+
 
 humburgerPlate.addEventListener("click", () => {
   // document.body.scrollTop = document.documentElement.scrollTop = 0;
   if (!isMobileMenuOpened) {
-    gsap.to(menuScreen, {
-      x: 0,
-      duration: 1,
-    });
+        // gsap.to(menuScreen, {
+    //   x: 0,
+    //   duration: 1,
+    // });
+    menuScreen.classList.add("active");
+    mobileDropDown.classList.add("active");
     gsap.to(".line", {
       stroke: "white",
     });
@@ -292,9 +297,14 @@ humburgerPlate.addEventListener("click", () => {
     strokeColor = lineContainer.style.stroke;
     body.style.overflow = "hidden";
   } else {
-    gsap.to(menuScreen, {
-      x: "100%",
-      duration: 1,
+    // gsap.to(menuScreen, {
+    //   x: "-100%",
+    //   duration: 1,
+    // });
+    menuScreen.classList.remove("active");
+    mobileDropDown.classList.remove("active");
+    mobileListItems.forEach((item) => {
+      closeMobileNavBarItem(item.id);
     });
     gsap.to(".line", {
       stroke: `${strokeColor}`,

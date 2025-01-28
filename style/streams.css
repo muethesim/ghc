@@ -96,11 +96,11 @@ ul {
 }
 
 .main-logo {
-  cursor: pointer;;
+  cursor: pointer;
 }
 
 .main-logo {
-  cursor: pointer;;
+  cursor: pointer;
 }
 
 .header-container {
@@ -398,8 +398,6 @@ ul {
     width: calc(100% - 45px);
   }
 }
-
- 
 
 .current-path {
   background-color: rgba(11, 22, 33, 1);
@@ -854,8 +852,6 @@ ul {
 
 /* --------------------------- HUMBERGER --------------------------- */
 
-
-
 /* ------------------------------ DROP DOWN ------------------------------------- */
 
 .drop-down {
@@ -993,7 +989,7 @@ ul {
   display: flex;
   flex-direction: column;
   height: -webkit-fill-available;
-height: -moz-available;
+  height: -moz-available;
 }
 
 .drop-down-navigation-description > img {
@@ -1070,7 +1066,7 @@ height: -moz-available;
   display: none;
 }
 
-.drop-down-navigation-description.small.empty-div > img{
+.drop-down-navigation-description.small.empty-div > img {
   height: 100%;
 }
 
@@ -1083,8 +1079,6 @@ height: -moz-available;
   grid-template-columns: 40% 60%;
   width: 100%;
 } */
-
- 
 
 .drop-down-navigation-description.multiple {
   display: none;
@@ -1125,4 +1119,105 @@ height: -moz-available;
   display: none;
 }
 
+/* MOBILE */
 
+.drop-down-mobile {
+  height: calc(100vh);
+  width: calc(100% + 480px);
+  background-color: #597294;
+}
+
+@media only screen and (max-width: 1024px) {
+  .drop-down-mobile {
+    width: calc(100% + 180px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .drop-down-mobile {
+    width: calc(100% + 90px);
+  }
+}
+
+
+.mobile-drop-down-items {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  overflow-y: scroll;
+}
+
+.mobile-drop-down-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-top: white solid 1px;
+}
+
+.mobile-drop-down-item-first {
+  border-top: none;
+}
+
+.mobile-list-items {
+  position: absolute;
+  background-color: #597294;
+  width: 100%;
+  z-index: 4;
+  height: inherit;
+  color: white;
+  transform: translateX(-100%);
+}
+
+.about-us-mobile,
+.bussiness-mobile,
+.media-mobile {
+  z-index: 3;
+}
+
+.image-reverse-x {
+  transform: rotate(180deg);
+}
+
+.mobile-drop-heading-container {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+}
+
+.mobile-drop-heading-container > h1 {
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: white;
+}
+
+.mobile-drop-paragraph {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.mobile-drop-down-learn-more {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.mobile-drop-down-items.initial {
+  height: 0;
+  transition: height ease 2s;
+}
+
+.drop-down-mobile {
+  height: 0;
+  transition: height ease 2s;
+}
+
+.mobile-drop-down-items.active {
+  height: 100vh;
+}
+
+.drop-down-mobile.active {
+  height: 100vh;
+}
