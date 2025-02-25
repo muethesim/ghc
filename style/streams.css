@@ -1221,3 +1221,16 @@ ul {
 .drop-down-mobile.active {
   height: 100vh;
 }
+
+
+/* ---------------------------- LAST CHANGES ----------------------------- */
+@media only screen and (max-width: 520px) {
+  .mobile-drop-paragraph {
+    display: none;
+  }
+
+  .mobile-list-items > div > a {
+    display: none;
+  }
+}
+
