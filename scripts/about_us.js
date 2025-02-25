@@ -124,6 +124,8 @@ humburgerPlate.addEventListener("click", () => {
     //   x: 0,
     //   duration: 1,
     // });
+    menuScreen.classList.add("active");
+    mobileDropDown.classList.add("active");
     gsap.to(".line", {
       stroke: "white",
     });
@@ -213,7 +215,6 @@ gsap.from(".contact-data-container > a >.main-button", {
 // const aboutUsNav = document.querySelector(".about-us-nav");
 // var isAboutUsActive = false;
 // const dropDownTop = dropDown.style.transform;
-// console.log(dropDownTop);
 // aboutUsNav.addEventListener("click", () => {
 //   if (isAboutUsActive) {
 //     gsap.to(".drop-down", {
@@ -462,7 +463,6 @@ function showEventMore(itemName) {
 // SUPPORTING COMMUNITY EVENT CHANGE IMAGE
 
 const communityImage = document.querySelector(".how-it-work-image");
-console.log(communityImage);
 const communityItems = document.querySelectorAll(".how-content");
 
 communityItems.forEach((item, index) => {
@@ -604,19 +604,12 @@ document.querySelector("#events").addEventListener("click", () => {
 
 var emptyDivs = document.querySelectorAll(".empty-div");
 dropDownItems.forEach((item) => {
-  console.log(item);
   document.querySelector(`#${item}`).addEventListener("mouseover", () => {
-    console.log(
-      document
-        .querySelector(`.${item}-description`)
-        .classList.contains("multiple")
-    );
     if (
       document
         .querySelector(`.${item}-description`)
         .classList.contains("multiple")
     ) {
-      console.log("HEREE");
       document.querySelector(`.${item}-description`).style.display = "grid";
     } else {
       document.querySelector(`.${item}-description`).style.display = "flex";
@@ -634,14 +627,12 @@ dropDownItems.forEach((item) => {
   document
     .querySelector(`.${item}-description`)
     .addEventListener("mouseover", () => {
-      console.log("HERE 2");
       document.querySelector(`.${item}-description`).style.display = "flex";
       if (
         document
           .querySelector(`.${item}-description`)
           .classList.contains("multiple")
       ) {
-        console.log("HERE 3");
 
         document.querySelector(`.${item}-description`).style.display = "grid";
       }
@@ -688,7 +679,6 @@ const dropDownSmallItems = [
 ];
 
 dropDownSmallItems.forEach((item) => {
-  console.log(item);
   document.querySelector(`#${item}`).addEventListener("mouseover", () => {
     document.querySelector(`.${item}-description`).style.display = "flex";
   });
@@ -714,7 +704,6 @@ dropDownSmallItems.forEach((item) => {
 });
 
 document.querySelector("#awards").addEventListener("click", () => {
-  console.log("HERE");
   document.querySelector(
     ".media-room-drop-down .drop-down-description > a"
   ).href = "/awards.html";
